@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9A21B3B061F00968814 /* AppDelegate.swift */; };
+		2725D9A51B3B061F00968814 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9A41B3B061F00968814 /* ViewController.swift */; };
+		2725D9A71B3B061F00968814 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A61B3B061F00968814 /* Images.xcassets */; };
+		2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A81B3B061F00968814 /* Main.storyboard */; };
+		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2725D9B01B3B061F00968814 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2725D9951B3B061F00968814 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2725D99C1B3B061F00968814;
+			remoteInfo = "Tinderbox-Aeon-Exchange";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2725D99D1B3B061F00968814 /* Tinderbox-Aeon-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinderbox-Aeon-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2725D9A11B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2725D9A21B3B061F00968814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2725D9A41B3B061F00968814 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2725D9A61B3B061F00968814 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2725D9A91B3B061F00968814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2725D9AF1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tinderbox-Aeon-ExchangeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2725D9B41B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2725D99A1B3B061F00968814 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725D9AC1B3B061F00968814 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2725D9941B3B061F00968814 = {
+			isa = PBXGroup;
+			children = (
+				2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */,
+				2725D9B21B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */,
+				2725D99E1B3B061F00968814 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2725D99E1B3B061F00968814 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2725D99D1B3B061F00968814 /* Tinderbox-Aeon-Exchange.app */,
+				2725D9AF1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				2725D9A21B3B061F00968814 /* AppDelegate.swift */,
+				2725D9A41B3B061F00968814 /* ViewController.swift */,
+				2725D9A61B3B061F00968814 /* Images.xcassets */,
+				2725D9A81B3B061F00968814 /* Main.storyboard */,
+				2725D9A01B3B061F00968814 /* Supporting Files */,
+			);
+			path = "Tinderbox-Aeon-Exchange";
+			sourceTree = "<group>";
+		};
+		2725D9A01B3B061F00968814 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2725D9A11B3B061F00968814 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2725D9B21B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */,
+				2725D9B31B3B061F00968814 /* Supporting Files */,
+			);
+			path = "Tinderbox-Aeon-ExchangeTests";
+			sourceTree = "<group>";
+		};
+		2725D9B31B3B061F00968814 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2725D9B41B3B061F00968814 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2725D99C1B3B061F00968814 /* Tinderbox-Aeon-Exchange */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2725D9B91B3B061F00968814 /* Build configuration list for PBXNativeTarget "Tinderbox-Aeon-Exchange" */;
+			buildPhases = (
+				2725D9991B3B061F00968814 /* Sources */,
+				2725D99A1B3B061F00968814 /* Frameworks */,
+				2725D99B1B3B061F00968814 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tinderbox-Aeon-Exchange";
+			productName = "Tinderbox-Aeon-Exchange";
+			productReference = 2725D99D1B3B061F00968814 /* Tinderbox-Aeon-Exchange.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2725D9AE1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2725D9BC1B3B061F00968814 /* Build configuration list for PBXNativeTarget "Tinderbox-Aeon-ExchangeTests" */;
+			buildPhases = (
+				2725D9AB1B3B061F00968814 /* Sources */,
+				2725D9AC1B3B061F00968814 /* Frameworks */,
+				2725D9AD1B3B061F00968814 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2725D9B11B3B061F00968814 /* PBXTargetDependency */,
+			);
+			name = "Tinderbox-Aeon-ExchangeTests";
+			productName = "Tinderbox-Aeon-ExchangeTests";
+			productReference = 2725D9AF1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2725D9951B3B061F00968814 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Michael Prenez-Isbell";
+				TargetAttributes = {
+					2725D99C1B3B061F00968814 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					2725D9AE1B3B061F00968814 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 2725D99C1B3B061F00968814;
+					};
+				};
+			};
+			buildConfigurationList = 2725D9981B3B061F00968814 /* Build configuration list for PBXProject "Tinderbox-Aeon-Exchange" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2725D9941B3B061F00968814;
+			productRefGroup = 2725D99E1B3B061F00968814 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2725D99C1B3B061F00968814 /* Tinderbox-Aeon-Exchange */,
+				2725D9AE1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2725D99B1B3B061F00968814 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725D9A71B3B061F00968814 /* Images.xcassets in Resources */,
+				2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725D9AD1B3B061F00968814 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2725D9991B3B061F00968814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
+				2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725D9AB1B3B061F00968814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2725D9B11B3B061F00968814 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2725D99C1B3B061F00968814 /* Tinderbox-Aeon-Exchange */;
+			targetProxy = 2725D9B01B3B061F00968814 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2725D9A81B3B061F00968814 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2725D9A91B3B061F00968814 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2725D9B71B3B061F00968814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2725D9B81B3B061F00968814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2725D9BA1B3B061F00968814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tinderbox-Aeon-Exchange/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2725D9BB1B3B061F00968814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tinderbox-Aeon-Exchange/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2725D9BD1B3B061F00968814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tinderbox-Aeon-ExchangeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinderbox-Aeon-Exchange.app/Contents/MacOS/Tinderbox-Aeon-Exchange";
+			};
+			name = Debug;
+		};
+		2725D9BE1B3B061F00968814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tinderbox-Aeon-ExchangeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinderbox-Aeon-Exchange.app/Contents/MacOS/Tinderbox-Aeon-Exchange";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2725D9981B3B061F00968814 /* Build configuration list for PBXProject "Tinderbox-Aeon-Exchange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2725D9B71B3B061F00968814 /* Debug */,
+				2725D9B81B3B061F00968814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2725D9B91B3B061F00968814 /* Build configuration list for PBXNativeTarget "Tinderbox-Aeon-Exchange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2725D9BA1B3B061F00968814 /* Debug */,
+				2725D9BB1B3B061F00968814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2725D9BC1B3B061F00968814 /* Build configuration list for PBXNativeTarget "Tinderbox-Aeon-ExchangeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2725D9BD1B3B061F00968814 /* Debug */,
+				2725D9BE1B3B061F00968814 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2725D9951B3B061F00968814 /* Project object */;
+}
