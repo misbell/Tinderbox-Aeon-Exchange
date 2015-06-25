@@ -10,11 +10,18 @@ import Cocoa
 
 class ViewController: NSViewController,  NSXMLParserDelegate {
     
+    var parseTbx : Bool?
+    var parseAeon : Bool?
     
-    @IBOutlet weak var textViewTinderbox: TASCTextViewTB!
+
+    @IBOutlet var textViewTinderbox: TASCTextViewTB!
+    @IBOutlet var textViewAeon: TASCTextViewAE!
     
-    @IBOutlet weak var textViewAeon: TASCTextViewAE!
-    
+    required   init?(coder: NSCoder) {
+        super.init(coder: coder)
+        parseAeon = false
+        parseTbx = false
+    }
     
     @IBAction func loadAeonXmlDocument(sender: AnyObject) {
         
@@ -35,11 +42,18 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         
         if let _  = openPanel.URL {
             print("file found")
+            parseAeon = true
+            
+          //  textViewAeon.string = "hello, world"
+
             let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
             xmlParser!.delegate = self
             xmlParser!.parse()
+            parseAeon = false
             
         }
+        
+        // retry the completion handler version
      
         // aeonxml
         
@@ -47,8 +61,19 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
-        print("Element's name is \(elementName)")
-        print("Element's attributes are \(attributeDict)")
+        //print("Element's name is \(elementName)")
+        //print("Element's attributes are \(attributeDict)")
+        
+        if parseAeon! {
+            print("parseaeon")
+            let str = "Element's name is \(elementName) \n Element's attributes are \(attributeDict) \n"
+            textViewAeon.textStorage?.mutableString.appendString(str)
+        }
+        if parseTbx! {
+            print("parsetinderbox")
+            let str = "Element's name is \(elementName) \n Element's attributes are \(attributeDict) \n"
+            textViewTinderbox.textStorage?.mutableString.appendString(str)
+        }
     }
 
 
@@ -73,10 +98,14 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         
         if let _  = openPanel.URL {
             print("file found")
+            parseTbx = true
+            
             let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
             xmlParser!.delegate = self
             xmlParser!.parse()
+            parseTbx = false
             
+        
         }
         
     }
