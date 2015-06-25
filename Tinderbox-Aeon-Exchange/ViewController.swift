@@ -65,11 +65,7 @@ class ViewController: NSViewController {
             println("file found")
         }
         
-        
-        
-        
     }
-    
     
 
     override func viewDidLoad() {
