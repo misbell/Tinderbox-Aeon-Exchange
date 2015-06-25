@@ -20,21 +20,7 @@ class ViewController: NSViewController {
         
         println("well done ae")
         
-        var openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = true
-        openPanel.canCreateDirectories = false
-        openPanel.canChooseFiles = true
-              
-        
-    }
-    
-    
-    @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
-        
-        println("well done tb")
-        
-        var openFileTypes = ["tbx"]
+        let openFileTypes = ["aeonxml"]
         
         var openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = false
@@ -43,7 +29,35 @@ class ViewController: NSViewController {
         openPanel.canChooseFiles = true
         openPanel.allowedFileTypes = openFileTypes
         
-        openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/prenez/Dropbox/___tbx6/",isDirectory: false)
+        openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___aeon/",isDirectory: false)
+        let urls = openPanel.URLs
+        let result = openPanel.runModal()
+        
+        if let chosenfile = openPanel.URL {
+            println("file found")
+        }
+        
+              
+        // aeonxml
+        
+        
+    }
+    
+    
+    @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
+        
+        println("well done tb")
+        
+        let openFileTypes = ["tbx"]
+        
+        var openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowedFileTypes = openFileTypes
+        
+        openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___tbx6/",isDirectory: false)
         let urls = openPanel.URLs
         let result = openPanel.runModal()
 

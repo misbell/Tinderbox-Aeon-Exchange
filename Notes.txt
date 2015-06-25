@@ -3,3 +3,20 @@ first things first, load the files into text views
 
 outline views next probably, one step at a time.
 
+init with a tinderbox doc in the cloud
+init with an aeon doc in the cloud
+init with a scrivener doc in the cloud
+
+add a tinderbox doc to a TASC doc
+add an aeon doc to a TASC doc
+add a scrivener doc to a TASC doc
+
+get a tinderbox doc to local from a TASC doc
+get an aeon doc to local from a TASC doc
+get a scrivener doc to local from a TASC doc
+
+
+=========
+
+view a TASC doc's data
+
