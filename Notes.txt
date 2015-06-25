@@ -20,3 +20,5 @@ get a scrivener doc to local from a TASC doc
 
 view a TASC doc's data
 
+http://dubinski.org/wpis/easy-xml-parsing-in-swift/
+

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController,  NSXMLParserDelegate {
     
     
     @IBOutlet weak var textViewTinderbox: TASCTextViewTB!
@@ -35,13 +35,23 @@ class ViewController: NSViewController {
         
         if let chosenfile = openPanel.URL {
             println("file found")
+            var xmlParser = NSXMLParser(contentsOfURL: openPanel.URL)
+            xmlParser!.delegate = self
+            xmlParser!.parse()
+            
         }
-        
-              
+     
         // aeonxml
         
         
     }
+    
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+        println("Element's name is \(elementName)")
+        println("Element's attributes are \(attributeDict)")
+    }
+
+
     
     
     @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
