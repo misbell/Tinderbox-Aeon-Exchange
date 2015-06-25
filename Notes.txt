@@ -1,0 +1,5 @@
+
+first things first, load the files into text views
+
+outline views next probably, one step at a time.
+

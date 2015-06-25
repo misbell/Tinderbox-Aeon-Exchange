@@ -12,6 +12,10 @@
 		2725D9A71B3B061F00968814 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A61B3B061F00968814 /* Images.xcassets */; };
 		2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A81B3B061F00968814 /* Main.storyboard */; };
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
+		C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583011B3C0FEC0075AC8A /* TASCTextView.swift */; };
+		C97583041B3C10330075AC8A /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97583031B3C10330075AC8A /* Notes.txt */; };
+		C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583051B3C10860075AC8A /* TASCTextViewTB.swift */; };
+		C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		2725D9AF1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tinderbox-Aeon-ExchangeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725D9B41B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
+		C97583011B3C0FEC0075AC8A /* TASCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextView.swift; sourceTree = "<group>"; };
+		C97583031B3C10330075AC8A /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
+		C97583051B3C10860075AC8A /* TASCTextViewTB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewTB.swift; sourceTree = "<group>"; };
+		C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewAE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 		2725D9941B3B061F00968814 = {
 			isa = PBXGroup;
 			children = (
+				C97583031B3C10330075AC8A /* Notes.txt */,
 				2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */,
 				2725D9B21B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */,
 				2725D99E1B3B061F00968814 /* Products */,
@@ -80,6 +89,9 @@
 				2725D9A61B3B061F00968814 /* Images.xcassets */,
 				2725D9A81B3B061F00968814 /* Main.storyboard */,
 				2725D9A01B3B061F00968814 /* Supporting Files */,
+				C97583011B3C0FEC0075AC8A /* TASCTextView.swift */,
+				C97583051B3C10860075AC8A /* TASCTextViewTB.swift */,
+				C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */,
 			);
 			path = "Tinderbox-Aeon-Exchange";
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2725D9A71B3B061F00968814 /* Images.xcassets in Resources */,
+				C97583041B3C10330075AC8A /* Notes.txt in Resources */,
 				2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */,
+				C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */,
 				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
+				C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */,
 				2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +416,7 @@
 				2725D9BB1B3B061F00968814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2725D9BC1B3B061F00968814 /* Build configuration list for PBXNativeTarget "Tinderbox-Aeon-ExchangeTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +425,7 @@
 				2725D9BE1B3B061F00968814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
