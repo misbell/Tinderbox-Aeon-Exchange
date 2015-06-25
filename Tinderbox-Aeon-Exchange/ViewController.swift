@@ -18,11 +18,11 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     
     @IBAction func loadAeonXmlDocument(sender: AnyObject) {
         
-        println("well done ae")
+        print("well done ae")
         
         let openFileTypes = ["aeonxml"]
         
-        var openPanel = NSOpenPanel()
+        let openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = false
@@ -30,12 +30,12 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         openPanel.allowedFileTypes = openFileTypes
         
         openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___aeon/",isDirectory: false)
-        let urls = openPanel.URLs
-        let result = openPanel.runModal()
+        let _ = openPanel.URLs
+        let _ = openPanel.runModal()
         
-        if let chosenfile = openPanel.URL {
-            println("file found")
-            var xmlParser = NSXMLParser(contentsOfURL: openPanel.URL)
+        if let _  = openPanel.URL {
+            print("file found")
+            let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
             xmlParser!.delegate = self
             xmlParser!.parse()
             
@@ -46,9 +46,9 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
-        println("Element's name is \(elementName)")
-        println("Element's attributes are \(attributeDict)")
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
+        print("Element's name is \(elementName)")
+        print("Element's attributes are \(attributeDict)")
     }
 
 
@@ -56,11 +56,11 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     
     @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
         
-        println("well done tb")
+        print("well done tb")
         
         let openFileTypes = ["tbx"]
         
-        var openPanel = NSOpenPanel()
+        let openPanel = NSOpenPanel()
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = false
@@ -68,11 +68,15 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         openPanel.allowedFileTypes = openFileTypes
         
         openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___tbx6/",isDirectory: false)
-        let urls = openPanel.URLs
-        let result = openPanel.runModal()
-
-        if let chosenfile = openPanel.URL {
-            println("file found")
+        let _ = openPanel.URLs
+        let _ = openPanel.runModal()
+        
+        if let _  = openPanel.URL {
+            print("file found")
+            let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
+            xmlParser!.delegate = self
+            xmlParser!.parse()
+            
         }
         
     }
