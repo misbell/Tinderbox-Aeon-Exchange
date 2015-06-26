@@ -35,4 +35,11 @@ https://github.com/trending?l=swift
 review the photos from brooklyn swift thing
 ash furrow
 
+http://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift
+
+
+http://airspeedvelocity.net
+
+read file from url code
+https://gist.github.com/ericdke/f13a4b4d3f9d53127711
 
