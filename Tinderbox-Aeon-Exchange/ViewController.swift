@@ -67,13 +67,17 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
                 
                 for child in xmlDoc.root.children {
-                    print(child.name)
-                    for cchold in child.children {
-                        print(cchold.name)
-                        for ccchold in cchold.children {
-                            print(ccchold.name)
-                        }
+                    if let _ = child.value {
+                        print("\(child.name) >> \(child.value!)")
                     }
+                    else {
+                        print("\(child.name) >> no value")
+                    }
+                    for attribute in child.attributes {
+                        print("\t \(attribute.0) :: \(attribute.1) ")
+                       
+                    }
+                    getChildren(child)
                 }
                 
             }
@@ -87,7 +91,24 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         
     }
     
+    func getChildren(element : AEXMLElement) {
+        for child in element.children {
+            if let _ = child.value {
+                print("\(child.name) >> \(child.value!)")
+            }
+            else {
+                print("\(child.name) >> no value")
+            }
+            
+            for attribute in child.attributes {
+                        print("\t \(attribute.0) :: \(attribute.1) ")
+            }
+            getChildren(child)
+        }
         
+    }
+    
+    
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
         //print("Element's name is \(elementName)")
         //print("Element's attributes are \(attributeDict)")
@@ -145,16 +166,23 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
                 
                 for child in xmlDoc.root.children {
-                    print(child.name)
-                    for cchold in child.children {
-                        print(cchold.name)
-                        for ccchold in cchold.children {
-                            print(ccchold.name)
-                        }
+                    if let _ = child.value {
+                        print("\(child.name) >> \(child.value!)")
                     }
+                    else {
+                         print("\(child.name) >> no value")
+                    }
+                    
+
+           
+                    for attribute in child.attributes {
+                        print("\t \(attribute.0) :: \(attribute.1) ")
+                    }
+                    getChildren(child)
                 }
                 
             }
+            
             
             //   let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
             //   xmlParser!.delegate = self

@@ -43,3 +43,6451 @@ http://airspeedvelocity.net
 read file from url code
 https://gist.github.com/ericdke/f13a4b4d3f9d53127711
 
+
+
+
+
+
+
+
+well done tb
+file found
+attrib
+Name :: anything
+default ::
+visibleInEditor :: 1
+editable :: 0
+attrib
+Name :: System
+visibleInEditor :: 1
+default ::
+parent :: anything
+editable :: 0
+attrib
+Name :: Agent
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: System
+editable :: 0
+attrib
+Name :: AgentAction
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: Agent
+editable :: 1
+attrib
+Name :: AgentCaseSensitive
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: Agent
+editable :: 1
+attrib
+Name :: AgentPriority
+default :: 1
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Agent
+attrib
+Name :: AgentQuery
+visibleInEditor :: 1
+default ::
+parent :: Agent
+editable :: 1
+attrib
+Name :: Appearance
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: Badge
+visibleInEditor :: 1
+default ::
+parent :: Appearance
+editable :: 1
+attrib
+Name :: BadgeMonochrome
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Appearance
+editable :: 1
+attrib
+Name :: BadgeSize
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Border
+visibleInEditor :: 1
+default :: 2
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: BorderBevel
+visibleInEditor :: 1
+default :: automatic
+parent :: Appearance
+editable :: 1
+attrib
+Name :: BorderColor
+visibleInEditor :: 1
+default :: automatic
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: BorderDash
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: CaptionAlignment
+visibleInEditor :: 1
+default :: left
+parent :: Appearance
+editable :: 1
+attrib
+Name :: CaptionColor
+visibleInEditor :: 1
+default :: blue
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: CaptionFont
+visibleInEditor :: 1
+default :: SketchnoteSquare
+type :: 11
+parent :: Appearance
+editable :: 1
+attrib
+Name :: CaptionOpacity
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: CaptionSize
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Color
+visibleInEditor :: 1
+default :: warm gray dark
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Color2
+visibleInEditor :: 1
+default :: dark warm gray dark
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Opacity
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Pattern
+visibleInEditor :: 1
+default :: plain
+parent :: Appearance
+editable :: 1
+attrib
+Name :: PlotColor
+visibleInEditor :: 1
+default :: light green
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Shadow
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: Appearance
+editable :: 1
+attrib
+Name :: ShadowBlur
+visibleInEditor :: 1
+default :: 10
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: ShadowColor
+visibleInEditor :: 1
+default :: black
+type :: 1
+parent :: Appearance
+editable :: 1
+attrib
+Name :: ShadowDistance
+visibleInEditor :: 1
+default :: 5
+type :: 2
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Shape
+visibleInEditor :: 1
+default ::
+parent :: Appearance
+editable :: 1
+attrib
+Name :: Events
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: DueDate
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Events
+editable :: 1
+attrib
+Name :: EndDate
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Events
+editable :: 1
+attrib
+Name :: StartDate
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineAliases
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineBand
+default :: 0
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Events
+attrib
+Name :: TimelineBandLabelColor
+visibleInEditor :: 1
+default :: black
+type :: 1
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineBandLabelOpacity
+visibleInEditor :: 1
+default :: 25
+type :: 2
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineBandLabels
+visibleInEditor :: 1
+default ::
+type :: 10
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineColor
+visibleInEditor :: 1
+default :: lighter warm gray
+type :: 1
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineDescendants
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineEnd
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineEndAttribute
+visibleInEditor :: 1
+default :: EndDate
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineGridColor
+visibleInEditor :: 1
+default :: #009090
+type :: 1
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineMarker
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineScaleColor
+visibleInEditor :: 1
+default :: cool gray
+type :: 1
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineScaleColor2
+visibleInEditor :: 1
+default ::
+type :: 1
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineStart
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Events
+editable :: 1
+attrib
+Name :: TimelineStartAttribute
+visibleInEditor :: 1
+default :: StartDate
+parent :: Events
+editable :: 1
+attrib
+Name :: General
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: AdornmentCount
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: General
+editable :: 0
+attrib
+Name :: Caption
+visibleInEditor :: 1
+default ::
+parent :: General
+editable :: 1
+attrib
+Name :: Checked
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: General
+editable :: 1
+attrib
+Name :: ChildCount
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: General
+editable :: 0
+attrib
+Name :: CleanupAction
+visibleInEditor :: 1
+default :: grid
+parent :: General
+editable :: 1
+attrib
+Name :: Container
+visibleInEditor :: 1
+default ::
+parent :: General
+editable :: 1
+attrib
+Name :: Created
+default :: never
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 5
+parent :: General
+attrib
+Name :: Creator
+default :: prenez
+kind :: 1
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+parent :: General
+attrib
+Name :: DescendantCount
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: General
+editable :: 0
+attrib
+Name :: DisplayExpression
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: General
+editable :: 1
+attrib
+Name :: DisplayExpressionDisabled
+default :: false
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 4
+parent :: General
+attrib
+Name :: DisplayName
+visibleInEditor :: 1
+default ::
+parent :: General
+editable :: 0
+attrib
+Name :: Edict
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: General
+editable :: 1
+attrib
+Name :: EdictDisabled
+default :: false
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 4
+parent :: General
+attrib
+Name :: File
+visibleInEditor :: 1
+default ::
+type :: 3
+parent :: General
+editable :: 1
+attrib
+Name :: HoverExpression
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: General
+editable :: 1
+attrib
+Name :: ID
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: InboundLinkCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: IsAdornment
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: General
+editable :: 0
+attrib
+Name :: IsAlias
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: General
+editable :: 0
+attrib
+Name :: IsPrototype
+default :: false
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 4
+parent :: General
+attrib
+Name :: Modified
+default :: never
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 5
+parent :: General
+attrib
+Name :: Name
+visibleInEditor :: 1
+canInherit :: 0
+default :: untitled
+parent :: General
+editable :: 1
+attrib
+Name :: OnAdd
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: General
+editable :: 1
+attrib
+Name :: OutboundLinkCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: OutlineDepth
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: OutlineOrder
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: Path
+visibleInEditor :: 1
+default ::
+parent :: General
+editable :: 0
+attrib
+Name :: PlainLinkCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: Private
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: General
+editable :: 1
+attrib
+Name :: Prototype
+visibleInEditor :: 1
+canInherit :: 0
+default ::
+parent :: General
+editable :: 1
+attrib
+Name :: PrototypeBequeathsChildren
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: General
+editable :: 1
+attrib
+Name :: ReadCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: Rule
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: General
+editable :: 1
+attrib
+Name :: RuleDisabled
+default :: false
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 4
+parent :: General
+attrib
+Name :: Searchable
+default :: true
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 4
+parent :: General
+attrib
+Name :: SelectionCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: SiblingOrder
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: Subtitle
+visibleInEditor :: 1
+default ::
+parent :: General
+editable :: 1
+attrib
+Name :: TextLinkCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: WebLinkCount
+default :: 0
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 2
+parent :: General
+attrib
+Name :: Grid
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: GridColor
+visibleInEditor :: 1
+default :: #ffffff
+type :: 1
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridColumns
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridLabelFont
+visibleInEditor :: 1
+default :: HelveticaNeue
+type :: 11
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridLabelSize
+visibleInEditor :: 1
+default :: 10
+type :: 2
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridLabels
+visibleInEditor :: 1
+default ::
+type :: 10
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridOpacity
+visibleInEditor :: 1
+default :: 75
+type :: 2
+parent :: Grid
+editable :: 1
+attrib
+Name :: GridRows
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Grid
+editable :: 1
+attrib
+Name :: HTML
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: HTMLBoldEnd
+visibleInEditor :: 1
+default :: </b>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLBoldStart
+visibleInEditor :: 1
+default :: <b>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud1End
+visibleInEditor :: 1
+default :: </span>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud1Start
+visibleInEditor :: 1
+default :: <span style="font-size: 0.75em" >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud2End
+visibleInEditor :: 1
+default :: </span>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud2Start
+visibleInEditor :: 1
+default :: <span style="font-size: 1em" >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud3End
+visibleInEditor :: 1
+default :: </span>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud3Start
+visibleInEditor :: 1
+default :: <span style="font-size: 1.4em" >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud4End
+visibleInEditor :: 1
+default :: </span>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud4Start
+visibleInEditor :: 1
+default :: <span style="font-size: 2em" >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud5End
+visibleInEditor :: 1
+default :: </span>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLCloud5Start
+visibleInEditor :: 1
+default :: <span style="font-size: 2.8em" >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLDontExport
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLEntities
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportAfter
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportBefore
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportChildren
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportCommand
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportExtension
+visibleInEditor :: 1
+kind :: 9
+default :: .html
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportFileName
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportFileNameSpacer
+visibleInEditor :: 1
+default :: _
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLExportPath
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 0
+attrib
+Name :: HTMLExportTemplate
+visibleInEditor :: 1
+default ::
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLFileNameLowerCase
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLFileNameMaxLength
+visibleInEditor :: 1
+default :: 24
+type :: 2
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLFirstParagraphEnd
+visibleInEditor :: 1
+default :: </p>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLFirstParagraphStart
+visibleInEditor :: 1
+default :: <p>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLImageEnd
+visibleInEditor :: 1
+default :: >
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLImageStart
+visibleInEditor :: 1
+default :: <img
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLIndentedParagraphEnd
+visibleInEditor :: 1
+default :: </blockquote>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLIndentedParagraphStart
+visibleInEditor :: 1
+default :: <blockquote>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLItalicEnd
+visibleInEditor :: 1
+default :: </i>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLItalicStart
+visibleInEditor :: 1
+default :: <i>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLListEnd
+visibleInEditor :: 1
+default :: </ul>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLListItemEnd
+visibleInEditor :: 1
+default :: </li>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLListItemStart
+visibleInEditor :: 1
+default :: <li>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLListStart
+visibleInEditor :: 1
+default :: <ul>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLMarkupText
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLOrderedListEnd
+visibleInEditor :: 1
+default :: </ol>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLOrderedListStart
+visibleInEditor :: 1
+default :: <ol>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLOverwriteImages
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLParagraphEnd
+visibleInEditor :: 1
+default :: </p>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLParagraphStart
+visibleInEditor :: 1
+default :: <p>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLQuoteHTML
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLStrikeEnd
+visibleInEditor :: 1
+default :: </strike>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLStrikeStart
+visibleInEditor :: 1
+default :: <strike>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLUnderlineEnd
+visibleInEditor :: 1
+default :: </u>
+parent :: HTML
+editable :: 1
+attrib
+Name :: HTMLUnderlineStart
+visibleInEditor :: 1
+default :: <u>
+parent :: HTML
+editable :: 1
+attrib
+Name :: IsTemplate
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: HTML
+editable :: 1
+attrib
+Name :: Internal
+visibleInEditor :: 0
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: Alias
+visibleInEditor :: 0
+default :: 0
+type :: 6
+parent :: Internal
+editable :: 0
+attrib
+Name :: EntryScript
+visibleInEditor :: 0
+default ::
+parent :: Internal
+editable :: 0
+attrib
+Name :: ExitScript
+visibleInEditor :: 0
+default ::
+parent :: Internal
+editable :: 0
+attrib
+Name :: GeocodedAddress
+visibleInEditor :: 1
+default ::
+parent :: Internal
+editable :: 1
+attrib
+Name :: WindowPlace
+default :: Rect[ 50 50 750 1150]
+kind :: 21
+visibleInEditor :: 0
+editable :: 0
+canInherit :: 0
+type :: 100
+parent :: Internal
+attrib
+Name :: Iris
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: IrisAngle
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Iris
+editable :: 1
+attrib
+Name :: IrisRadius
+visibleInEditor :: 1
+default :: 1
+type :: 2
+parent :: Iris
+editable :: 1
+attrib
+Name :: Map
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: Base
+visibleInEditor :: 1
+default :: 0.5
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: Bend
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: Direction
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: Fill
+visibleInEditor :: 1
+default ::
+parent :: Map
+editable :: 1
+attrib
+Name :: FillOpacity
+visibleInEditor :: 1
+default :: 0.75
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: Height
+default :: 1.86
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: InteriorScale
+default :: 1.5
+kind :: 20
+visibleInEditor :: 1
+editable :: 1
+type :: 2
+parent :: Map
+attrib
+Name :: LeafBase
+visibleInEditor :: 1
+default :: 0.5
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: LeafBend
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: LeafDirection
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: LeafTip
+visibleInEditor :: 1
+default :: 0.5
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: Lock
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBackgroundColor
+default :: #f2f2ed
+kind :: 3
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: Map
+attrib
+Name :: MapBackgroundColor2
+default :: #f2f2ed
+kind :: 24
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: Map
+attrib
+Name :: MapBackgroundFill
+visibleInEditor :: 1
+default ::
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBackgroundFillOpacity
+visibleInEditor :: 1
+default :: 0.1
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBackgroundPattern
+visibleInEditor :: 1
+kind :: 25
+default :: plain
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBackgroundShadow
+visibleInEditor :: 1
+default :: true
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBodyTextColor
+visibleInEditor :: 1
+default :: automatic
+type :: 1
+parent :: Map
+editable :: 1
+attrib
+Name :: MapBodyTextSize
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: MapScrollX
+default :: 0
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: MapScrollY
+default :: 0
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: MapTextSize
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: NameAlignment
+visibleInEditor :: 1
+default :: left
+parent :: Map
+editable :: 1
+attrib
+Name :: NameBold
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: NameColor
+visibleInEditor :: 1
+default :: automatic
+type :: 1
+parent :: Map
+editable :: 1
+attrib
+Name :: NameFont
+default :: HelveticaNeue
+kind :: 2
+visibleInEditor :: 1
+editable :: 1
+type :: 11
+parent :: Map
+attrib
+Name :: NameLeading
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: NameStrike
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: PlotBackgroundColor
+visibleInEditor :: 1
+default :: white
+type :: 1
+parent :: Map
+editable :: 1
+attrib
+Name :: PlotBackgroundOpacity
+visibleInEditor :: 1
+default :: 50
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: PlotColorList
+visibleInEditor :: 1
+default :: 2;7;3;8;4;9;0;5;1;6
+type :: 10
+parent :: Map
+editable :: 1
+attrib
+Name :: Sticky
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Map
+editable :: 1
+attrib
+Name :: SubtitleColor
+visibleInEditor :: 1
+default :: automatic
+type :: 1
+parent :: Map
+editable :: 1
+attrib
+Name :: SubtitleOpacity
+visibleInEditor :: 1
+default :: 50
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: SubtitleSize
+visibleInEditor :: 1
+default :: 75
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: TableExpression
+visibleInEditor :: 1
+default ::
+type :: 7
+parent :: Map
+editable :: 1
+attrib
+Name :: TableHeading
+visibleInEditor :: 1
+default ::
+parent :: Map
+editable :: 1
+attrib
+Name :: Tip
+visibleInEditor :: 1
+default :: 0.5
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: TitleHeight
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: TitleOpacity
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Map
+editable :: 1
+attrib
+Name :: Width
+default :: 3
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: Xpos
+default :: 0
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: Ypos
+default :: 0
+visibleInEditor :: 1
+editable :: 1
+canInherit :: 0
+type :: 2
+parent :: Map
+attrib
+Name :: Net
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: AutoFetch
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Net
+editable :: 1
+attrib
+Name :: AutoFetchCommand
+visibleInEditor :: 1
+default ::
+parent :: Net
+editable :: 1
+attrib
+Name :: LastFetched
+default :: never
+visibleInEditor :: 1
+editable :: 0
+canInherit :: 0
+type :: 5
+parent :: Net
+attrib
+Name :: RSSChannelTemplate
+visibleInEditor :: 1
+default :: RSSChannel
+parent :: Net
+editable :: 1
+attrib
+Name :: RSSItemLimit
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Net
+editable :: 1
+attrib
+Name :: RSSItemTemplate
+visibleInEditor :: 1
+default :: RSSItem
+parent :: Net
+editable :: 1
+attrib
+Name :: RawData
+visibleInEditor :: 1
+default ::
+parent :: Net
+editable :: 1
+attrib
+Name :: URL
+visibleInEditor :: 1
+default ::
+type :: 9
+parent :: Net
+editable :: 1
+attrib
+Name :: ViewInBrowser
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Net
+editable :: 1
+attrib
+Name :: Outline
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: OutlineBackgroundColor
+visibleInEditor :: 1
+default :: automatic
+type :: 1
+parent :: Outline
+editable :: 1
+attrib
+Name :: OutlineColorSwatch
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Outline
+editable :: 1
+attrib
+Name :: OutlineTextSize
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: Outline
+editable :: 1
+attrib
+Name :: PrototypeHighlightColor
+default :: #cceecc
+kind :: 13
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: Outline
+attrib
+Name :: Separator
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Outline
+editable :: 1
+attrib
+Name :: People
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: AIM
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Address
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: City
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Country
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: District
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Email
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: FormattedAddress
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: FullName
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Latitude
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: People
+editable :: 1
+attrib
+Name :: Longitude
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: People
+editable :: 1
+attrib
+Name :: Organization
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: PostalCode
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: State
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Telephone
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: Twitter
+visibleInEditor :: 1
+default ::
+parent :: People
+editable :: 1
+attrib
+Name :: References
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: AccessDate
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: ArticleTitle
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Author2
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Author3
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Author4
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Authors
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: References
+editable :: 1
+attrib
+Name :: BookTitle
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: CallNumber
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: DOI
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Edition
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: ISBN
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Issue
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Journal
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Pages
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: PublicationCity
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: PublicationYear
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Publisher
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: RefFormat
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: RefKeywords
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: References
+editable :: 1
+attrib
+Name :: RefType
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: ReferenceRIS
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: ReferenceTitle
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: ReferenceURL
+visibleInEditor :: 1
+default ::
+type :: 9
+parent :: References
+editable :: 1
+attrib
+Name :: Volume
+visibleInEditor :: 1
+default ::
+parent :: References
+editable :: 1
+attrib
+Name :: Sandbox
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: MyBoolean
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MyColor
+visibleInEditor :: 1
+default ::
+type :: 1
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MyDate
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MyList
+visibleInEditor :: 1
+default ::
+type :: 10
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MyNumber
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MySet
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: MyString
+visibleInEditor :: 1
+default ::
+parent :: Sandbox
+editable :: 1
+attrib
+Name :: Scrivener
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: ScrivenerCompileAsIs
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerFileExtension
+visibleInEditor :: 0
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerFreeformFlag
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerID
+visibleInEditor :: 1
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerIconFileName
+visibleInEditor :: 0
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerIgnoresTitlePrefixAndSuffix
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerIncludeInCompile
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerIndexCardFileExension
+visibleInEditor :: 0
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerKeywords
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerLabel
+visibleInEditor :: 1
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerLabelID
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerNote
+visibleInEditor :: 1
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerNoteRTF
+visibleInEditor :: 0
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerPageBreakBefore
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerPreferredExternalApplication
+visibleInEditor :: 0
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerShowSynopsisImage
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerStatus
+visibleInEditor :: 1
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerStatusID
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerTemplateFolder
+visibleInEditor :: 0
+default :: false
+type :: 4
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: ScrivenerType
+visibleInEditor :: 1
+default ::
+parent :: Scrivener
+editable :: 1
+attrib
+Name :: Simplenote
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: SimplenoteKey
+visibleInEditor :: 1
+default ::
+parent :: Simplenote
+editable :: 1
+attrib
+Name :: SimplenoteModified
+visibleInEditor :: 1
+default :: never
+type :: 5
+parent :: Simplenote
+editable :: 1
+attrib
+Name :: SimplenoteSync
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Simplenote
+editable :: 1
+attrib
+Name :: SimplenoteTags
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: Simplenote
+editable :: 1
+attrib
+Name :: SimplenoteVersion
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Simplenote
+editable :: 1
+attrib
+Name :: Sorting
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: Sort
+visibleInEditor :: 1
+default ::
+parent :: Sorting
+editable :: 1
+attrib
+Name :: SortAlso
+visibleInEditor :: 1
+default ::
+parent :: Sorting
+editable :: 1
+attrib
+Name :: SortAlsoTransform
+visibleInEditor :: 1
+default :: case-sensitive
+parent :: Sorting
+editable :: 1
+attrib
+Name :: SortBackward
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Sorting
+editable :: 1
+attrib
+Name :: SortBackwardAlso
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Sorting
+editable :: 1
+attrib
+Name :: SortTransform
+visibleInEditor :: 1
+default :: case-sensitive
+parent :: Sorting
+editable :: 1
+attrib
+Name :: TextFormat
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: HideKeyAttributes
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: KeyAttributeFont
+visibleInEditor :: 1
+default :: HelveticaNeue
+type :: 11
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: KeyAttributes
+visibleInEditor :: 1
+default ::
+type :: 8
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: LeftMargin
+default :: 2
+kind :: 15
+visibleInEditor :: 1
+editable :: 1
+type :: 2
+parent :: TextFormat
+attrib
+Name :: LineSpacing
+visibleInEditor :: 1
+default :: 100
+type :: 2
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: NoSpelling
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: ParagraphSpacing
+default :: 8
+kind :: 14
+visibleInEditor :: 1
+editable :: 1
+type :: 2
+parent :: TextFormat
+attrib
+Name :: RightMargin
+default :: 2
+kind :: 16
+visibleInEditor :: 1
+editable :: 1
+type :: 2
+parent :: TextFormat
+attrib
+Name :: ShowTitle
+default :: false
+kind :: 5
+visibleInEditor :: 1
+editable :: 1
+type :: 4
+parent :: TextFormat
+attrib
+Name :: SmartQuotes
+default :: true
+kind :: 26
+visibleInEditor :: 1
+editable :: 1
+type :: 4
+parent :: TextFormat
+attrib
+Name :: Tabs
+visibleInEditor :: 1
+default :: 0.25;0.25;0.25;0.25;
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: TextAlign
+visibleInEditor :: 1
+kind :: 22
+default ::
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: TextBackgroundColor
+default :: #ffffff
+kind :: 8
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: TextFormat
+attrib
+Name :: TextColor
+default :: #000000
+kind :: 7
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: TextFormat
+attrib
+Name :: TextFont
+default :: HoeflerText-Regular
+kind :: 18
+visibleInEditor :: 1
+editable :: 1
+type :: 11
+parent :: TextFormat
+attrib
+Name :: TextFontSize
+default :: 16
+kind :: 19
+visibleInEditor :: 1
+editable :: 1
+type :: 2
+parent :: TextFormat
+attrib
+Name :: TextPaneRatio
+visibleInEditor :: 1
+default :: 0.5
+type :: 2
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: TextPaneWidth
+visibleInEditor :: 1
+default :: -1
+type :: 2
+parent :: TextFormat
+editable :: 1
+attrib
+Name :: TextSidebar
+default :: false
+kind :: 17
+visibleInEditor :: 1
+editable :: 1
+type :: 4
+parent :: TextFormat
+attrib
+Name :: TitleBackgroundColor
+default :: #000000
+kind :: 12
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: TextFormat
+attrib
+Name :: TitleFont
+default :: HelveticaNeue
+kind :: 4
+visibleInEditor :: 1
+editable :: 1
+type :: 11
+parent :: TextFormat
+attrib
+Name :: TitleForegroundColor
+default :: #ffffff
+kind :: 11
+visibleInEditor :: 1
+editable :: 1
+type :: 1
+parent :: TextFormat
+attrib
+Name :: Textual
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: ImageCount
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Textual
+editable :: 0
+attrib
+Name :: ReadOnly
+visibleInEditor :: 1
+default :: false
+type :: 4
+parent :: Textual
+editable :: 1
+attrib
+Name :: Text
+visibleInEditor :: 1
+default ::
+parent :: Textual
+editable :: 1
+attrib
+Name :: TextExportTemplate
+visibleInEditor :: 1
+kind :: 10
+default :: outline
+parent :: Textual
+editable :: 1
+attrib
+Name :: TextLength
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Textual
+editable :: 0
+attrib
+Name :: WordCount
+visibleInEditor :: 1
+default :: 0
+type :: 2
+parent :: Textual
+editable :: 0
+attrib
+Name :: Wordcount
+visibleInEditor :: 0
+default :: 0
+type :: 2
+parent :: Textual
+editable :: 0
+attrib
+Name :: Weblog
+visibleInEditor :: 1
+default ::
+parent :: System
+editable :: 0
+attrib
+Name :: WeblogPostID
+visibleInEditor :: 1
+default ::
+parent :: Weblog
+editable :: 1
+attrib
+Name :: mt_allow_comments
+visibleInEditor :: 1
+default :: 1
+type :: 2
+parent :: Weblog
+editable :: 1
+attrib
+Name :: mt_allow_pings
+visibleInEditor :: 1
+default :: 1
+type :: 2
+parent :: Weblog
+editable :: 1
+attrib
+Name :: mt_convert_breaks
+visibleInEditor :: 1
+default ::
+parent :: Weblog
+editable :: 1
+attrib
+Name :: mt_keywords
+visibleInEditor :: 1
+default ::
+parent :: Weblog
+editable :: 1
+attrib
+Name :: User
+visibleInEditor :: 1
+default ::
+parent :: anything
+editable :: 0
+attrib
+Name :: TimelineBandName
+visibleInEditor :: 1
+default ::
+parent :: User
+editable :: 1
+colors
+color
+color :: #7a7978
+name :: 0
+color
+color :: #a19f9e
+name :: 1
+color
+color :: #b8b6b4
+name :: 2
+color
+color :: #c7c5c3
+name :: 3
+color
+color :: #d4d2d0
+name :: 4
+color
+color :: #dedcda
+name :: 5
+color
+color :: #e6e4e1
+name :: 6
+color
+color :: #eeebe9
+name :: 7
+color
+color :: #f4f2ef
+name :: 8
+color
+color :: #faf8f5
+name :: 9
+color
+color :: #000000
+name :: black
+color
+color :: #003366
+name :: blue
+color
+color :: #0000ff
+name :: bright blue
+color
+color :: #00ff00
+name :: bright green
+color
+color :: #ff0000
+name :: bright red
+color
+color :: #607080
+name :: cool gray
+color
+color :: #505860
+name :: cool gray dark
+color
+color :: #006666
+name :: cyan
+color
+color :: #009900
+name :: green
+color
+color :: #660066
+name :: magenta
+color
+color :: #d7587f
+name :: normal
+color
+color :: #ff8800
+name :: orange
+color
+color :: #ffcc66
+name :: poppy
+color
+color :: #990000
+name :: red
+color
+color :: #330099
+name :: violet
+color
+color :: #787060
+name :: warm gray
+color
+color :: #605850
+name :: warm gray dark
+color
+color :: #ffffff
+name :: white
+color
+color :: #cccc00
+name :: yellow
+menu
+kind :: stamps
+name :: Value
+linkTypes
+linkType
+label ::
+color :: #000000
+showLabel :: 0
+required :: 1
+visible :: 1
+colorString :: black
+name :: *untitled
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: agree
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: clarify
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: disagree
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: example
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: exception
+style :: 0
+linkType
+color :: #666666
+showLabel :: 1
+required :: 1
+visible :: 1
+colorString :: #666666
+name :: note
+style :: 0
+linkType
+color :: #444444
+showLabel :: 1
+required :: 1
+visible :: 1
+colorString :: #444444
+name :: note+
+style :: 0
+linkType
+color :: #993333
+showLabel :: 1
+required :: 1
+visible :: 0
+colorString :: #993333
+name :: prototype
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: response
+style :: 0
+linkType
+color :: #000000
+showLabel :: 1
+required :: 0
+visible :: 1
+colorString :: black
+name :: update
+style :: 0
+item
+ID :: 1434313569
+Creator :: prenez
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+item
+ID :: 1434314213
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: IsPrototype
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: TimelineBandLabelColor
+attribute
+name :: TimelineBandLabels
+attribute
+name :: TimelineColor
+attribute
+name :: TimelineEnd
+attribute
+name :: TimelineMarker
+attribute
+name :: TimelineScaleColor
+attribute
+name :: TimelineScaleColor2
+attribute
+name :: TimelineStart
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+agent
+ID :: 1435034276
+Creator :: prenez
+attribute
+name :: Agent
+attribute
+name :: AgentAction
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: HTMLExportChildren
+attribute
+name :: Height
+attribute
+name :: IsPrototype
+attribute
+name :: KeyAttributes
+attribute
+name :: MapScrollX
+attribute
+name :: MapScrollY
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435021364
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435021556
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435024168
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963654
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434966095
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: MapScrollX
+attribute
+name :: MapScrollY
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435021409
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434965836
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Checked
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435023008
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435024245
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434968427
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434968369
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435024265
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434968529
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435023009
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435024944
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435024956
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434968605
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434968708
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435024967
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435025046
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434969034
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+ID :: 1435113177
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113237
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113267
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113517
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113239
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113448
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113549
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113551
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113553
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113555
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113557
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113812
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113814
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113885
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114154
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114156
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114158
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114160
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114162
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114164
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114166
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114397
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114398
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114400
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114402
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114406
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114408
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114410
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114449
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114639
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114640
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114689
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114691
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114693
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114695
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114890
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114892
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114894
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114896
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114898
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114697
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114699
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435114701
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115141
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115143
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115145
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115147
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115149
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115151
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115153
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115203
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115205
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115207
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115209
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115211
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115213
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435115215
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113879
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113882
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113884
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435023005
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926543
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434969291
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434926727
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113681
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113683
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113685
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113687
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113689
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Separator
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113691
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435113811
+Creator :: prenez
+attribute
+name :: Badge
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBandName
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926729
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926731
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926742
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963211
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963246
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963247
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963321
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963320
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963455
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963457
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963467
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963458
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963335
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434927381
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434927383
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434963459
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963509
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963527
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963528
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963554
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963553
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: EndDate
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434927385
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1434925087
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926009
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434926013
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1434328715
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: EndDate
+attribute
+name :: IsPrototype
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434924328
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: post prototype
+ID :: 1434925020
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: post prototype
+ID :: 1434967230
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: post prototype
+ID :: 1434967539
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434968362
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434968659
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+item
+proto :: event prototype
+ID :: 1434963926
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: NameColor
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963932
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963936
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+proto :: event prototype
+ID :: 1434963942
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: IsPrototype
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1434963982
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1435031181
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1435026668
+Creator :: prenez
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Edict
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1435031179
+Creator :: prenez
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Edict
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1434329501
+Creator :: system
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: EndDate
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Opacity
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1434328719
+Creator :: system
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: EndDate
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Opacity
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1434328716
+Creator :: system
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: EndDate
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Opacity
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: TimelineBand
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1435031182
+Creator :: prenez
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Edict
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: StartDate
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+adornment
+ID :: 1435034279
+Creator :: prenez
+attribute
+name :: AgentQuery
+attribute
+name :: Color
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: KeyAttributes
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: Searchable
+attribute
+name :: SelectionCount
+attribute
+name :: SortAlsoTransform
+attribute
+name :: SortTransform
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+item
+ID :: 1434967229
+Creator :: prenez
+attribute
+name :: Created
+attribute
+name :: Height
+attribute
+name :: Modified
+attribute
+name :: Name
+attribute
+name :: SelectionCount
+attribute
+name :: Width
+attribute
+name :: Xpos
+attribute
+name :: Ypos
+text
+rtfd
+links
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434924328
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926009
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926013
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926543
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926727
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926729
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926731
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434926742
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434927381
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434927383
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434927385
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963211
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963246
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963247
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963320
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963321
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963335
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963455
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963457
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963458
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963459
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963467
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963509
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963527
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963528
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963553
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963554
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963654
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963936
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963926
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963942
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434963932
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434963926
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434925020
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434965836
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434966095
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434963926
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434967230
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968362
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968369
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968427
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968529
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968605
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968659
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434968708
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434969034
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434328715
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434969291
+style :: 0
+link
+arrowtype :: 0
+slen :: 0
+color :: #993333
+sourceid :: 1434963926
+sourcecreator :: prenez
+name :: prototype
+destcreator :: prenez
+sstart :: -1
+destid :: 1434967539
+style :: 0
+macros
+preferences
+Creator
+ToolbarVisible
+OpenTextImmediately
+Tinderbox5Wizard
+DynamicSpelling
+AutoOpen
+AutomaticBackup
+ReopenLastDocument
+Autosave
+KeepWindowsOpen
+LeftMargin
+RightMargin
+ParagraphSpacing
+TextFont
+TextSize
+TextJust
+AlwaysShowTextLinks
+ShowWikiLinks
+TextLinkFrames
+TextLinkColorString
+TextBackgroundColorString
+SmartQuotes
+TextWindowWidth
+TextWindowHeight
+AutoIndentLists
+ShowTitle
+TitleFont
+TitleSize
+TitleJust
+MapShowLinks
+MapEnacted
+InPlaceEditing
+MapLabelSize
+MapBackgroundColorString
+MapBackgroundColorString2
+OpaqueAdornments
+MapBackgroundPattern
+PrototypeHighlightColorString
+MapFont
+DarkenOutlineColors
+BlackOutlineText
+UnderlineAliases
+AutomaticLinkDetection
+HiddenTabBar
+OutlineLeading
+InteriorScale
+InteriorScaleNew
+ExpandMode
+AfterLinkingSelect
+ExportImageFormat
+ExportURL
+ExportHTMLHelper
+ExportHTMLExtension
+HTMLParagraphStyle
+HTMLViewFont
+HTMLViewFontSize
+ExportTemplatePath
+RoadmapWindowWidth
+RoadmapWindowHeight
+TextExportViewFont
+TextExportViewFontSize
+ExportTextTemplatePath
+ExportTextHelper
+AskToDelete
+DailyTip
+WarnEditingDefault
+WarnDuplicateName
+RunScriptsAutomatically
+Version
+PreferencePane
+LastBadgeFamily
+TipWindowX
+TipWindowY
+RegUserName
+RegUserOrg
+CurrentAttributeClass
+CurrentAttribute
+FindCaseSensitive
+ExportFolder
+ReadOnly
+InfoWindowHeight
+InfoWindowWidth
+RecentFiles
+PingServer
+PingMethod
+PingTitle
+PingURL
+PingTechnorati
+PingWeblogsCom
+PingGoogle
+PingFeedURL
+WeblogServer
+WeblogUser
+WeblogPassword
+WeblogID
+WeblogKind
+ToolbarKind
+ReadingReminders
+AllowViews
+AutomaticAgentUpdate
+ToolbarX
+ToolbarY
+FindWindowX
+FindWindowY
+RenameWindowX
+RenameWindowY
+InspectorX
+InspectorY
+EnterKeyAction
+UpdateViewShown
+TimelineScale
+TimelineLabelSize
+GetInfoPane
+GetInfoCategory
+GetInfoSelection
+LastLinkName
+UsingGuides
+SystemAttributesCategory
+SystemAttributesSelection
+CheckMail
+MailHost
+MailUser
+MailPassword
+CheckSimplenote
+SimplenoteEmail
+SimplenotePassword
+SimplenoteTag
+MapBackgroundColor
+MapBackgroundColor2
+TextColor
+TextBackgroundColor
+TitleBackgroundColor
+TitleForegroundColor
+ActiveLinkColor
+VisitedLinkColor
+MagnifyFonts
+MagnifyPictures
+RememberWindowPositions
+ExportHTMLCreator
+ExportTextCreator
+ShowSidebar
+MapPrototypeColor
+TextLinkColor
+LastVersionString
+ExplodeDelimiter
+windows
+window
+bounds :: Rect[ 866 146 2790 1258]
+tabs
+tab
+action ::
+scale :: 26.4558
+queryLabel ::
+scrollY :: 36
+treemapColorStart :: #fffef9100
+textTab :: 0
+scrollX :: 1288
+query ::
+treemapExpression ::
+treemapColorExpression ::
+columnString :: _(275);Badge(100;2);StartDate(100;2);EndDate(100;2);TimelineBand(100;2);TimelineBandName(164;2);
+viewType :: 4
+container ::
+showColumns :: 1
+actionLabel ::
+selection ::
+splitRatio :: 0.22921
+treemapBorderColorExpression :: $Color
+selected :: 1
+treemapColorEnd :: #ccd5bf100
+expanded ::
+sortAttribute ::
+attribute ::
+ID :: 1434314213
+summaryMethod ::
+summaryAttribute ::
+usingCheckboxes :: 0
+tab
+action ::
+scale :: 32
+queryLabel ::
+scrollY :: 0
+treemapColorStart :: #fffef9100
+textTab :: 0
+scrollX :: 0
+query ::
+treemapExpression ::
+treemapColorExpression ::
+columnString :: _(200);TimelineStart(100;2);TimelineEnd(100;2);TimelineBand(100;2);
+viewType :: 4
+container ::
+showColumns :: 1
+actionLabel ::
+selection ::
+splitRatio :: 0.458889
+treemapBorderColorExpression :: $Color
+selected :: 0
+treemapColorEnd :: #ccd5bf100
+expanded ::
+sortAttribute ::
+attribute ::
+ID :: 1434313569
+summaryMethod ::
+summaryAttribute ::
+usingCheckboxes :: 0
+utilityWindows
+tabs
+tab
+action ::
+scale :: 26.4558
+queryLabel ::
+scrollY :: 36
+treemapColorStart :: #fffef9100
+textTab :: 0
+scrollX :: 1288
+query ::
+treemapExpression ::
+treemapColorExpression ::
+columnString :: _(275);Badge(100;2);StartDate(100;2);EndDate(100;2);TimelineBand(100;2);TimelineBandName(164;2);
+viewType :: 4
+container ::
+showColumns :: 1
+actionLabel ::
+selection ::
+splitRatio :: 0.22921
+treemapBorderColorExpression :: $Color
+selected :: 1
+treemapColorEnd :: #ccd5bf100
+expanded ::
+sortAttribute ::
+attribute ::
+ID :: 1434314213
+summaryMethod ::
+summaryAttribute ::
+usingCheckboxes :: 0
+tab
+action ::
+scale :: 32
+queryLabel ::
+scrollY :: 0
+treemapColorStart :: #fffef9100
+textTab :: 0
+scrollX :: 0
+query ::
+treemapExpression ::
+treemapColorExpression ::
+columnString :: _(200);TimelineStart(100;2);TimelineEnd(100;2);TimelineBand(100;2);
+viewType :: 4
+container ::
+showColumns :: 1
+actionLabel ::
+selection ::
+splitRatio :: 0.458889
+treemapBorderColorExpression :: $Color
+selected :: 0
+treemapColorEnd :: #ccd5bf100
+expanded ::
+sortAttribute ::
+attribute ::
+ID :: 1434313569
+summaryMethod ::
+summaryAttribute ::
+usingCheckboxes :: 0
+searches
