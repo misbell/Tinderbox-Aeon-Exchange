@@ -47,7 +47,7 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         let _ = openPanel.runModal()
         
         if let chosenfile  = openPanel.URL {
-            println("file found")
+            print("file found")
             parseAeon = true
             
             //  textViewAeon.string = "hello, world"
@@ -60,18 +60,18 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             var error: NSError?
             
             //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
-            var path = chosenfile.path!
-            var data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
-            var txt: NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            let path = chosenfile.path!
+            let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
+            //var str : NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
             
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
                 
                 for child in xmlDoc.root.children {
-                    println(child.name)
+                    print(child.name)
                     for cchold in child.children {
-                        println(cchold.name)
+                        print(cchold.name)
                         for ccchold in cchold.children {
-                            println(ccchold.name)
+                            print(ccchold.name)
                         }
                     }
                 }
@@ -87,11 +87,8 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         
-        
-        
-        //    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
         //print("Element's name is \(elementName)")
         //print("Element's attributes are \(attributeDict)")
         
@@ -141,18 +138,18 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             var error: NSError?
             
             //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
-            var path = chosenfile.path!
-            var data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
-            var txt: NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            let path = chosenfile.path!
+            let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
+            // var str: NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
             
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
                 
                 for child in xmlDoc.root.children {
-                    println(child.name)
+                    print(child.name)
                     for cchold in child.children {
-                        println(cchold.name)
+                        print(cchold.name)
                         for ccchold in cchold.children {
-                            println(ccchold.name)
+                            print(ccchold.name)
                         }
                     }
                 }
