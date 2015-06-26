@@ -17,6 +17,12 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     @IBOutlet var textViewTinderbox: TASCTextViewTB!
     @IBOutlet var textViewAeon: TASCTextViewAE!
     
+    
+    @IBOutlet weak var outlineViewTinderbox: TASCOutlineViewTinderbox!
+    
+    @IBOutlet weak var outlineViewAeon: TASCOutlineViewAeon!
+    
+    
     required   init?(coder: NSCoder) {
         super.init(coder: coder)
         parseAeon = false

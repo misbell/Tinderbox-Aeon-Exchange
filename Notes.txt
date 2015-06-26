@@ -22,3 +22,17 @@ view a TASC doc's data
 
 http://dubinski.org/wpis/easy-xml-parsing-in-swift/
 
+thought, make nsxmlparser an extension, not a protocol
+
+https://github.com/matteocrippa/awesome-swift
+
+https://github.com/Wolg/awesome-swift
+
+https://github.com/vsouza/awesome-ios
+
+https://github.com/trending?l=swift
+
+review the photos from brooklyn swift thing
+ash furrow
+
+
