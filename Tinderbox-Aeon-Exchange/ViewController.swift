@@ -62,7 +62,7 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
             let path = chosenfile.path!
             let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
-            //var str : NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            //var str : NSString = NSString(data: vara, encoding: NSUTF8StringEncoding)!
             
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
                 
@@ -164,6 +164,15 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             // var str: NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
             
             if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
+                
+              //  var itemelement = AEXMLElement("item", value: "")
+                
+                var firstelement = xmlDoc.root["item"]
+                print (xmlDoc.root["item"].stringValue)
+                
+                var firstitem =  xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
+                
+                xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
                 
                 for child in xmlDoc.root.children {
                     if let _ = child.value {

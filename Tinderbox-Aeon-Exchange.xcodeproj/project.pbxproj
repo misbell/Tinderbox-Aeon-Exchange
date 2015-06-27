@@ -13,6 +13,7 @@
 		2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A81B3B061F00968814 /* Main.storyboard */; };
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
 		C94FF2881B3D760700B19515 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML.swift */; };
+		C95307061B3EA71500E9954E /* app notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C95307051B3EA71500E9954E /* app notes.txt */; };
 		C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */; };
 		C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */; };
 		C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583011B3C0FEC0075AC8A /* TASCTextView.swift */; };
@@ -42,6 +43,7 @@
 		2725D9B41B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
 		C94FF2871B3D760700B19515 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
+		C95307051B3EA71500E9954E /* app notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "app notes.txt"; sourceTree = "<group>"; };
 		C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewTinderbox.swift; sourceTree = "<group>"; };
 		C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewAeon.swift; sourceTree = "<group>"; };
 		C97583011B3C0FEC0075AC8A /* TASCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		2725D9941B3B061F00968814 = {
 			isa = PBXGroup;
 			children = (
+				C95307051B3EA71500E9954E /* app notes.txt */,
 				C97583031B3C10330075AC8A /* Notes.txt */,
 				2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */,
 				2725D9B21B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2725D9A71B3B061F00968814 /* Images.xcassets in Resources */,
+				C95307061B3EA71500E9954E /* app notes.txt in Resources */,
 				C97583041B3C10330075AC8A /* Notes.txt in Resources */,
 				2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */,
 			);
