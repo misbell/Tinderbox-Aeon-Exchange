@@ -103,17 +103,7 @@ extension OutlineViewController : NSOutlineViewDataSource {
     }
     
     
-    /*
-    (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
-    everything else is the same(minimal req is the first three datasource methods, you don't need the delegate methods) but, you can't use willdisplaycell its called only for cell based , do everything to the view in the viefortablecolumn method like this:
-    
-    if ([[tableColumn identifier] isEqualToString:@"YourColumnIdentifier"]){
-    NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"YourViewsIdentifier" owner:self];
-    [cell.textField setStringValue:[(YourItem *)item name]];
-    [cell.imageView setImage:[(YourItem *)item image]];
-    return cell;
-    }
-*/
+
     
  
     

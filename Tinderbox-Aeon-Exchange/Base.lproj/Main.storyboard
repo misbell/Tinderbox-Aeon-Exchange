@@ -953,7 +953,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <objectController id="Sq8-Pk-a1A"/>
-                <customObject id="X4B-wE-DeL"/>
+                <customObject id="X4B-wE-DeL" customClass="OutlineViewController" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="609" y="926.5"/>
         </scene>
