@@ -1,0 +1,27 @@
+
+attrib
+colors
+  color
+menu
+linktypes
+   linktype
+item
+  attributes
+  item
+   agent
+   adornment
+
+links
+macros
+preferences
+
+windows
+   window
+      tabs
+         tab
+utilitywindows
+   window
+      tabs
+       tab
+searches
+

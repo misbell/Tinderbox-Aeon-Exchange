@@ -14,6 +14,8 @@
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
 		C94FF2881B3D760700B19515 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML.swift */; };
 		C95307061B3EA71500E9954E /* app notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C95307051B3EA71500E9954E /* app notes.txt */; };
+		C95307081B3EE87400E9954E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95307071B3EE87400E9954E /* Person.swift */; };
+		C953070A1B3EF5CB00E9954E /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95307091B3EF5CB00E9954E /* OutlineViewController.swift */; };
 		C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */; };
 		C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */; };
 		C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583011B3C0FEC0075AC8A /* TASCTextView.swift */; };
@@ -44,6 +46,8 @@
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
 		C94FF2871B3D760700B19515 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
 		C95307051B3EA71500E9954E /* app notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "app notes.txt"; sourceTree = "<group>"; };
+		C95307071B3EE87400E9954E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C95307091B3EF5CB00E9954E /* OutlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
 		C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewTinderbox.swift; sourceTree = "<group>"; };
 		C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewAeon.swift; sourceTree = "<group>"; };
 		C97583011B3C0FEC0075AC8A /* TASCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */,
 				C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */,
 				C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */,
+				C95307071B3EE87400E9954E /* Person.swift */,
+				C95307091B3EF5CB00E9954E /* OutlineViewController.swift */,
 			);
 			path = "Tinderbox-Aeon-Exchange";
 			sourceTree = "<group>";
@@ -238,9 +244,11 @@
 				C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */,
 				C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */,
 				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
+				C953070A1B3EF5CB00E9954E /* OutlineViewController.swift in Sources */,
 				C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */,
 				C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */,
 				C94FF2881B3D760700B19515 /* AEXML.swift in Sources */,
+				C95307081B3EE87400E9954E /* Person.swift in Sources */,
 				C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */,
 				2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */,
 			);
