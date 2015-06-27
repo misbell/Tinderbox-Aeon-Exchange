@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 
 
-class OutlineViewControllerTbx  : NSObject {
+class OutlineViewControllerAeon  : NSObject {
     var people: Array<Person> = []
     
     // designated
@@ -36,27 +36,27 @@ class OutlineViewControllerTbx  : NSObject {
     
 }
 
-extension OutlineViewControllerTbx : NSOutlineViewDataSource {
-
-
+extension OutlineViewControllerAeon : NSOutlineViewDataSource {
+    
+    
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         
         return (item == nil) ? self.people.count : (item as! Person).children.count
         
-    } 
+    }
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
         
         // if item is nil, this will break
         
         return (item as! Person).children.count != 0
-
+        
     }//
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
         return (item == nil) ? self.people[index] : (item as! Person).children[index]
-
+        
         
     }
     
@@ -80,10 +80,10 @@ extension OutlineViewControllerTbx : NSOutlineViewDataSource {
         
     }
     
-
+    
 }
 
-extension OutlineViewControllerTbx: NSOutlineViewDelegate {
+extension OutlineViewControllerAeon: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {

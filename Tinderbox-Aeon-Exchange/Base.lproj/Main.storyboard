@@ -748,7 +748,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ag-KWV" customClass="tasc">
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ag-KWV">
                                 <rect key="frame" x="48" y="39" width="275" height="579"/>
                                 <clipView key="contentView" ambiguous="YES" id="JcP-wp-sHm">
                                     <rect key="frame" x="1" y="17" width="273" height="561"/>
@@ -827,8 +827,8 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <outlet property="dataSource" destination="X4B-wE-DeL" id="ZAR-nC-dd1"/>
-                                                <outlet property="delegate" destination="X4B-wE-DeL" id="NhR-pI-lCu"/>
+                                                <outlet property="dataSource" destination="X4B-wE-DeL" id="3gA-O7-CbV"/>
+                                                <outlet property="delegate" destination="X4B-wE-DeL" id="TVx-xs-fs6"/>
                                             </connections>
                                         </outlineView>
                                     </subviews>
@@ -925,6 +925,10 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="OxE-u4-IYb" id="BlC-ie-yBd"/>
+                                                <outlet property="delegate" destination="OxE-u4-IYb" id="eMm-dU-eBw"/>
+                                            </connections>
                                         </outlineView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -952,8 +956,8 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <objectController id="Sq8-Pk-a1A"/>
-                <customObject id="X4B-wE-DeL" customClass="OutlineViewController" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
+                <customObject id="X4B-wE-DeL" customClass="OutlineViewControllerTbx" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
+                <customObject id="OxE-u4-IYb" customClass="OutlineViewControllerAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="609" y="926.5"/>
         </scene>
