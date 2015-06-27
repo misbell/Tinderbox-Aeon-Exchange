@@ -24,13 +24,13 @@ class Person {
     var age: Int
     
     //default
-     init () {
-        
-        self.name = "test name"
-        self.age = 25
-        self.children = []
-        
-    }
+ //    init () {
+ //
+ //       self.name = "test name"
+ //       self.age = 25
+ //       self.children = []
+ //
+ //   }
     
     //designated
     init(name: String, age: Int, children: Array<Person>) {

@@ -34,11 +34,11 @@ class OutlineViewController  : NSObject {
         self.people.append(boss)
     }
     
-    
 }
 
-extension OutlineViewController: NSOutlineViewDataSource {
-    
+extension OutlineViewController : NSOutlineViewDataSource {
+
+
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         
         return (item == nil) ? self.people.count : (item as! Person).children.count
@@ -55,7 +55,7 @@ extension OutlineViewController: NSOutlineViewDataSource {
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
-        return (item == nil) ? self.people[index] : Person()
+        return (item == nil) ? self.people[index] : (item as! Person).children[index]
 
         
     }
@@ -80,6 +80,42 @@ extension OutlineViewController: NSOutlineViewDataSource {
         
     }
     
+    func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
+        
+        if tableColumn?.identifier == "name" {
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
+            cell.textField?.stringValue = (item as! Person).name
+           // cell.imageViewCell.image = xxx
+            return cell
+
+        }
+        
+        if tableColumn?.identifier == "age" {
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
+            cell.textField?.stringValue = String((item as! Person).age)
+            // cell.imageViewCell.image = xxx
+            return cell
+            
+        }
+        
+        return nil
+        
+    }
+    
+    
+    /*
+    (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item
+    everything else is the same(minimal req is the first three datasource methods, you don't need the delegate methods) but, you can't use willdisplaycell its called only for cell based , do everything to the view in the viefortablecolumn method like this:
+    
+    if ([[tableColumn identifier] isEqualToString:@"YourColumnIdentifier"]){
+    NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"YourViewsIdentifier" owner:self];
+    [cell.textField setStringValue:[(YourItem *)item name]];
+    [cell.imageView setImage:[(YourItem *)item image]];
+    return cell;
+    }
+*/
+    
+ 
     
 }
 

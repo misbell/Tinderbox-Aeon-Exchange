@@ -748,13 +748,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ag-KWV">
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ag-KWV" customClass="tasc">
                                 <rect key="frame" x="48" y="39" width="275" height="579"/>
                                 <clipView key="contentView" ambiguous="YES" id="JcP-wp-sHm">
                                     <rect key="frame" x="1" y="17" width="273" height="561"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nzy-nI-54s" viewBased="YES" indentationPerLevel="16" outlineTableColumn="e0O-T4-aNF" id="8qo-ui-fPg" customClass="TASCOutlineViewTinderbox" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nzy-nI-54s" viewBased="YES" indentationPerLevel="16" outlineTableColumn="e0O-T4-aNF" id="8qo-ui-fPg">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="561"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -774,13 +774,13 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="Mqm-0f-e6j">
+                                                        <tableCellView identifier="tbxNameCellView" id="RK7-lc-Mop">
                                                             <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubi-b8-aw9">
+                                                                <textField identifier="tbxViewCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEF-Gf-bFx">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Uf7-Eq-csD">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" identifier="tbxViewCellTxt" title="Table View Cell" id="g74-LV-sO6">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -788,7 +788,7 @@
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
-                                                                <outlet property="textField" destination="Ubi-b8-aw9" id="TbU-oQ-RLR"/>
+                                                                <outlet property="textField" destination="UEF-Gf-bFx" id="Gsp-8g-aYB"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -806,14 +806,13 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="hdL-tB-Dmd">
+                                                        <tableCellView identifier="tbxAgeCellView" id="glE-PY-ozW">
                                                             <rect key="frame" x="120" y="1" width="151" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-qv-ZFN">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKA-Zw-tFc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="CT0-x3-At0">
-                                                                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="MOr-k1-kNb"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="UzB-Iv-gbD">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -821,12 +820,16 @@
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
-                                                                <outlet property="textField" destination="VwX-qv-ZFN" id="Pg9-iQ-CJC"/>
+                                                                <outlet property="textField" destination="KKA-Zw-tFc" id="feB-EU-aSR"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="NMz-8p-kdV"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="jaP-eq-vPV"/>
+                                            </connections>
                                         </outlineView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -850,7 +853,7 @@
                                     <rect key="frame" x="1" y="17" width="278" height="561"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="36J-w0-AML" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Iaj-9P-bqa" id="SOZ-Y8-tAZ" customClass="TASCOutlineViewAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="36J-w0-AML" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Iaj-9P-bqa" id="SOZ-Y8-tAZ">
                                             <rect key="frame" x="0.0" y="0.0" width="278" height="561"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -942,14 +945,15 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="outlineViewAeon" destination="SOZ-Y8-tAZ" id="obh-8j-IX1"/>
-                        <outlet property="outlineViewTinderbox" destination="8qo-ui-fPg" id="GhW-4V-H1B"/>
+                        <outlet property="ovAeon" destination="SOZ-Y8-tAZ" id="PH5-lp-Pkz"/>
+                        <outlet property="ovTinderbox" destination="8qo-ui-fPg" id="CaU-UG-PHN"/>
                         <outlet property="textViewAeon" destination="3gU-jw-Zpa" id="Ryr-eg-d8h"/>
                         <outlet property="textViewTinderbox" destination="oqS-Oq-GR1" id="ig9-jU-PT5"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="525-z3-jM8" userLabel="OutlineViewController" customClass="OutlineViewController"/>
+                <objectController id="Sq8-Pk-a1A"/>
+                <customObject id="X4B-wE-DeL"/>
             </objects>
             <point key="canvasLocation" x="609" y="926.5"/>
         </scene>
