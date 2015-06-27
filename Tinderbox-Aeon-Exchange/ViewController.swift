@@ -22,8 +22,6 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     
     @IBOutlet weak var ovAeon: NSOutlineView!
 
-
-    @IBOutlet var ovc: OutlineViewController!
     
     
     var people: Array<Person> = []
@@ -33,22 +31,7 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         parseAeon = false
         parseTbx = false
         
-        let boss = Person(name: "yoda", age: 900, children: [])
-        boss.addChild(Person(name:"stephan", age: 25, children:[]))
-        boss.addChild(Person(name:"kara", age: 19, children:[]))
-        boss.addChild(Person(name:"jesse", age: 18, children:[]))
-        
-        let p = (boss.children)[0]
-        p.addChild(Person(name:"sue", age: 18, children:[]))
-        
-        let pp = (boss.children)[1]
-        
-        
-        pp.addChild(Person(name:"adam", age: 21, children:[]))
-        
-        // add all this to the array property
-        // this will be our datasource for the treeview
-        self.people.append(boss)
+
     }
     
     @IBAction func loadAeonXmlDocument(sender: AnyObject) {
@@ -243,87 +226,5 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
 
 
 
-extension ViewController : NSOutlineViewDataSource {
-    
-    
-    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        
-        return (item == nil) ? self.people.count : (item as! Person).children.count
-        
-    }
-    
-    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        
-        // if item is nil, this will break
-        
-        return (item as! Person).children.count != 0
-        
-    }
-    
-    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        
-        return (item == nil) ? self.people[index] : (item as! Person).children[index]
-        
-        
-    }
-    
-    func outlineView(outlineView: NSOutlineView, objectValueForTableColumn tableColumn: NSTableColumn?, byItem item: AnyObject?) -> AnyObject? {
-        
-        // heres where we decide which properties on object we want to display
-        // to do this have to set the identifier on the column for the outlinevie
-        // in interfacebuilder
-        
-        
-    // THIS IS ONLY USED FOR CELL BASED TABLE AND OUTLINE VIEWS
-    // BUT THIS IS A VIEW BASED OUTLINE VIEW SO SEE DELEGATE METHOD BELOW
-
-        
-        if tableColumn?.identifier == "name" {
-            print( (item as! Person).name)
-            return (item as! Person).name as NSString
-            
-        }
-        
-        if tableColumn?.identifier == "age" {
-            print( (item as! Person).age)
-            return (item as! Person).age as NSNumber
-            
-        }
-        
-        return "no column";
-        
-    }
-    
-
-    
-}
-
-extension ViewController: NSOutlineViewDelegate {
-    func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
-        
-        // this is used for VIEW BASED OUTLINE VIEWS, which is what this is
-        
-        if tableColumn?.identifier == "name" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxNameCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = (item as! Person).name
-            // cell.imageViewCell.image = xxx
-            return cell
-            
-        }
-
-        
-        if tableColumn?.identifier == "age" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = String((item as! Person).age)
-            // cell.imageViewCell.image = xxx
-            return cell
-            
-        }
-        
-        return nil
-        
-    }
-    
-}
 
 

@@ -754,7 +754,7 @@
                                     <rect key="frame" x="1" y="17" width="273" height="561"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nzy-nI-54s" viewBased="YES" indentationPerLevel="16" outlineTableColumn="e0O-T4-aNF" id="8qo-ui-fPg">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nzy-nI-54s" viewBased="YES" indentationPerLevel="16" outlineTableColumn="e0O-T4-aNF" id="8qo-ui-fPg" customClass="TASCOutlineViewTinderbox" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="561"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -827,8 +827,8 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
-                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="NMz-8p-kdV"/>
-                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="jaP-eq-vPV"/>
+                                                <outlet property="dataSource" destination="X4B-wE-DeL" id="ZAR-nC-dd1"/>
+                                                <outlet property="delegate" destination="X4B-wE-DeL" id="NhR-pI-lCu"/>
                                             </connections>
                                         </outlineView>
                                     </subviews>
@@ -853,7 +853,7 @@
                                     <rect key="frame" x="1" y="17" width="278" height="561"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="36J-w0-AML" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Iaj-9P-bqa" id="SOZ-Y8-tAZ">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="36J-w0-AML" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Iaj-9P-bqa" id="SOZ-Y8-tAZ" customClass="TASCOutlineViewAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="278" height="561"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>

@@ -43,7 +43,7 @@ extension OutlineViewController : NSOutlineViewDataSource {
         
         return (item == nil) ? self.people.count : (item as! Person).children.count
         
-    }
+    } 
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
         
@@ -51,7 +51,7 @@ extension OutlineViewController : NSOutlineViewDataSource {
         
         return (item as! Person).children.count != 0
 
-    }
+    }//
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
@@ -76,18 +76,22 @@ extension OutlineViewController : NSOutlineViewDataSource {
             
         }
         
-        return "something is wrong";
+        return "no column";
         
     }
     
+
+}
+
+extension OutlineViewController: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {
             let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = (item as! Person).name
-           // cell.imageViewCell.image = xxx
+            // cell.imageViewCell.image = xxx
             return cell
-
+            
         }
         
         if tableColumn?.identifier == "age" {
@@ -101,15 +105,5 @@ extension OutlineViewController : NSOutlineViewDataSource {
         return nil
         
     }
-    
-    
-
-    
- 
-    
-}
-
-extension OutlineViewController: NSOutlineViewDelegate {
-    
 }
 
