@@ -15,6 +15,7 @@
 		C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */; };
 		C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB71B3F826100F5A9DD /* TbxItem.swift */; };
 		C9158FBF1B40019D00F5A9DD /* AeonEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FBE1B40019D00F5A9DD /* AeonEvent.swift */; };
+		C9158FC11B4005BC00F5A9DD /* XMLParserTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */; };
 		C94FF2881B3D760700B19515 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML.swift */; };
 		C95307061B3EA71500E9954E /* app notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C95307051B3EA71500E9954E /* app notes.txt */; };
 		C95307081B3EE87400E9954E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95307071B3EE87400E9954E /* Person.swift */; };
@@ -50,6 +51,7 @@
 		C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerAeon.swift; sourceTree = "<group>"; };
 		C9158FB71B3F826100F5A9DD /* TbxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TbxItem.swift; path = ../TbxItem.swift; sourceTree = "<group>"; };
 		C9158FBE1B40019D00F5A9DD /* AeonEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AeonEvent.swift; sourceTree = "<group>"; };
+		C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParserTbx.swift; sourceTree = "<group>"; };
 		C94FF2871B3D760700B19515 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
 		C95307051B3EA71500E9954E /* app notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "app notes.txt"; sourceTree = "<group>"; };
 		C95307071B3EE87400E9954E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				C97583051B3C10860075AC8A /* TASCTextViewTB.swift */,
 				C9158FB71B3F826100F5A9DD /* TbxItem.swift */,
 				C95307091B3EF5CB00E9954E /* OutlineViewControllerTbx.swift */,
+				C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */,
 			);
 			name = Tinderbox;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */,
 				C95307081B3EE87400E9954E /* Person.swift in Sources */,
 				C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */,
+				C9158FC11B4005BC00F5A9DD /* XMLParserTbx.swift in Sources */,
 				C9158FBF1B40019D00F5A9DD /* AeonEvent.swift in Sources */,
 				2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */,
 			);

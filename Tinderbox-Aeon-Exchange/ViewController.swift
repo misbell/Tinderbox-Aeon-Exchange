@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController,  NSXMLParserDelegate {
+class ViewController: NSViewController {
     
     var parseTbx : Bool?
     var parseAeon : Bool?
@@ -38,7 +38,7 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
 
     }
     
-    @IBAction func loadAeonXmlDocument(sender: AnyObject) {
+   /* @IBAction func loadAeonXmlDocument(sender: AnyObject) {
         
         print("well done ae")
         
@@ -73,23 +73,7 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
             let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
             //var str : NSString = NSString(data: vara, encoding: NSUTF8StringEncoding)!
             
-            if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
-                
-                for child in xmlDoc.root.children {
-                    if let _ = child.value {
-                        print("\(child.name) >> \(child.value!)")
-                    }
-                    else {
-                        print("\(child.name) >> no value")
-                    }
-                    for attribute in child.attributes {
-                        print("\t \(attribute.0) :: \(attribute.1) ")
-                       
-                    }
-                    getChildren(child)
-                }
-                
-            }
+//xmldoc
             
         }
         
@@ -99,41 +83,11 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         //test
         
     }
-    
-    func getChildren(element : AEXMLElement) {
-        for child in element.children {
-            if let _ = child.value {
-                print("\(child.name) >> \(child.value!)")
-            }
-            else {
-                print("\(child.name) >> no value")
-            }
-            
-            for attribute in child.attributes {
-                        print("\t \(attribute.0) :: \(attribute.1) ")
-            }
-            getChildren(child)
-        }
-        
-    }
+    */
+
     
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
-        //print("Element's name is \(elementName)")
-        //print("Element's attributes are \(attributeDict)")
-        
-        if parseAeon! {
-            //print("parseaeon")
-            let str = "Element's name is \(elementName) \n Element's attributes are \(attributeDict) \n"
-            textViewAeon.textStorage?.mutableString.appendString(str)
-        }
-        if parseTbx! {
-            // print("parsetinderbox")
-            let str = "Element's name is \(elementName) \n Element's attributes are \(attributeDict) \n"
-            textViewTinderbox.textStorage?.mutableString.appendString(str)
-        }
-    }
-    
+
     
     
     
@@ -154,57 +108,18 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         let _ = openPanel.URLs
         let _ = openPanel.runModal()
         
-        if let chosenfile  = openPanel.URL {
+        if let fileurl  = openPanel.URL {
             print("file found")
             parseTbx = true
-            
-            //  textViewAeon.string = "hello, world"
-            
-            let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
-            xmlParser!.delegate = self
-            xmlParser!.parse()
-            parseAeon = false
-            
-            var error: NSError?
-            
-            //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
-            let path = chosenfile.path!
-            let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
-            // var str: NSString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            
-            if let xmlDoc = AEXMLDocument(xmlData: data, error: &error) {
-                
-              //  var itemelement = AEXMLElement("item", value: "")
-                
-                var firstelement = xmlDoc.root["item"]
-                print (xmlDoc.root["item"].stringValue)
-                
-                var firstitem =  xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
-                
-                xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
-                
-                for child in xmlDoc.root.children {
-                    if let _ = child.value {
-                        print("\(child.name) >> \(child.value!)")
-                    }
-                    else {
-                         print("\(child.name) >> no value")
-                    }
-                    
-
-           
-                    for attribute in child.attributes {
-                        print("\t \(attribute.0) :: \(attribute.1) ")
-                    }
-                    getChildren(child)
-                }
+ 
+            if let xmlParserTbx = XMLParserTbx(contentPath: fileurl  ) {
+                xmlParserTbx.parse()
                 
             }
-            
-            
-            //   let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
-            //   xmlParser!.delegate = self
-            //   xmlParser!.parse()
+            else {
+                
+            }
+
             parseTbx = false
             
             
