@@ -12,6 +12,7 @@ import AppKit
 
 class OutlineViewControllerTbx  : NSObject {
     var people: Array<Person> = []
+    var items: Array<TbxItem> = []
     
     // designated
     override init() {
@@ -87,7 +88,7 @@ extension OutlineViewControllerTbx: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxNameCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = (item as! Person).name
             // cell.imageViewCell.image = xxx
             return cell

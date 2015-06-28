@@ -21,7 +21,11 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
     @IBOutlet weak var ovTinderbox: NSOutlineView!
     
     @IBOutlet weak var ovAeon: NSOutlineView!
+    
+    
+    @IBOutlet var outlineViewControllerTbx: OutlineViewControllerTbx!
 
+    @IBOutlet var outlineViewControllerAeon: OutlineViewControllerAeon!
     
     
     var people: Array<Person> = []
@@ -213,6 +217,8 @@ class ViewController: NSViewController,  NSXMLParserDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        var x = outlineViewControllerTbx.items
     }
     
     override var representedObject: AnyObject? {

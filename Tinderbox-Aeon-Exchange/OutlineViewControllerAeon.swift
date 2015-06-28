@@ -87,7 +87,7 @@ extension OutlineViewControllerAeon: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("aeonNameCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = (item as! Person).name
             // cell.imageViewCell.image = xxx
             return cell
@@ -95,7 +95,7 @@ extension OutlineViewControllerAeon: NSOutlineViewDelegate {
         }
         
         if tableColumn?.identifier == "age" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("aeonAgeCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = String((item as! Person).age)
             // cell.imageViewCell.image = xxx
             return cell

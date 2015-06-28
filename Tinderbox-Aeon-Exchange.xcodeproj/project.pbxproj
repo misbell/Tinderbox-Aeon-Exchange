@@ -13,6 +13,8 @@
 		2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A81B3B061F00968814 /* Main.storyboard */; };
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
 		C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */; };
+		C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB71B3F826100F5A9DD /* TbxItem.swift */; };
+		C9158FBF1B40019D00F5A9DD /* AeonEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FBE1B40019D00F5A9DD /* AeonEvent.swift */; };
 		C94FF2881B3D760700B19515 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML.swift */; };
 		C95307061B3EA71500E9954E /* app notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C95307051B3EA71500E9954E /* app notes.txt */; };
 		C95307081B3EE87400E9954E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95307071B3EE87400E9954E /* Person.swift */; };
@@ -46,6 +48,8 @@
 		2725D9B41B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
 		C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerAeon.swift; sourceTree = "<group>"; };
+		C9158FB71B3F826100F5A9DD /* TbxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TbxItem.swift; path = ../TbxItem.swift; sourceTree = "<group>"; };
+		C9158FBE1B40019D00F5A9DD /* AeonEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AeonEvent.swift; sourceTree = "<group>"; };
 		C94FF2871B3D760700B19515 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
 		C95307051B3EA71500E9954E /* app notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "app notes.txt"; sourceTree = "<group>"; };
 		C95307071B3EE87400E9954E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -99,20 +103,16 @@
 		2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */ = {
 			isa = PBXGroup;
 			children = (
-				C94FF2871B3D760700B19515 /* AEXML.swift */,
+				C9158FBD1B3F843E00F5A9DD /* Abstractions */,
+				C9158FBC1B3F83EA00F5A9DD /* Parser */,
+				C9158FBB1B3F83CA00F5A9DD /* TestData */,
+				C9158FBA1B3F83B900F5A9DD /* Aeon */,
+				C9158FB91B3F83A000F5A9DD /* Tinderbox */,
 				2725D9A21B3B061F00968814 /* AppDelegate.swift */,
 				2725D9A41B3B061F00968814 /* ViewController.swift */,
 				2725D9A61B3B061F00968814 /* Images.xcassets */,
 				2725D9A81B3B061F00968814 /* Main.storyboard */,
 				2725D9A01B3B061F00968814 /* Supporting Files */,
-				C97583011B3C0FEC0075AC8A /* TASCTextView.swift */,
-				C97583051B3C10860075AC8A /* TASCTextViewTB.swift */,
-				C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */,
-				C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */,
-				C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */,
-				C95307071B3EE87400E9954E /* Person.swift */,
-				C95307091B3EF5CB00E9954E /* OutlineViewController.swift */,
-				C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */,
 			);
 			path = "Tinderbox-Aeon-Exchange";
 			sourceTree = "<group>";
@@ -140,6 +140,52 @@
 				2725D9B41B3B061F00968814 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9158FB91B3F83A000F5A9DD /* Tinderbox */ = {
+			isa = PBXGroup;
+			children = (
+				C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */,
+				C97583051B3C10860075AC8A /* TASCTextViewTB.swift */,
+				C9158FB71B3F826100F5A9DD /* TbxItem.swift */,
+				C95307091B3EF5CB00E9954E /* OutlineViewController.swift */,
+			);
+			name = Tinderbox;
+			sourceTree = "<group>";
+		};
+		C9158FBA1B3F83B900F5A9DD /* Aeon */ = {
+			isa = PBXGroup;
+			children = (
+				C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */,
+				C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */,
+				C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */,
+				C9158FBE1B40019D00F5A9DD /* AeonEvent.swift */,
+			);
+			name = Aeon;
+			sourceTree = "<group>";
+		};
+		C9158FBB1B3F83CA00F5A9DD /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				C95307071B3EE87400E9954E /* Person.swift */,
+			);
+			name = TestData;
+			sourceTree = "<group>";
+		};
+		C9158FBC1B3F83EA00F5A9DD /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C94FF2871B3D760700B19515 /* AEXML.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		C9158FBD1B3F843E00F5A9DD /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				C97583011B3C0FEC0075AC8A /* TASCTextView.swift */,
+			);
+			name = Abstractions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,11 +295,13 @@
 				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
 				C953070A1B3EF5CB00E9954E /* OutlineViewController.swift in Sources */,
 				C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */,
+				C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */,
 				C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */,
 				C94FF2881B3D760700B19515 /* AEXML.swift in Sources */,
 				C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */,
 				C95307081B3EE87400E9954E /* Person.swift in Sources */,
 				C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */,
+				C9158FBF1B40019D00F5A9DD /* AeonEvent.swift in Sources */,
 				2725D9A31B3B061F00968814 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
