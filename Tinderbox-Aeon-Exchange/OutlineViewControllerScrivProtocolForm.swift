@@ -1,4 +1,18 @@
 //
+//  OutlineViewControllerScrivProtocolForm.swift
+//  Tinderbox-Aeon-Exchange
+//
+//  Created by prenez on 6/28/15.
+//  Copyright © 2015 Michael Prenez-Isbell. All rights reserved.
+//
+
+import Cocoa
+
+class OutlineViewControllerScrivProtocolForm: NSObject, NSOutlineViewDataSource,NSOutlineViewDelegate {
+
+}
+
+//
 //  OutlineViewControllerScrivener.swift
 //  Tinderbox-Aeon-Exchange
 //
@@ -11,7 +25,7 @@ import Foundation
 import AppKit
 
 
-class OutlineViewControllerScrivener  : NSObject {
+class OutlineViewControllerScriv  : NSObject {
     
     var scrivenerItems: Array<ScrivenerItem> = []
     
@@ -21,10 +35,8 @@ class OutlineViewControllerScrivener  : NSObject {
         
     }
     
-}
 
-extension OutlineViewControllerScrivener : NSOutlineViewDataSource {
-    
+
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         
@@ -67,15 +79,12 @@ extension OutlineViewControllerScrivener : NSOutlineViewDataSource {
         
     }
     
-    
-}
 
-extension OutlineViewControllerScrivener: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {
             let cell : NSTableCellView = outlineView.makeViewWithIdentifier("scrivNameCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = (item as! ScrivenerItem).name
+            cell.textField?.stringValue = (item as! AeonItem).name
             // cell.imageViewCell.image = xxx
             return cell
             
@@ -83,7 +92,7 @@ extension OutlineViewControllerScrivener: NSOutlineViewDelegate {
         
         if tableColumn?.identifier == "value" {
             let cell : NSTableCellView = outlineView.makeViewWithIdentifier("scrivValueCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = String((item as! ScrivenerItem).value)
+            cell.textField?.stringValue = String((item as! AeonItem).value)
             // cell.imageViewCell.image = xxx
             return cell
             

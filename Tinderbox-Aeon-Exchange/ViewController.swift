@@ -21,11 +21,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var ovAeon: NSOutlineView!
     
     @IBOutlet weak var ovScrivener: NSOutlineView!
+   
     
     @IBOutlet var outlineViewControllerTbx: OutlineViewControllerTbx!
 
     @IBOutlet var outlineViewControllerAeon: OutlineViewControllerAeon!
-    
+ 
+
     @IBOutlet var outlineViewControllerScrivener: OutlineViewControllerScrivener!
     
     
