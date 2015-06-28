@@ -17,7 +17,7 @@ class XMLParserTbx   {
     var data: NSData
     var items: [TbxItem]
     var tbxItems : TbxItem = TbxItem()
-    var currentItem: TbxItem = TbxItem()
+
     
     init?(contentPath: NSURL) {
         
@@ -56,52 +56,57 @@ class XMLParserTbx   {
             
             // this parses every element in the document
             // this is where i build my array
-            
+            var currentItem : TbxItem = TbxItem()
             self.tbxItems = TbxItem(name: "root", value: "", children: [])
             for child in xmlDoc.root.children {
                 if let _ = child.value {
                     print("\(child.name) >> \(child.value!)")
-                    self.currentItem = TbxItem(name: child.name, value: child.value!, children: [])
+                     currentItem = TbxItem(name: child.name, value: child.value!, children: [])
                      self.tbxItems.addChild(currentItem)
                 }
                 else {
-                    self.currentItem = TbxItem(name: child.name, value: "no value", children: [])
+                    currentItem = TbxItem(name: child.name, value: "", children: [])
                     self.tbxItems.addChild(currentItem)
                 }
                 
                 for attribute in child.attributes {
                     print("\t \(attribute.0) :: \(attribute.1) ")
-                    self.currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
+                    currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
             
                 }
-                getChildren(child)
+                getChildren(currentItem, element: child)
             }
             
         }
         
         // make accessible to outlineview
         self.items.append(tbxItems)
-         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.mainViewController?.outlineViewControllerTbx.tbxItems.append(tbxItems)
+        appDelegate.mainViewController?.ovTinderbox.reloadData()
+        
+        
+        
     }
     
-    func getChildren(element : AEXMLElement) {
+    func getChildren(parentItem: TbxItem, element : AEXMLElement) {
         for child in element.children {
+            var currentItem = TbxItem()
             if let _ = child.value {
                 print("\(child.name) >> \(child.value!)")
-                self.currentItem = TbxItem(name: child.name, value: child.value!, children: [])
-                self.tbxItems.addChild(currentItem)
+                currentItem = TbxItem(name: child.name, value: child.value!, children: [])
+                parentItem.addChild(currentItem)
             }
             else {
-                self.currentItem = TbxItem(name: child.name, value: "no value", children: [])
-                self.tbxItems.addChild(currentItem)
+                currentItem = TbxItem(name: child.name, value: "", children: [])
+                parentItem.addChild(currentItem)
             }
             
             for attribute in child.attributes {
                 print("\t \(attribute.0) :: \(attribute.1) ")
-                self.currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
+                currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
             }
-            getChildren(child)
+           getChildren(currentItem, element: child)
         }
         
     }
