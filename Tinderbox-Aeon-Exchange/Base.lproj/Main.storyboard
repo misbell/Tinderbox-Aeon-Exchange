@@ -669,7 +669,7 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="684" height="1011"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1550" height="1011"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-9k-KzR">
@@ -682,80 +682,14 @@
                                     <action selector="loadTinderboxXmlDocument:" target="XfG-lQ-9wD" id="6Jo-xO-KLh"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-pa-GOs">
-                                <rect key="frame" x="489" y="712" width="128" height="32"/>
-                                <buttonCell key="cell" type="push" title="load aeon doc" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="E2U-DM-bTy">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="loadAeonXmlDocument:" target="XfG-lQ-9wD" id="82k-8q-3TX"/>
-                                </connections>
-                            </button>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-o2-rOb">
-                                <rect key="frame" x="43" y="626" width="280" height="73"/>
-                                <clipView key="contentView" ambiguous="YES" id="Lad-x9-tBx">
-                                    <rect key="frame" x="1" y="1" width="278" height="71"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="oqS-Oq-GR1" userLabel="Text View" customClass="TASCTextViewTB" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="71"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="278" height="71"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="278" height="71"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="3R9-te-5xC">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="4lC-oo-BBj">
-                                    <rect key="frame" x="263" y="1" width="16" height="71"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLF-PM-M3f">
-                                <rect key="frame" x="370" y="626" width="280" height="73"/>
-                                <clipView key="contentView" ambiguous="YES" id="jfp-tj-kma">
-                                    <rect key="frame" x="1" y="1" width="278" height="71"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="3gU-jw-Zpa" customClass="TASCTextViewAE" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="71"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="278" height="71"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="278" height="71"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="aWa-WR-Pvl">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="js6-6F-y6b">
-                                    <rect key="frame" x="263" y="1" width="16" height="71"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-ag-KWV">
-                                <rect key="frame" x="48" y="39" width="275" height="579"/>
+                                <rect key="frame" x="48" y="39" width="390" height="660"/>
                                 <clipView key="contentView" ambiguous="YES" id="JcP-wp-sHm">
-                                    <rect key="frame" x="1" y="17" width="273" height="561"/>
+                                    <rect key="frame" x="1" y="17" width="388" height="642"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nzy-nI-54s" viewBased="YES" indentationPerLevel="16" outlineTableColumn="e0O-T4-aNF" id="8qo-ui-fPg" customClass="TASCOutlineViewTinderbox" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="273" height="561"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="642"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -793,7 +727,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="value" width="151" minWidth="40" maxWidth="1000" id="qwe-2w-3EP">
+                                                <tableColumn identifier="value" width="266" minWidth="40" maxWidth="1000" id="qwe-2w-3EP">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="value">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -807,7 +741,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="tbxValueCellView" id="glE-PY-ozW">
-                                                            <rect key="frame" x="120" y="1" width="151" height="17"/>
+                                                            <rect key="frame" x="120" y="1" width="266" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKA-Zw-tFc">
@@ -843,18 +777,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="nzy-nI-54s">
-                                    <rect key="frame" x="0.0" y="0.0" width="273" height="17"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="17"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmO-Af-6nb">
-                                <rect key="frame" x="370" y="39" width="280" height="579"/>
+                                <rect key="frame" x="480" y="39" width="419" height="660"/>
                                 <clipView key="contentView" ambiguous="YES" id="w3k-l4-7HA">
-                                    <rect key="frame" x="1" y="17" width="278" height="561"/>
+                                    <rect key="frame" x="1" y="17" width="417" height="642"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="36J-w0-AML" viewBased="YES" indentationPerLevel="16" outlineTableColumn="Iaj-9P-bqa" id="SOZ-Y8-tAZ" customClass="TASCOutlineViewAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="278" height="561"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="417" height="642"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -892,8 +826,8 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="age" width="156" minWidth="40" maxWidth="1000" id="s5w-Af-Qg3">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="age">
+                                                <tableColumn identifier="value" width="295" minWidth="40" maxWidth="1000" id="s5w-Af-Qg3">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="value">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -905,8 +839,8 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="aeonAgeCellView" id="MDI-qI-9lD">
-                                                            <rect key="frame" x="120" y="1" width="156" height="17"/>
+                                                        <tableCellView identifier="aeonValueCellView" id="MDI-qI-9lD">
+                                                            <rect key="frame" x="120" y="1" width="295" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rQY-To-rGX">
@@ -942,26 +876,146 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="36J-w0-AML">
-                                    <rect key="frame" x="0.0" y="0.0" width="278" height="17"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="417" height="17"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-pa-GOs">
+                                <rect key="frame" x="474" y="712" width="128" height="32"/>
+                                <buttonCell key="cell" type="push" title="load aeon doc" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="E2U-DM-bTy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loadAeonXmlDocument:" target="XfG-lQ-9wD" id="82k-8q-3TX"/>
+                                </connections>
+                            </button>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9h-L4-2eN">
+                                <rect key="frame" x="943" y="39" width="419" height="660"/>
+                                <clipView key="contentView" ambiguous="YES" id="uoM-ZB-Ka1">
+                                    <rect key="frame" x="1" y="17" width="417" height="642"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="w39-ZO-gRe" viewBased="YES" indentationPerLevel="16" outlineTableColumn="6db-nn-XYB" id="d0m-EB-nbF" customClass="TASCOutlineViewAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="417" height="642"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="name" width="116" minWidth="40" maxWidth="1000" id="6db-nn-XYB">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="name">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="c9T-MJ-EXe">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="scrivNameCellView" id="5f3-0B-b6d">
+                                                            <rect key="frame" x="1" y="1" width="116" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-AG-RJH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="ImI-dC-v3x">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="Nd7-AG-RJH" id="Zt2-OW-J7Y"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                                <tableColumn identifier="value" width="295" minWidth="40" maxWidth="1000" id="32a-5q-DXs">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="value">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Lae-O0-Hcr">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="scrivValueCellView" id="gdm-ww-P8T">
+                                                            <rect key="frame" x="120" y="1" width="295" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qev-hZ-ioc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="M12-xs-bva">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="qev-hZ-ioc" id="ek5-SU-CRA"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="OxE-u4-IYb" id="Nuz-3I-Vvx"/>
+                                                <outlet property="delegate" destination="OxE-u4-IYb" id="HmN-Ev-1vP"/>
+                                            </connections>
+                                        </outlineView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="pRb-Ip-avc">
+                                    <rect key="frame" x="1" y="1" width="0.0" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="iEZ-xX-MWa">
+                                    <rect key="frame" x="-15" y="17" width="16" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="w39-ZO-gRe">
+                                    <rect key="frame" x="0.0" y="0.0" width="417" height="17"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMA-ZI-XQU">
+                                <rect key="frame" x="937" y="712" width="153" height="32"/>
+                                <buttonCell key="cell" type="push" title="load scrivener xml" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mXA-cq-ENx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loadScrivenerXmlDocument:" target="XfG-lQ-9wD" id="BfQ-Ff-0ZB"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="outlineViewControllerAeon" destination="OxE-u4-IYb" id="qLe-zC-i6r"/>
+                        <outlet property="outlineViewControllerScrivener" destination="biS-aV-p9t" id="hPT-le-Gud"/>
                         <outlet property="outlineViewControllerTbx" destination="X4B-wE-DeL" id="29R-JN-QLK"/>
                         <outlet property="ovAeon" destination="SOZ-Y8-tAZ" id="PH5-lp-Pkz"/>
+                        <outlet property="ovScrivener" destination="d0m-EB-nbF" id="ERb-CN-uxa"/>
                         <outlet property="ovTinderbox" destination="8qo-ui-fPg" id="CaU-UG-PHN"/>
-                        <outlet property="textViewAeon" destination="3gU-jw-Zpa" id="Ryr-eg-d8h"/>
-                        <outlet property="textViewTinderbox" destination="oqS-Oq-GR1" id="ig9-jU-PT5"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="X4B-wE-DeL" customClass="OutlineViewControllerTbx" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
                 <customObject id="OxE-u4-IYb" customClass="OutlineViewControllerAeon" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
+                <customObject id="biS-aV-p9t" customClass="OutlineViewControllerScrivener" customModule="Tinderbox_Aeon_Exchange" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="609" y="926.5"/>
+            <point key="canvasLocation" x="1042" y="926.5"/>
         </scene>
     </scenes>
 </document>

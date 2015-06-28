@@ -1,33 +1,34 @@
 //
-//  OutlineViewController.swift
+//  OutlineViewControllerScrivener.swift
 //  Tinderbox-Aeon-Exchange
 //
-//  Created by prenez on 6/27/15.
+//  Created by prenez on 6/28/15.
 //  Copyright © 2015 Michael Prenez-Isbell. All rights reserved.
 //
+
 
 import Foundation
 import AppKit
 
 
-class OutlineViewControllerAeon  : NSObject {
+class OutlineViewControllerScrivener  : NSObject {
     
-    var aeonItems: Array<AeonItem> = []
+    var scrivenerItems: Array<ScrivenerItem> = []
     
     // designated
     override init() {
         super.init()
-
+        
     }
     
 }
 
-extension OutlineViewControllerAeon : NSOutlineViewDataSource {
+extension OutlineViewControllerScrivener : NSOutlineViewDataSource {
     
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         
-        return (item == nil) ? self.aeonItems.count : (item as! AeonItem).children.count
+        return (item == nil) ? self.scrivenerItems.count : (item as! ScrivenerItem).children.count
         
     }
     
@@ -35,13 +36,13 @@ extension OutlineViewControllerAeon : NSOutlineViewDataSource {
         
         // if item is nil, this will break
         
-        return (item as! AeonItem).children.count != 0
+        return (item as! ScrivenerItem).children.count != 0
         
     }//
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
-        return (item == nil) ? self.aeonItems[index] : (item as! AeonItem).children[index]
+        return (item == nil) ? self.scrivenerItems[index] : (item as! ScrivenerItem).children[index]
         
         
     }
@@ -53,12 +54,12 @@ extension OutlineViewControllerAeon : NSOutlineViewDataSource {
         // in interfacebuilder
         
         if tableColumn?.identifier == "name" {
-            return (item as! AeonItem).name
+            return (item as! ScrivenerItem).name
             
         }
         
         if tableColumn?.identifier == "value" {
-            return (item as! AeonItem).value
+            return (item as! ScrivenerItem).value
             
         }
         
@@ -69,11 +70,11 @@ extension OutlineViewControllerAeon : NSOutlineViewDataSource {
     
 }
 
-extension OutlineViewControllerAeon: NSOutlineViewDelegate {
+extension OutlineViewControllerScrivener: NSOutlineViewDelegate {
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         
         if tableColumn?.identifier == "name" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("aeonNameCellView", owner: self) as! NSTableCellView
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("scrivNameCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = (item as! AeonItem).name
             // cell.imageViewCell.image = xxx
             return cell
@@ -81,7 +82,7 @@ extension OutlineViewControllerAeon: NSOutlineViewDelegate {
         }
         
         if tableColumn?.identifier == "value" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("aeonValueCellView", owner: self) as! NSTableCellView
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("scrivValueCellView", owner: self) as! NSTableCellView
             cell.textField?.stringValue = String((item as! AeonItem).value)
             // cell.imageViewCell.image = xxx
             return cell

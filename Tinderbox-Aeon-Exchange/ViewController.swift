@@ -13,22 +13,21 @@ class ViewController: NSViewController {
     var parseTbx : Bool?
     var parseAeon : Bool?
     
-    
-    @IBOutlet var textViewTinderbox: TASCTextViewTB!
-    @IBOutlet var textViewAeon: TASCTextViewAE!
+
     
     
     @IBOutlet weak var ovTinderbox: NSOutlineView!
     
     @IBOutlet weak var ovAeon: NSOutlineView!
     
+    @IBOutlet weak var ovScrivener: NSOutlineView!
     
     @IBOutlet var outlineViewControllerTbx: OutlineViewControllerTbx!
 
     @IBOutlet var outlineViewControllerAeon: OutlineViewControllerAeon!
     
+    @IBOutlet var outlineViewControllerScrivener: OutlineViewControllerScrivener!
     
-    var people: Array<Person> = []
     
     required   init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -40,7 +39,61 @@ class ViewController: NSViewController {
 
     }
     
+    
+    @IBAction func loadScrivenerXmlDocument(sender: AnyObject) {
+        
+        let openFileTypes = ["scrivx"]
+        
+        let openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowedFileTypes = openFileTypes
+        
+        openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/",isDirectory: false)
+        let _ = openPanel.URLs
+        let _ = openPanel.runModal()
+        
+        if let fileurl  = openPanel.URL {
+            
+            if let xmlParserScrivener = XMLParserScrivener(contentPath: fileurl  ) {
+                xmlParserScrivener.parse()
+                
+            }
+            else {
+                
+            }
+            
+        }
+    }
+    
     @IBAction func loadAeonXmlDocument(sender: AnyObject) {
+        
+       let openFileTypes = ["aeonxml"]
+        
+        let openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowedFileTypes = openFileTypes
+        
+       openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___aeon/",isDirectory: false)
+        let _ = openPanel.URLs
+        let _ = openPanel.runModal()
+        
+        if let fileurl  = openPanel.URL {
+            
+            if let xmlParserAeon = XMLParserAeon(contentPath: fileurl  ) {
+                xmlParserAeon.parse()
+                
+            }
+            else {
+                
+            }
+            
+        }
     }
     
     /*
