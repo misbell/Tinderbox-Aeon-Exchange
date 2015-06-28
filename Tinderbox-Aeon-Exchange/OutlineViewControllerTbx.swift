@@ -11,28 +11,13 @@ import AppKit
 
 
 class OutlineViewControllerTbx  : NSObject {
-    var people: Array<Person> = []
-    var items: Array<TbxItem> = []
+    
+    var tbxItems: Array<TbxItem> = []
     
     // designated
     override init() {
         super.init()
-        let boss = Person(name: "yoda", age: 900, children: [])
-        boss.addChild(Person(name:"stephan", age: 25, children:[]))
-        boss.addChild(Person(name:"kara", age: 19, children:[]))
-        boss.addChild(Person(name:"jesse", age: 18, children:[]))
-        
-        let p = (boss.children)[0]
-        p.addChild(Person(name:"sue", age: 18, children:[]))
-        
-        let pp = (boss.children)[1]
-        
-        
-        pp.addChild(Person(name:"adam", age: 21, children:[]))
-        
-        // add all this to the array property
-        // this will be our datasource for the treeview
-        self.people.append(boss)
+
     }
     
 }
@@ -42,7 +27,7 @@ extension OutlineViewControllerTbx : NSOutlineViewDataSource {
 
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
         
-        return (item == nil) ? self.people.count : (item as! Person).children.count
+        return (item == nil) ? self.tbxItems.count : (item as! TbxItem).children.count
         
     } 
     
@@ -50,13 +35,13 @@ extension OutlineViewControllerTbx : NSOutlineViewDataSource {
         
         // if item is nil, this will break
         
-        return (item as! Person).children.count != 0
+        return (item as! TbxItem).children.count != 0
 
     }//
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
         
-        return (item == nil) ? self.people[index] : (item as! Person).children[index]
+        return (item == nil) ? self.tbxItems[index] : (item as! TbxItem).children[index]
 
         
     }
@@ -68,12 +53,12 @@ extension OutlineViewControllerTbx : NSOutlineViewDataSource {
         // in interfacebuilder
         
         if tableColumn?.identifier == "name" {
-            return (item as! Person).name
+            return (item as! TbxItem).name
             
         }
         
-        if tableColumn?.identifier == "age" {
-            return (item as! Person).age as NSNumber
+        if tableColumn?.identifier == "value" {
+            return (item as! TbxItem).value
             
         }
         
@@ -89,15 +74,15 @@ extension OutlineViewControllerTbx: NSOutlineViewDelegate {
         
         if tableColumn?.identifier == "name" {
             let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxNameCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = (item as! Person).name
+            cell.textField?.stringValue = (item as! TbxItem).name
             // cell.imageViewCell.image = xxx
             return cell
             
         }
         
-        if tableColumn?.identifier == "age" {
-            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxAgeCellView", owner: self) as! NSTableCellView
-            cell.textField?.stringValue = String((item as! Person).age)
+        if tableColumn?.identifier == "value" {
+            let cell : NSTableCellView = outlineView.makeViewWithIdentifier("tbxValueCellView", owner: self) as! NSTableCellView
+            cell.textField?.stringValue = String((item as! TbxItem).value)
             // cell.imageViewCell.image = xxx
             return cell
             

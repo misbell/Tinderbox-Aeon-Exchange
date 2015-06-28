@@ -34,12 +34,17 @@ class ViewController: NSViewController {
         super.init(coder: coder)
         parseAeon = false
         parseTbx = false
+        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         
+        appDelegate.mainViewController = self
 
     }
     
-   /* @IBAction func loadAeonXmlDocument(sender: AnyObject) {
-        
+    @IBAction func loadAeonXmlDocument(sender: AnyObject) {
+    }
+    
+    /*
+    
         print("well done ae")
         
         let openFileTypes = ["aeonxml"]
@@ -109,9 +114,7 @@ class ViewController: NSViewController {
         let _ = openPanel.runModal()
         
         if let fileurl  = openPanel.URL {
-            print("file found")
-            parseTbx = true
- 
+   
             if let xmlParserTbx = XMLParserTbx(contentPath: fileurl  ) {
                 xmlParserTbx.parse()
                 
@@ -120,9 +123,6 @@ class ViewController: NSViewController {
                 
             }
 
-            parseTbx = false
-            
-            
         }
         
     }
@@ -133,7 +133,7 @@ class ViewController: NSViewController {
         
         // Do any additional setup after loading the view.
         
-        var x = outlineViewControllerTbx.items
+        var x = outlineViewControllerTbx.tbxItems
     }
     
     override var representedObject: AnyObject? {

@@ -13,14 +13,14 @@ import Foundation
 class TbxItem {
     
     var name : String
-    var text: String
-    var ID: String
-    var isPrototype: Bool
-    var aliasID:String
-    var nextNull: Bool
-    var hasNoteDescendants: Bool
-    var hasNoteSiblings: Bool
-    var parent : TbxItem?
+    var value: String
+//    var ID: String
+//    var isPrototype: Bool
+//    var aliasID:String
+//    var nextNull: Bool
+//    var hasNoteDescendants: Bool
+//    var hasNoteSiblings: Bool
+//    var parent : TbxItem?
     
     var children: Array<TbxItem>
     
@@ -30,28 +30,28 @@ class TbxItem {
         init () {
             
             self.name = ""
-            self.text = ""
-            self.ID = ""
-            self.isPrototype = false
-            self.aliasID = ""
-            self.nextNull = true
-            self.hasNoteDescendants = false
-            self.hasNoteSiblings = false
-            self.parent = nil
+            self.value = ""
+//            self.ID = ""
+//            self.isPrototype = false
+//            self.aliasID = ""
+//            self.nextNull = true
+//            self.hasNoteDescendants = false
+//            self.hasNoteSiblings = false
+//            self.parent = nil
             self.children = []
             
 
       }
     
     //designated
-   // init(name: String, age: Int, children: Array<Person>) {
+    init(name: String, value: String, children: Array<TbxItem>) {
         
         
-   //     self.name = name
-   //     self.age = age
-   //     self.children = []
+        self.name = name
+        self.value = value
+        self.children = []
         
-   // }
+    }
     
     //convenience
     // convenience init (aname: String) {
