@@ -17,7 +17,9 @@ class XMLParserTbx   {
     var data: NSData
     var items: [TbxItem]
     var tbxItems : TbxItem = TbxItem()
-
+    
+    var itemIDNumbers : [Int64] = []
+    
     
     init?(contentPath: NSURL) {
         
@@ -60,9 +62,9 @@ class XMLParserTbx   {
             self.tbxItems = TbxItem(name: "root", value: "", children: [])
             for child in xmlDoc.root.children {
                 if let _ = child.value {
-                    print("\(child.name) >> \(child.value!)")
-                     currentItem = TbxItem(name: child.name, value: child.value!, children: [])
-                     self.tbxItems.addChild(currentItem)
+                    
+                    currentItem = TbxItem(name: child.name, value: child.value!, children: [])
+                    self.tbxItems.addChild(currentItem)
                 }
                 else {
                     currentItem = TbxItem(name: child.name, value: "", children: [])
@@ -70,14 +72,28 @@ class XMLParserTbx   {
                 }
                 
                 for attribute in child.attributes {
-                    print("\t \(attribute.0) :: \(attribute.1) ")
+                    
+                    if currentItem.name == "item" {
+                        if attribute.0 == "ID" {
+                            print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+                            let x = Int64(attribute.1 as! String)
+                            self.itemIDNumbers.append(x!)
+                        }
+                    }
+                    
                     currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
-            
+                    
                 }
                 getChildren(currentItem, element: child)
             }
             
         }
+        
+        let sortedItemIDNumbers =  itemIDNumbers.sort()
+        let lowest = sortedItemIDNumbers.first
+        let highest = sortedItemIDNumbers.last
+        
+        print(" lowest is \(lowest) and highest is \(highest)")
         
         // make accessible to outlineview
         self.items.append(tbxItems)
@@ -90,10 +106,11 @@ class XMLParserTbx   {
     }
     
     func getChildren(parentItem: TbxItem, element : AEXMLElement) {
+        var currentItem = TbxItem()
         for child in element.children {
-            var currentItem = TbxItem()
+            
             if let _ = child.value {
-                print("\(child.name) >> \(child.value!)")
+                
                 currentItem = TbxItem(name: child.name, value: child.value!, children: [])
                 parentItem.addChild(currentItem)
             }
@@ -103,10 +120,17 @@ class XMLParserTbx   {
             }
             
             for attribute in child.attributes {
-                print("\t \(attribute.0) :: \(attribute.1) ")
+                if currentItem.name == "item" {
+                    if attribute.0 == "ID" {
+                        print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+                        let x = Int64(attribute.1 as! String)
+                        self.itemIDNumbers.append(x!)
+                    }
+                }
+                
                 currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
             }
-           getChildren(currentItem, element: child)
+            getChildren(currentItem, element: child)
         }
         
     }

@@ -19,6 +19,9 @@ class XMLParserAeon   {
     var items: [AeonItem]
     var aeonItems : AeonItem = AeonItem()
     
+    var eventIDNumbers : [Int64] = []
+    
+    
     
     init?(contentPath: NSURL) {
         
@@ -61,7 +64,6 @@ class XMLParserAeon   {
             self.aeonItems = AeonItem(name: "root", value: "", children: [])
             for child in xmlDoc.root.children {
                 if let _ = child.value {
-                    print("\(child.name) >> \(child.value!)")
                     currentItem = AeonItem(name: child.name, value: child.value!, children: [])
                     self.aeonItems.addChild(currentItem)
                 }
@@ -71,7 +73,14 @@ class XMLParserAeon   {
                 }
                 
                 for attribute in child.attributes {
-                    print("\t \(attribute.0) :: \(attribute.1) ")
+                    if currentItem.name == "Event" {
+                        if attribute.0 == "ID" {
+                            print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
+                            let x = Int64(attribute.1 as! String)
+                            self.eventIDNumbers.append(x!)
+                        }
+                    }
+                    
                     currentItem.addChild(AeonItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
                     
                 }
@@ -79,6 +88,13 @@ class XMLParserAeon   {
             }
             
         }
+        
+        let sortedEventIDNumbers =  eventIDNumbers.sort()
+        let lowest = sortedEventIDNumbers.first
+        let highest = sortedEventIDNumbers.last
+        
+        print(" lowest is \(lowest) and highest is \(highest)")
+        
         
         // make accessible to outlineview
         self.items.append(aeonItems)
@@ -94,7 +110,6 @@ class XMLParserAeon   {
         for child in element.children {
             var currentItem = AeonItem()
             if let _ = child.value {
-                print("\(child.name) >> \(child.value!)")
                 currentItem = AeonItem(name: child.name, value: child.value!, children: [])
                 parentItem.addChild(currentItem)
             }
@@ -104,7 +119,13 @@ class XMLParserAeon   {
             }
             
             for attribute in child.attributes {
-                print("\t \(attribute.0) :: \(attribute.1) ")
+                if currentItem.name == "Event" {
+                    if attribute.0 == "ID" {
+                        print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
+                        let x = Int64(attribute.1 as! String)
+                        self.eventIDNumbers.append(x!)
+                    }
+                }
                 currentItem.addChild(AeonItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
             }
             getChildren(currentItem, element: child)
