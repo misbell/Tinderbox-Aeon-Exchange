@@ -30,7 +30,7 @@ class ViewController: NSViewController {
 
     @IBOutlet var outlineViewControllerScrivener: OutlineViewControllerScrivener!
     
-    
+
     required   init?(coder: NSCoder) {
         super.init(coder: coder)
         parseAeon = false
@@ -182,13 +182,20 @@ class ViewController: NSViewController {
         
     }
     
+    @IBAction func writeNewTinderboxDocument(sender: AnyObject) {
+        
+        let xmlWriter = XMLWriterTbx()
+        xmlWriter.writeTinderboxXMLDocument()
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        var x = outlineViewControllerTbx.tbxItems
+   
     }
     
     override var representedObject: AnyObject? {

@@ -49,17 +49,21 @@ class XMLParserTbx   {
             // also think about making an array for each of the top level elements,
             // the easier to make key value lists with later
             
-            var firstelement = xmlDoc.root["item"]
-            print (xmlDoc.root["item"].stringValue)
+           // var firstelement = xmlDoc.root["item"]
+           // print (xmlDoc.root["item"].stringValue)
             
-            var firstitem =  xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
+           // var firstitem =  xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
             
-            xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
+           // xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
             
             // this parses every element in the document
             // this is where i build my array
-            var currentItem : TbxItem = TbxItem()
-            self.tbxItems = TbxItem(name: "root", value: "", children: [])
+            var currentItem = TbxItem(name: (xmlDoc.root.first?.name)!, value: "", children: [])
+            self.tbxItems = currentItem
+            for attribute in xmlDoc.root.attributes {
+                currentItem.addChild(TbxItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
+            }
+            
             for child in xmlDoc.root.children {
                 if let _ = child.value {
                     

@@ -999,6 +999,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="usm-xy-Pgy">
+                                <rect key="frame" x="249" y="712" width="195" height="32"/>
+                                <buttonCell key="cell" type="push" title="write NEW tinderbox doc" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1oy-kq-75H">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="writeNewTinderboxDocument:" target="XfG-lQ-9wD" id="we4-Ld-U9f"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>

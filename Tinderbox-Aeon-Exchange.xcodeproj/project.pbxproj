@@ -30,6 +30,7 @@
 		C97583041B3C10330075AC8A /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97583031B3C10330075AC8A /* Notes.txt */; };
 		C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583051B3C10860075AC8A /* TASCTextViewTB.swift */; };
 		C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */; };
+		C98B7AFB1B42B8D600C5D662 /* XMLWriterTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */; };
 		C99A213A1B404E630027B1D6 /* TASCOutlineViewScrivener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		C97583031B3C10330075AC8A /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		C97583051B3C10860075AC8A /* TASCTextViewTB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewTB.swift; sourceTree = "<group>"; };
 		C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewAE.swift; sourceTree = "<group>"; };
+		C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLWriterTbx.swift; sourceTree = "<group>"; };
 		C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewScrivener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				C9158FB71B3F826100F5A9DD /* TbxItem.swift */,
 				C95307091B3EF5CB00E9954E /* OutlineViewControllerTbx.swift */,
 				C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */,
+				C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */,
 			);
 			name = Tinderbox;
 			path = "Tinderbox-Aeon-Exchange";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99A213A1B404E630027B1D6 /* TASCOutlineViewScrivener.swift in Sources */,
+				C98B7AFB1B42B8D600C5D662 /* XMLWriterTbx.swift in Sources */,
 				C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */,
 				C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */,
 				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
