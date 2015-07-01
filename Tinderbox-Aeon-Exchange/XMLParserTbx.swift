@@ -79,7 +79,7 @@ class XMLParserTbx   {
                     
                     if currentItem.name == "item" {
                         if attribute.0 == "ID" {
-                            print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+                          //  print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
                             let x = Int64(attribute.1 as! String)
                             self.itemIDNumbers.append(x!)
                         }
@@ -126,7 +126,7 @@ class XMLParserTbx   {
             for attribute in child.attributes {
                 if currentItem.name == "item" {
                     if attribute.0 == "ID" {
-                        print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+                     //   print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
                         let x = Int64(attribute.1 as! String)
                         self.itemIDNumbers.append(x!)
                     }

@@ -12,11 +12,12 @@
 		2725D9A71B3B061F00968814 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A61B3B061F00968814 /* Images.xcassets */; };
 		2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725D9A81B3B061F00968814 /* Main.storyboard */; };
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
+		27D008641B442CCA00E677E4 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D008631B442CCA00E677E4 /* AEXML.swift */; };
 		C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */; };
 		C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB71B3F826100F5A9DD /* TbxItem.swift */; };
 		C9158FBF1B40019D00F5A9DD /* AeonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FBE1B40019D00F5A9DD /* AeonItem.swift */; };
 		C9158FC11B4005BC00F5A9DD /* XMLParserTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */; };
-		C94FF2881B3D760700B19515 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML.swift */; };
+		C94FF2881B3D760700B19515 /* AEXML1.txt in Sources */ = {isa = PBXBuildFile; fileRef = C94FF2871B3D760700B19515 /* AEXML1.txt */; };
 		C95307061B3EA71500E9954E /* app notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C95307051B3EA71500E9954E /* app notes.txt */; };
 		C953070A1B3EF5CB00E9954E /* OutlineViewControllerTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95307091B3EF5CB00E9954E /* OutlineViewControllerTbx.swift */; };
 		C962A65C1B403EAD0019A2AC /* XMLParserAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A65B1B403EAD0019A2AC /* XMLParserAeon.swift */; };
@@ -26,6 +27,7 @@
 		C96310971B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96310961B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift */; };
 		C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */; };
 		C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */; };
+		C96F9ED71B4385C500BE8F61 /* xmlstring.txt in Resources */ = {isa = PBXBuildFile; fileRef = C96F9ED61B4385C500BE8F61 /* xmlstring.txt */; };
 		C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583011B3C0FEC0075AC8A /* TASCTextView.swift */; };
 		C97583041B3C10330075AC8A /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97583031B3C10330075AC8A /* Notes.txt */; };
 		C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583051B3C10860075AC8A /* TASCTextViewTB.swift */; };
@@ -54,11 +56,12 @@
 		2725D9AF1B3B061F00968814 /* Tinderbox-Aeon-ExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tinderbox-Aeon-ExchangeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725D9B41B3B061F00968814 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
+		27D008631B442CCA00E677E4 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
 		C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerAeon.swift; sourceTree = "<group>"; };
 		C9158FB71B3F826100F5A9DD /* TbxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TbxItem.swift; path = ../TbxItem.swift; sourceTree = "<group>"; };
 		C9158FBE1B40019D00F5A9DD /* AeonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AeonItem.swift; sourceTree = "<group>"; };
 		C9158FC01B4005BC00F5A9DD /* XMLParserTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParserTbx.swift; sourceTree = "<group>"; };
-		C94FF2871B3D760700B19515 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
+		C94FF2871B3D760700B19515 /* AEXML1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AEXML1.txt; sourceTree = "<group>"; };
 		C95307051B3EA71500E9954E /* app notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "app notes.txt"; sourceTree = "<group>"; };
 		C95307091B3EF5CB00E9954E /* OutlineViewControllerTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerTbx.swift; sourceTree = "<group>"; };
 		C962A65B1B403EAD0019A2AC /* XMLParserAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParserAeon.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		C96310961B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerScrivProtocolForm.swift; sourceTree = "<group>"; };
 		C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewTinderbox.swift; sourceTree = "<group>"; };
 		C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewAeon.swift; sourceTree = "<group>"; };
+		C96F9ED61B4385C500BE8F61 /* xmlstring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xmlstring.txt; sourceTree = "<group>"; };
 		C97583011B3C0FEC0075AC8A /* TASCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextView.swift; sourceTree = "<group>"; };
 		C97583031B3C10330075AC8A /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		C97583051B3C10860075AC8A /* TASCTextViewTB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewTB.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				C95307051B3EA71500E9954E /* app notes.txt */,
 				C97583031B3C10330075AC8A /* Notes.txt */,
+				C96F9ED61B4385C500BE8F61 /* xmlstring.txt */,
 				C9158FB91B3F83A000F5A9DD /* Tinderbox */,
 				C9158FBA1B3F83B900F5A9DD /* Aeon */,
 				C962A65D1B4046770019A2AC /* Scrivener */,
@@ -194,7 +199,8 @@
 		C9158FBC1B3F83EA00F5A9DD /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				C94FF2871B3D760700B19515 /* AEXML.swift */,
+				C94FF2871B3D760700B19515 /* AEXML1.txt */,
+				27D008631B442CCA00E677E4 /* AEXML.swift */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				C95307061B3EA71500E9954E /* app notes.txt in Resources */,
 				C97583041B3C10330075AC8A /* Notes.txt in Resources */,
 				2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */,
+				C96F9ED71B4385C500BE8F61 /* xmlstring.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +333,7 @@
 				C98B7AFB1B42B8D600C5D662 /* XMLWriterTbx.swift in Sources */,
 				C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */,
 				C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */,
+				27D008641B442CCA00E677E4 /* AEXML.swift in Sources */,
 				2725D9A51B3B061F00968814 /* ViewController.swift in Sources */,
 				C962A65F1B4046AF0019A2AC /* OutlineViewControllerScrivener.swift in Sources */,
 				C96310971B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift in Sources */,
@@ -333,7 +341,7 @@
 				C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */,
 				C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */,
 				C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */,
-				C94FF2881B3D760700B19515 /* AEXML.swift in Sources */,
+				C94FF2881B3D760700B19515 /* AEXML1.txt in Sources */,
 				C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */,
 				C97583021B3C0FEC0075AC8A /* TASCTextView.swift in Sources */,
 				C9158FC11B4005BC00F5A9DD /* XMLParserTbx.swift in Sources */,

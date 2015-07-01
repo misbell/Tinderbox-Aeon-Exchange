@@ -159,7 +159,7 @@ public class AEXMLElement: Equatable {
     }
     
     private func removeChild(child: AEXMLElement) {
-        if let childIndex = children.indexOf(child) {
+        if let childIndex = children.indexOf(child) { // find(children, child) {
             children.removeAtIndex(childIndex)
         }
     }
@@ -184,6 +184,58 @@ public class AEXMLElement: Equatable {
         return indent
     }
     
+    public var rawXmlString: String {
+        var xml = String()
+        
+        // open element
+        xml += indentation(parentsCount - 1)
+        xml += "<\(name)"
+        
+        if attributes.count > 0 {
+            // insert attributes
+   
+            for (key, value) in attributes {
+                xml += " \(key)=\""
+                let xxx = String(value)
+                if xxx == "HTML" {
+                    var xxx = String(value)
+                    
+                    var firstChar = Array(arrayLiteral: xxx)[0]
+         
+                    
+                    xml += String(value)
+                }
+                xml += String(value)
+                xml += "\""
+            }
+        }
+        
+        if value == nil && children.count == 0 {
+            // close element
+            xml += " />"
+        } else {
+            if children.count > 0 {
+                // add children
+                xml += ">\n"
+                for child in children {
+                    xml += "\(child.rawXmlString)\n"
+                }
+                // add indentation
+                xml += indentation(parentsCount - 1)
+                xml += "</\(name)>"
+            } else {
+                // insert string value and close element
+                xml += ">"
+                xml += String(stringValue)
+                xml += "</\(name)>"
+         
+            }
+        }
+        
+        return xml
+        
+    }
+    
     public var xmlString: String {
         var xml = String()
         
@@ -194,7 +246,9 @@ public class AEXMLElement: Equatable {
         if attributes.count > 0 {
             // insert attributes
             for (key, value) in attributes {
-                xml += " \(key)=\"\(value)\""
+                xml += " \(key)=\""
+                xml += String(value)
+                xml += "\""
             }
         }
         
@@ -222,7 +276,9 @@ public class AEXMLElement: Equatable {
     
     public var xmlStringCompact: String {
         let chars = NSCharacterSet(charactersInString: "\n\t")
-        return "".join(xmlString.componentsSeparatedByCharactersInSet(chars))
+        let separator = ""
+        //let outputString = separator.join(xmlString.componentsSeparatedByCharactersInSet(chars))
+        return separator.join(xmlString.componentsSeparatedByCharactersInSet(chars))
     }
 }
 
@@ -260,10 +316,11 @@ public class AEXMLDocument: AEXMLElement {
         }
     }
     
-    public convenience init(version: Double = 1.0, encoding: String = "utf-8", standalone: String = "no", xmlData: NSData) throws {
+    public convenience init?(version: Double = 1.0, encoding: String = "utf-8", standalone: String = "no", xmlData: NSData, inout error: NSError?) {
         self.init(version: version, encoding: encoding, standalone: standalone)
         if let parseError = readXMLData(xmlData) {
-            throw parseError
+            error = parseError
+            return nil
         }
     }
     

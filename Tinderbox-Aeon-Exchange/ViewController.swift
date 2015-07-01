@@ -13,7 +13,7 @@ class ViewController: NSViewController {
     var parseTbx : Bool?
     var parseAeon : Bool?
     
-
+    var fileURL: NSURL?
     
     
     @IBOutlet weak var ovTinderbox: NSOutlineView!
@@ -21,16 +21,16 @@ class ViewController: NSViewController {
     @IBOutlet weak var ovAeon: NSOutlineView!
     
     @IBOutlet weak var ovScrivener: NSOutlineView!
-   
+    
     
     @IBOutlet var outlineViewControllerTbx: OutlineViewControllerTbx!
-
+    
     @IBOutlet var outlineViewControllerAeon: OutlineViewControllerAeon!
- 
-
+    
+    
     @IBOutlet var outlineViewControllerScrivener: OutlineViewControllerScrivener!
     
-
+    
     required   init?(coder: NSCoder) {
         super.init(coder: coder)
         parseAeon = false
@@ -38,7 +38,7 @@ class ViewController: NSViewController {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.mainViewController = self
-
+        
     }
     
     
@@ -72,36 +72,6 @@ class ViewController: NSViewController {
     
     @IBAction func loadAeonXmlDocument(sender: AnyObject) {
         
-       let openFileTypes = ["aeonxml"]
-        
-        let openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = true
-        openPanel.canCreateDirectories = false
-        openPanel.canChooseFiles = true
-        openPanel.allowedFileTypes = openFileTypes
-        
-       openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___aeon/",isDirectory: false)
-        let _ = openPanel.URLs
-        let _ = openPanel.runModal()
-        
-        if let fileurl  = openPanel.URL {
-            
-            if let xmlParserAeon = XMLParserAeon(contentPath: fileurl  ) {
-                xmlParserAeon.parse()
-                
-            }
-            else {
-                
-            }
-            
-        }
-    }
-    
-    /*
-    
-        print("well done ae")
-        
         let openFileTypes = ["aeonxml"]
         
         let openPanel = NSOpenPanel()
@@ -115,39 +85,71 @@ class ViewController: NSViewController {
         let _ = openPanel.URLs
         let _ = openPanel.runModal()
         
-        if let chosenfile  = openPanel.URL {
-            print("file found")
-            parseAeon = true
+        if  let fileurl  = openPanel.URL {
             
-            //  textViewAeon.string = "hello, world"
             
-            let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
-            xmlParser!.delegate = self
-            xmlParser!.parse()
-            parseAeon = false
             
-            var error: NSError?
-            
-            //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
-            let path = chosenfile.path!
-            let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
-            //var str : NSString = NSString(data: vara, encoding: NSUTF8StringEncoding)!
-            
-//xmldoc
+            if let xmlParserAeon = XMLParserAeon(contentPath: fileurl   ) {
+                xmlParserAeon.parse()
+                
+            }
+            else {
+                
+            }
             
         }
-        
-        // retry the completion handler version
-        
-        // aeonxml
-        //test
-        
+    }
+    
+    /*
+    
+    print("well done ae")
+    
+    let openFileTypes = ["aeonxml"]
+    
+    let openPanel = NSOpenPanel()
+    openPanel.allowsMultipleSelection = false
+    openPanel.canChooseDirectories = true
+    openPanel.canCreateDirectories = false
+    openPanel.canChooseFiles = true
+    openPanel.allowedFileTypes = openFileTypes
+    
+    openPanel.directoryURL = NSURL(fileURLWithPath: "/Users/mprenez-isbell/Dropbox/___aeon/",isDirectory: false)
+    let _ = openPanel.URLs
+    let _ = openPanel.runModal()
+    
+    if let chosenfile  = openPanel.URL {
+    print("file found")
+    parseAeon = true
+    
+    //  textViewAeon.string = "hello, world"
+    
+    let xmlParser = NSXMLParser(contentsOfURL: openPanel.URL!)
+    xmlParser!.delegate = self
+    xmlParser!.parse()
+    parseAeon = false
+    
+    var error: NSError?
+    
+    //let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+    let path = chosenfile.path!
+    let data: NSData = NSFileManager.defaultManager().contentsAtPath(path)!
+    //var str : NSString = NSString(data: vara, encoding: NSUTF8StringEncoding)!
+    
+    //xmldoc
+    
+    }
+    
+    // retry the completion handler version
+    
+    // aeonxml
+    //test
+    
     }
     */
-
     
     
-
+    
+    
     
     
     
@@ -169,7 +171,9 @@ class ViewController: NSViewController {
         let _ = openPanel.runModal()
         
         if let fileurl  = openPanel.URL {
-   
+            
+            self.fileURL = fileurl
+            
             if let xmlParserTbx = XMLParserTbx(contentPath: fileurl  ) {
                 xmlParserTbx.parse()
                 
@@ -177,7 +181,7 @@ class ViewController: NSViewController {
             else {
                 
             }
-
+            
         }
         
     }
@@ -195,7 +199,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-   
+        
     }
     
     override var representedObject: AnyObject? {

@@ -1,0 +1,24 @@
+
+<attrib Name="AeonTimelineEvent" visibleInEditor="1" default="" parent="AeonTimeline" editable="0">
+<attrib Name="AeonEventNoteStatus" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="1"/>
+<attrib Name="AeonEventID" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventLocked" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventTitle" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventAllDay" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventStartDate" visibleInEditor="1" default="" type=" 0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventDescription" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventIncludeInExport" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventLabel" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventArc" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventRelationships" visibleInEditor="1" default="" type="10" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventTags" visibleInEditor="1" default="" type="10" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventCompleted" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventDuration" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventDurationUnit" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventShowTime" visibleInEditor="1" default="" type="0" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventShowDay" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventShowMonth" visibleInEditor="1" default="" type="2" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventExternalLinks" visibleInEditor="1" default="" type="10" parent="AeonTimeline" editable="0"/>
+<attrib Name="AeonEventNoteStatus" visibleInEditor="1" default="" type="8" parent="AeonTimeline" editable="0"/>
+
+
