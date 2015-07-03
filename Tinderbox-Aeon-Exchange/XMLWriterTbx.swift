@@ -186,7 +186,7 @@ class XMLWriterTbx  {
                 for arraych in arrayel.children {
                     //print (arraych.attributes)
                     if let name  = arraych.attributes["name"] as? String {
-                        print (name)
+                        //print (name)
                         if name == "Name" { // "Aeon Timeline TASC Container" {
                             if arraych.value == "Aeon Timeline TASC Container" {
                                 tascItem = tbxXmlDoc.root["item"]["item"]
@@ -225,7 +225,7 @@ class XMLWriterTbx  {
                         aeTascContainerTbxAttributeElement.value = "Aeon Timeline TASC Container"
                     } else {
                         aeTascContainerTbxAttributeElement.value = attribArray[1] as String
-                        print ( aeTascContainerTbxAttributeElement.value)
+                       // print ( aeTascContainerTbxAttributeElement.value)
                     }
                     
                     
@@ -259,10 +259,7 @@ class XMLWriterTbx  {
                 
                 // get the events
                 for arrayel in aeonXmlDoc.root["Events"]["Event"].all! {
-                    
-                    print(arrayel.name)
-                    print (arrayel.value)
-                    
+         
                     
                     // i am sure there is a better way to do this. later.
                     var tbxname : String = ""
@@ -318,9 +315,7 @@ class XMLWriterTbx  {
                     
                     // get the event's child element attributes
                     for arraych in arrayel.children {
-                        print(arraych.name)
-                        print (arraych.value)
-                        
+
                         if arraych.name == "EventTitle" {
                             saveEventTitle = arraych.value
                         }
@@ -377,24 +372,11 @@ class XMLWriterTbx  {
                         
                         aeonEventXmlElement.addChild(aeEventTbxAttributeElement)
                     }
-                    
-                    
-                    
-                    aeonEventXmlElement.addChild(aeonEventChildXmlElement)
-                    
-                    
-                    
-                    //also add necessary tinderbox children
-                    
-                    // here
-                    
+ 
                     self.tascBaseContainer.addChild(aeonEventXmlElement)
                 }
                 
-                // create elements from aeon events
-                // and add them to self.tascBaseContainer
-                
-                
+
                 
             }
             

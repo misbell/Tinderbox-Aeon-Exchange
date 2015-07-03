@@ -48,8 +48,21 @@ add prototypes
 add container
 add key attributes
 get spacing right
+get user id, creator, create dates right
+write it out to disk
+
+add lists for relationships and tags
+set it not to write over existing notes
+set it to update existing notes, aeon information
+think about what to update in tbx from the aeon note. dates? span = intervals?
+
 
 save the doc
 
 clean up this messy code
+
+
+
+
+
 
