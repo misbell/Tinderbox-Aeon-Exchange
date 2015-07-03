@@ -1,0 +1,147 @@
+<preferences>
+<Creator>prenez</Creator>
+<ToolbarVisible>1</ToolbarVisible>
+<OpenTextImmediately>0</OpenTextImmediately>
+<Tinderbox5Wizard>1</Tinderbox5Wizard>
+<DynamicSpelling>0</DynamicSpelling>
+<AutoOpen>1</AutoOpen>
+<AutomaticBackup>1</AutomaticBackup>
+<ReopenLastDocument>0</ReopenLastDocument>
+<Autosave>0</Autosave>
+<KeepWindowsOpen>1</KeepWindowsOpen>
+<LeftMargin>2</LeftMargin>
+<RightMargin>-2</RightMargin>
+<ParagraphSpacing>4</ParagraphSpacing>
+<TextFont>HoeflerText-Regular</TextFont>
+<TextSize>5</TextSize>
+<TextJust>0</TextJust>
+<AlwaysShowTextLinks>1</AlwaysShowTextLinks>
+<ShowWikiLinks>1</ShowWikiLinks>
+<TextLinkFrames>1</TextLinkFrames>
+<TextLinkColorString>#0066cc</TextLinkColorString>
+<TextBackgroundColorString>white</TextBackgroundColorString>
+<SmartQuotes>1</SmartQuotes>
+<TextWindowWidth>6</TextWindowWidth>
+<TextWindowHeight>6</TextWindowHeight>
+<AutoIndentLists>1</AutoIndentLists>
+<ShowTitle>0</ShowTitle>
+<TitleFont>HelveticaNeue</TitleFont>
+<TitleSize>2</TitleSize>
+<TitleJust>2</TitleJust>
+<MapShowLinks>1</MapShowLinks>
+<MapEnacted>1</MapEnacted>
+<InPlaceEditing>1</InPlaceEditing>
+<MapLabelSize>4</MapLabelSize>
+<MapBackgroundColorString>#f2f2ed</MapBackgroundColorString>
+<MapBackgroundColorString2>#f2f2ed</MapBackgroundColorString2>
+<OpaqueAdornments>0</OpaqueAdornments>
+<MapBackgroundPattern>plain</MapBackgroundPattern>
+<PrototypeHighlightColorString>#cceecc</PrototypeHighlightColorString>
+<MapFont>HelveticaNeue</MapFont>
+<DarkenOutlineColors>1</DarkenOutlineColors>
+<BlackOutlineText>0</BlackOutlineText>
+<UnderlineAliases>0</UnderlineAliases>
+<AutomaticLinkDetection>1</AutomaticLinkDetection>
+<HiddenTabBar>0</HiddenTabBar>
+<OutlineLeading>2</OutlineLeading>
+<InteriorScale>1</InteriorScale>
+<InteriorScaleNew>1.5</InteriorScaleNew>
+<ExpandMode>1</ExpandMode>
+<AfterLinkingSelect>2</AfterLinkingSelect>
+<ExportImageFormat>1</ExportImageFormat>
+<ExportURL>http://</ExportURL>
+<ExportHTMLHelper>Safari</ExportHTMLHelper>
+<ExportHTMLExtension>1</ExportHTMLExtension>
+<HTMLParagraphStyle>1</HTMLParagraphStyle>
+<HTMLViewFont>Lucide Grande</HTMLViewFont>
+<HTMLViewFontSize>2</HTMLViewFontSize>
+<ExportTemplatePath>plain</ExportTemplatePath>
+<RoadmapWindowWidth>0</RoadmapWindowWidth>
+<RoadmapWindowHeight>0</RoadmapWindowHeight>
+<TextExportViewFont>Lucide Grande</TextExportViewFont>
+<TextExportViewFontSize>2</TextExportViewFontSize>
+<ExportTextTemplatePath>outline</ExportTextTemplatePath>
+<ExportTextHelper>TextEdit</ExportTextHelper>
+<AskToDelete>2</AskToDelete>
+<DailyTip>1</DailyTip>
+<WarnEditingDefault>1</WarnEditingDefault>
+<WarnDuplicateName>1</WarnDuplicateName>
+<RunScriptsAutomatically>1</RunScriptsAutomatically>
+<Version>version 6.3.1</Version>
+<PreferencePane>0</PreferencePane>
+<LastBadgeFamily>1</LastBadgeFamily>
+<TipWindowX>300</TipWindowX>
+<TipWindowY>50</TipWindowY>
+<RegUserName />
+<RegUserOrg />
+<CurrentAttributeClass />
+<CurrentAttribute />
+<FindCaseSensitive>1</FindCaseSensitive>
+<ExportFolder>~/Desktop</ExportFolder>
+<ReadOnly>0</ReadOnly>
+<InfoWindowHeight>0</InfoWindowHeight>
+<InfoWindowWidth>0</InfoWindowWidth>
+<RecentFiles />
+<PingServer>http://rpc.weblogs.com/RPC2</PingServer>
+<PingMethod>weblogUpdates.ping</PingMethod>
+<PingTitle>your weblog name</PingTitle>
+<PingURL>weblog URL</PingURL>
+<PingTechnorati>1</PingTechnorati>
+<PingWeblogsCom>1</PingWeblogsCom>
+<PingGoogle>1</PingGoogle>
+<PingFeedURL />
+<WeblogServer>http://your_host/cgi-bin/mt/mt-xmlrpc.cgi</WeblogServer>
+<WeblogUser />
+<WeblogPassword />
+<WeblogID>1</WeblogID>
+<WeblogKind>2</WeblogKind>
+<ToolbarKind>-16883</ToolbarKind>
+<ReadingReminders>0</ReadingReminders>
+<AllowViews>1</AllowViews>
+<AutomaticAgentUpdate>1</AutomaticAgentUpdate>
+<ToolbarX>0</ToolbarX>
+<ToolbarY>0</ToolbarY>
+<FindWindowX>600</FindWindowX>
+<FindWindowY>100</FindWindowY>
+<RenameWindowX>-1</RenameWindowX>
+<RenameWindowY>-1</RenameWindowY>
+<InspectorX>2260</InspectorX>
+<InspectorY>917</InspectorY>
+<EnterKeyAction>0</EnterKeyAction>
+<UpdateViewShown />
+<TimelineScale>1000</TimelineScale>
+<TimelineLabelSize>0</TimelineLabelSize>
+<GetInfoPane />
+<GetInfoCategory />
+<GetInfoSelection />
+<LastLinkName>*untitled</LastLinkName>
+<UsingGuides>1</UsingGuides>
+<SystemAttributesCategory />
+<SystemAttributesSelection />
+<CheckMail>0</CheckMail>
+<MailHost />
+<MailUser />
+<MailPassword />
+<CheckSimplenote>0</CheckSimplenote>
+<SimplenoteEmail />
+<SimplenotePassword />
+<SimplenoteTag />
+<MapBackgroundColor>0 0 0</MapBackgroundColor>
+<MapBackgroundColor2>0 0 0</MapBackgroundColor2>
+<TextColor>0 0 0</TextColor>
+<TextBackgroundColor>65535 65535 65535</TextBackgroundColor>
+<TitleBackgroundColor>0 0 0</TitleBackgroundColor>
+<TitleForegroundColor>65535 65535 65535</TitleForegroundColor>
+<ActiveLinkColor>65535 0 0</ActiveLinkColor>
+<VisitedLinkColor>26112 0 52224</VisitedLinkColor>
+<MagnifyFonts>1</MagnifyFonts>
+<MagnifyPictures>1</MagnifyPictures>
+<RememberWindowPositions>1</RememberWindowPositions>
+<ExportHTMLCreator>1</ExportHTMLCreator>
+<ExportTextCreator>1</ExportTextCreator>
+<ShowSidebar>1</ShowSidebar>
+<MapPrototypeColor>52428 61166 52428</MapPrototypeColor>
+<TextLinkColor>0 26112 52224</TextLinkColor>
+<LastVersionString />
+<ExplodeDelimiter />
+</preferences>

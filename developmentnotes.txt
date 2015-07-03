@@ -1,0 +1,46 @@
+ok, been thinking about this. i think the super-simple implementation is the way to go for v 1.0 of this thing. no cloud, just all done in the app. so it would work like this.
+
+read in a tinderbox doc
+read in an aeon doc.
+press aeon to tinderbox button.
+tasc creates aeon container, and adornments to gather events, relationships, tags, entities, arcs, in the tinderbox elements in memory in tasc.
+(or uses them if they are already there)
+for right now, no modifying. the aeon container is cleared everytime you update it from aeon, and the events in aeon are cleared everytime aeon is updated from tinderbox. it will change and get better, but first pass just do this.
+events etc get turned into notes in tinderbox. have to think about how to arrange them. notes in the aeon container get turned into aeon events.
+there will be a mapping table somewhere.
+a tinderbox to aeon button will work the opposite way.
+for right now, no turning tbx timelines into aeon timelines. i will get to that later if there's a need for it, but I expect most timelines in tbx are small enough that people can just reenter the data.
+absolutely no writing over original documents. new document creation only. documents read in are immutable, and creates a mutable document until such time as it's written out.
+keep it very simple. i want to start using this for my book asap. save the programming heroics for later.
+
+
+
+
+
+If Aeon Event doesn't exist in Tinderbox doc (a search of all notes. does aeon id exist. if yes, id=id?)
+create a new Tinderbox note, with type 'new aeon event' for gathering by smart adornment.
+
+If Aeon Event does exist in Tinderbox doc
+update all of its Aeon information, but none of its Tinderbox information, such as xpos, ypos, links
+do update its name, which = the name of the event
+
+also, don't update tinderbox's timeline information. this is not intended to turn an aeon timeline doc into a tinderbox timeline. it's intended to bring aeon timeline events into tinderbox to let you treat them as notes and make other relationships with them. i am deliberately relegating all timeline functions to aeon. in my opinion, attempting this would just confuse the clean line I am trying to draw.
+
+if a Tinderbox note with Aeon id exists that does not exist in Aeon Timeline doc,
+then that note was deleted in the Aeon Timeline doc and should be deleted from Tinderbox
+IF a switch is set. Default behavior should be, don't delete it.
+
+
+
+
+
+okay, just made a decision to make all the Aeon imported data non-editable. The idea is to protect the user from himself, and creating a 'ruined' note accidentally. in order to change an aeon timeline event, you have to go into aeontimeline and change it, then reimport it. the big exception is the note title/event name of course, and the notes, which will get squirted back into aeon description attribute, at such time as I write code to send tinderbox to aeon, which won't be right away.
+
+so the main purpose of the aeon attributes will be to match notes. I could get away with importing a lot less data, true, but this is building against the future. I don't know what it will occur to me to do with the data later.
+
+does it make sense to write the aeon date into the tinderbox date? i'd rather not, and keep the separation there clean. but i can see an argument the other way. Here's a thought. What about writing the aeon date into caption, and maybe writing something else into the subtitle? The arc, perhaps. or maybe write arc and entities into the body of the note.
+
+of course, you'll be able to edit all the tinderbox attributes at will.
+
+
+

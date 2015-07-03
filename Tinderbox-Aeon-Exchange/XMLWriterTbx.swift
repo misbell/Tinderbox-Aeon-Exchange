@@ -72,17 +72,6 @@ class XMLWriterTbx  {
                 }
             }
 
-            
-        /*
-            
-            let el = xmlDoc.root["attrib"]["attrib"].attributes["Name"]
-            
-            if el as! String == "User" {
-                let x = xmlDoc.root["attrib"]["attrib"]
-                x.addChild(self.rootAttribElement)
-                
-            }
-*/
 
           print(xmlDoc.xmlString)
             
@@ -144,17 +133,6 @@ class XMLWriterTbx  {
                 }
             }
 
-            /*
-            
-            let el = xmlDoc.root["attrib"]["attrib"].attributes["Name"]!
-            if el as! String == "User" {
-                let x = xmlDoc.root["attrib"]["attrib"]
-                x.addChild(self.rootAttribElement)
-                
-                addAeonTimelineEventAttribs(rootAttribElement)
-                
-            }
-*/
 
         }
  
@@ -203,8 +181,6 @@ class XMLWriterTbx  {
     func writeChildren(item: TbxItem) {
         
         for child in item.children {
-            
-            //print (" \(child.name)  \(child.value)")
             
             writeChildren(child)
             

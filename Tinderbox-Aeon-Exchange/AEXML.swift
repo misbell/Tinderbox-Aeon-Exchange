@@ -195,40 +195,69 @@ public class AEXMLElement: Equatable {
             // insert attributes
             for (key, value) in attributes {
                 
-                var keyyy :String = key as! String
-                var sss: String = " "
-                if name == "MapBackgroundPattern" {
-                    sss = "ok"
-                }
                 
                 var newvalue = ""
                 if value is String {
                     
-                    if value as! String == "plain" {
-                        sss = "okok"
-                    }
-                    
                     if let s:String = value as! String {
+                        
+                        /*         var chars : [Character] = []
                         for character in s.characters  {
-                            
-                            if character == ("<") {
-                                print ("xxxx& lt:")
-                                newvalue = newvalue + "&lt;"
-                            }else if character == ">" {
-                                newvalue = newvalue + "&gt;"
-                            }else if character == "\"" {
-                                newvalue = newvalue + "&quot;"
+                        chars.append(character)
+                        break;
+                        }
+                        if chars[0] == "<" {
+                        
+                        }
+                        */
+                        if !s.isEmpty {
+                            var firstChar : Character = s[s.startIndex]
+                            if firstChar == "<" {
+                                for character in s.characters  {
+                                    
+                                    if character == ("<") {
+                                        print ("xxxx& lt:")
+                                        newvalue = newvalue + "&lt;"
+                                    }else if character == ">" {
+                                        newvalue = newvalue + "&gt;"
+                                    }else if character == "\"" {
+                                        newvalue = newvalue + "&quot;"
+                                        
+                                        
+                                    } else {
+                                        
+                                        newvalue.append(character)
+                                    }
+                                }
+                                xml += " \(key)=\"\(newvalue)\""
+   
+                            }
+                            else
+                            {
+                                xml += " \(key)=\"\(value)\""
                                 
-                                
-                            } else {
-                                
-                                newvalue.append(character)
                             }
                         }
+                        else {
+                            xml += " \(key)=\"\(value)\""
+                        }
+                        
+                    }
+                    else
+                    {
+                        xml += " \(key)=\"\(value)\""
+                        
                     }
                     
+                    
                 }
-                xml += " \(key)=\"\(newvalue)\""
+                else {
+                    xml += " \(key)=\"\(value)\""
+                    
+                }
+                
+                
+                
             }
         }
         
@@ -357,7 +386,7 @@ class AEXMLParser: NSObject, NSXMLParserDelegate {
     
     // MARK: NSXMLParserDelegate
     
-     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
         currentValue = String()
         currentElement = currentParent?.addChild(name: elementName, attributes: attributeDict)
         currentParent = currentElement
@@ -365,7 +394,7 @@ class AEXMLParser: NSObject, NSXMLParserDelegate {
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         currentValue += string ?? String()
-        let newValue = currentValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let newValue = currentValue //.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         currentElement?.value = newValue == String() ? nil : newValue
     }
     

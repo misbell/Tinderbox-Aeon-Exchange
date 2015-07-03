@@ -14,6 +14,9 @@
 		2725D9B61B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */; };
 		27D008641B442CCA00E677E4 /* AEXMLltg.txt in Sources */ = {isa = PBXBuildFile; fileRef = 27D008631B442CCA00E677E4 /* AEXMLltg.txt */; };
 		27D008661B447FC900E677E4 /* newxml.txt in Resources */ = {isa = PBXBuildFile; fileRef = 27D008651B447FC900E677E4 /* newxml.txt */; };
+		C905C3541B46AC38007037A2 /* bad-preferences.txt in Resources */ = {isa = PBXBuildFile; fileRef = C905C3531B46AC38007037A2 /* bad-preferences.txt */; };
+		C905C3561B46B097007037A2 /* goodpreferences.txt in Resources */ = {isa = PBXBuildFile; fileRef = C905C3551B46B097007037A2 /* goodpreferences.txt */; };
+		C905C3581B46BA6E007037A2 /* developmentnotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = C905C3571B46BA6E007037A2 /* developmentnotes.txt */; };
 		C9158FB61B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */; };
 		C9158FB81B3F826100F5A9DD /* TbxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FB71B3F826100F5A9DD /* TbxItem.swift */; };
 		C9158FBF1B40019D00F5A9DD /* AeonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9158FBE1B40019D00F5A9DD /* AeonItem.swift */; };
@@ -62,6 +65,9 @@
 		2725D9B51B3B061F00968814 /* Tinderbox_Aeon_ExchangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinderbox_Aeon_ExchangeTests.swift; sourceTree = "<group>"; };
 		27D008631B442CCA00E677E4 /* AEXMLltg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AEXMLltg.txt; sourceTree = "<group>"; };
 		27D008651B447FC900E677E4 /* newxml.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = newxml.txt; sourceTree = "<group>"; };
+		C905C3531B46AC38007037A2 /* bad-preferences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bad-preferences.txt"; sourceTree = "<group>"; };
+		C905C3551B46B097007037A2 /* goodpreferences.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goodpreferences.txt; sourceTree = "<group>"; };
+		C905C3571B46BA6E007037A2 /* developmentnotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = developmentnotes.txt; sourceTree = "<group>"; };
 		C9158FB51B3F52CB00F5A9DD /* OutlineViewControllerAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerAeon.swift; sourceTree = "<group>"; };
 		C9158FB71B3F826100F5A9DD /* TbxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TbxItem.swift; path = ../TbxItem.swift; sourceTree = "<group>"; };
 		C9158FBE1B40019D00F5A9DD /* AeonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AeonItem.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 		2725D9941B3B061F00968814 = {
 			isa = PBXGroup;
 			children = (
+				C905C3571B46BA6E007037A2 /* developmentnotes.txt */,
+				C905C3531B46AC38007037A2 /* bad-preferences.txt */,
+				C905C3551B46B097007037A2 /* goodpreferences.txt */,
 				C91C7A3F1B4623B300B2569F /* oldxmlwritertbx.txt */,
 				27D008651B447FC900E677E4 /* newxml.txt */,
 				C95307051B3EA71500E9954E /* app notes.txt */,
@@ -320,8 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2725D9A71B3B061F00968814 /* Images.xcassets in Resources */,
+				C905C3541B46AC38007037A2 /* bad-preferences.txt in Resources */,
 				27D008661B447FC900E677E4 /* newxml.txt in Resources */,
 				C978C38A1B45F40600D4D338 /* aexml-clean.txt in Resources */,
+				C905C3561B46B097007037A2 /* goodpreferences.txt in Resources */,
+				C905C3581B46BA6E007037A2 /* developmentnotes.txt in Resources */,
 				C95307061B3EA71500E9954E /* app notes.txt in Resources */,
 				C91C7A401B4623B300B2569F /* oldxmlwritertbx.txt in Resources */,
 				C97583041B3C10330075AC8A /* Notes.txt in Resources */,

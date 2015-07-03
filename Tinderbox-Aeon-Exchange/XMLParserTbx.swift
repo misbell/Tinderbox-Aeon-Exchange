@@ -66,11 +66,12 @@ class XMLParserTbx   {
             
             for child in xmlDoc.root.children {
                 if let _ = child.value {
-                    
+                 //   print("\(child.name) and \(child.value!)")
                     currentItem = TbxItem(name: child.name, value: child.value!, children: [])
                     self.tbxItems.addChild(currentItem)
                 }
                 else {
+                            //print("\(child.name) and NO VALUE NO VALUE NO VALUE )")
                     currentItem = TbxItem(name: child.name, value: "", children: [])
                     self.tbxItems.addChild(currentItem)
                 }
@@ -79,7 +80,7 @@ class XMLParserTbx   {
                     
                     if currentItem.name == "item" {
                         if attribute.0 == "ID" {
-                          //  print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+
                             let x = Int64(attribute.1 as! String)
                             self.itemIDNumbers.append(x!)
                         }
@@ -114,19 +115,22 @@ class XMLParserTbx   {
         for child in element.children {
             
             if let _ = child.value {
-                
+           //      print("\(child.name) and \(child.value!)")
                 currentItem = TbxItem(name: child.name, value: child.value!, children: [])
                 parentItem.addChild(currentItem)
             }
             else {
+               // print("\(child.name) and NO VALUE  )")
                 currentItem = TbxItem(name: child.name, value: "", children: [])
                 parentItem.addChild(currentItem)
+                
+                
             }
             
             for attribute in child.attributes {
                 if currentItem.name == "item" {
                     if attribute.0 == "ID" {
-                     //   print("\t Tinderbox item \(attribute.0) :: \(attribute.1) ")
+
                         let x = Int64(attribute.1 as! String)
                         self.itemIDNumbers.append(x!)
                     }
