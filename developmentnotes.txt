@@ -55,14 +55,18 @@ add lists for relationships and tags
 set it not to write over existing notes
 set it to update existing notes, aeon information
 think about what to update in tbx from the aeon note. dates? span = intervals?
+make sure the description in aeon gets into the text note in tinderbox
 
+add file menu
 
 save the doc
 
 clean up this messy code
 
 
+http://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch
 
+http://stackoverflow.com/questions/24010569/error-handling-in-swift-language
 
 
 

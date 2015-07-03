@@ -381,15 +381,51 @@ class XMLWriterTbx  {
             }
             
             
-            print(tbxXmlDoc.xmlString)
+           // print(tbxXmlDoc.xmlString)
+            
+            var path : String = ""
+            let savePanel = NSSavePanel()
+            savePanel.beginWithCompletionHandler { (result: Int) -> Void in
+                if result == NSFileHandlingPanelOKButton {
+                    _ = savePanel.URL  //writing
+                
+                    
+                    path  = savePanel.URL!.path!
+                    
+     
+
+                    // Save the data. What you do depends on your app.
+                    // Don't just paste this code in your app as your app
+                    // probably doesn't have a createPDF() method.                                			self.createPDF(exportedFileURL)
+                }
+                
+                do {
+                    try
+                        tbxXmlDoc.xmlString.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+        
+                } catch {
+                    // Catch all error-handling
+                }
+ 
+            
+                
+            } // End block
+            
+            
             
             
         }
         
     }
     
+    enum FileWriteError: ErrorType {
+        case Unknown
+        case Known
+    }
+    
     func writeOutTheTinderboxDocToTheDrive() {
-        
+
+      
     }
     
     
