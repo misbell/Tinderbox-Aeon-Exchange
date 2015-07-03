@@ -21,7 +21,54 @@ class XMLWriterTbx  {
     var aeondata: NSData
     
     
-    let aeonEventAttributes = ["AeonEventNoteStatus,0,1",
+    
+    /*
+    0 - string
+    1 - color
+    2 - number
+    3 - file
+    4 - boolean
+    5 - date
+    6 - (alias)
+    7 - action
+    8 - set
+    9 - url
+    10 - list
+    */
+    
+    var tascBaseContainer : AEXMLElement = AEXMLElement("dummy")
+    
+    // AeonNoteType - events, arcs, entities
+    // AeonNoteStatus - tbd - future use
+    
+    //relations and tags are lists, child elements entity, participation level
+    // duration has a an attribute
+    
+    let aeonEventToTinderboxMap = ["None, AeonNoteType, 0, 0",
+    "None, AeonEventNoteStatus,0,1",
+        "ID, AeonEventID,2,0",
+        "Locked, AeonEventLocked,2,0",
+        "EventTitle,AeonEventTitle,0,0",
+        "AllDay,AeonEventAllDay,2,0",
+        "StartDate,AeonEventStartDate, 0,0",
+        "Description,AeonEventDescription,0,0",
+        "IncludeInExport,AeonEventIncludeInExport,2,0",
+        "Label,AeonEventLabel,0,0",
+        "Arc,AeonEventArc,0,0",
+        "Relationships,AeonEventRelationships,10,0",
+        "Tags,AeonEventTags,10,0",
+        "Completed,AeonEventCompleted,2,0",
+        "Duration,AeonEventDuration,2,0",
+        "DurationUnit,AeonEventDurationUnit,0,0",
+        "ShowTime,AeonEventShowTime,0,0",
+        "ShowDay,AeonEventShowDay,2,0",
+        "ShowMonth,AeonEventShowMonth,2,0",
+        "ExternalLinks,AeonEventExternalLinks,10,0"]
+    
+    
+    
+    let aeonEventAttributes = [ "AeonNoteType,0,0",
+        "AeonEventNoteStatus,0,1",
         "AeonEventID,2,0",
         "AeonEventLocked,2,0",
         "AeonEventTitle,0,0",
@@ -39,8 +86,8 @@ class XMLWriterTbx  {
         "AeonEventShowTime,0,0",
         "AeonEventShowDay,2,0",
         "AeonEventShowMonth,2,0",
-        "AeonEventExternalLinks,10,0",
-        "AeonEventNoteStatus,8,0" ]
+        "AeonEventExternalLinks,10,0"
+    ]
     
     let basicNoteAttributes = [
         
@@ -163,15 +210,83 @@ class XMLWriterTbx  {
                     tascBaseItem.addChild(aeTascContainerTbxAttributeElement)
                 }
                 
-                
+                self.tascBaseContainer = tascBaseItem
                 baseItem.addChild(tascBaseItem)
                 
                 
             }
             
             
-            // now,
+            // now, let's just go get the events in the aeon document.
             
+            
+            var error: NSError?
+            
+            if let aeonXmlDoc = AEXMLDocument(xmlData: self.aeondata, error: &error) {
+                
+                // ID and Locked are attributes on event
+                // everything else is a child element
+                
+                // add aeon attribs to user section of tinderbox doc
+                //   for arrayel in aeonXmlDoc.root["Events"]["Event"].all! {
+                //     if let title  = arrayel.attributes["EventTitle"] as? String {
+                //       print(title)
+                // }
+                // }
+                
+                
+                // get the events
+                for arrayel in aeonXmlDoc.root["Events"]["Event"].all! {
+                    
+                    print(arrayel.name)
+                    print (arrayel.value)
+                    
+                    
+                    // i am sure there is a better way to do this. later.
+                    var tbxname : String = ""
+                    for attribs in aeonEventToTinderboxMap {
+                        let s = attribs.componentsSeparatedByString(",")
+                        if s[0] == arrayel.name {
+                            tbxname = s[1]
+                            break
+                        }
+                    }
+                    
+                    let aeonEventXmlElement = AEXMLElement("item")
+                    aeonEventXmlElement.value = arrayel.value!
+                    for attribute in arrayel.attributes {
+                        
+                    }
+                    // also add necessary tinderbox attributes, id and creator
+                    
+                    
+                    
+                    // get the events child element attributes
+                    for arraych in arrayel.children {
+                        print(arraych.name)
+                        print (arraych.value)
+                        
+                        let aeonEventChildXmlElement = AEXMLElement("attribute")
+                        if let childvalue = arraych.value {
+                            aeonEventChildXmlElement.value = arraych.value!
+                            for attribute in arraych.attributes {
+                                
+                            }
+                        }
+                        else {
+                            aeonEventChildXmlElement.value = " "
+                        }
+                        
+                    }
+                    //also add necessary tinderbox children
+                    
+                    
+                }
+                
+                // create elements from aeon events
+                // and add them to self.tascBaseContainer
+                
+            }
             
             
             print(tbxXmlDoc.xmlString)
