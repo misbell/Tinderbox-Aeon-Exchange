@@ -13,7 +13,9 @@ class ViewController: NSViewController {
     var parseTbx : Bool?
     var parseAeon : Bool?
     
-    var fileURL: NSURL?
+    var tbxfileURL: NSURL?
+    var aeonfileURL: NSURL?
+    var scrivfileURL: NSURL?
     
     
     @IBOutlet weak var ovTinderbox: NSOutlineView!
@@ -59,6 +61,10 @@ class ViewController: NSViewController {
         
         if let fileurl  = openPanel.URL {
             
+            
+            self.scrivfileURL = fileurl
+
+            
             if let xmlParserScrivener = XMLParserScrivener(contentPath: fileurl  ) {
                 xmlParserScrivener.parse()
                 
@@ -87,6 +93,9 @@ class ViewController: NSViewController {
         
         if  let fileurl  = openPanel.URL {
             
+            
+            self.aeonfileURL = fileurl
+
             
             
             if let xmlParserAeon = XMLParserAeon(contentPath: fileurl   ) {
@@ -166,7 +175,7 @@ class ViewController: NSViewController {
         
         if let fileurl  = openPanel.URL {
             
-            self.fileURL = fileurl
+            self.tbxfileURL = fileurl
             
             if let xmlParserTbx = XMLParserTbx(contentPath: fileurl  ) {
                 xmlParserTbx.parse()

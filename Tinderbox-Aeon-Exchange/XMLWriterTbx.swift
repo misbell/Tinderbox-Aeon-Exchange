@@ -12,9 +12,14 @@ class XMLWriterTbx  {
     
     var tbxItems : [TbxItem]
     var tbxItem : TbxItem
-    var fileurl : NSURL
-    var path: String
-    var data: NSData
+    var tbxfileurl : NSURL
+    var tbxpath: String
+    var tbxdata: NSData
+    
+    var aeonfileurl : NSURL
+    var aeonpath: String
+    var aeondata: NSData
+    
     
     let aeonEventAttributes = ["AeonEventNoteStatus,0,1",
         "AeonEventID,2,0",
@@ -43,24 +48,42 @@ class XMLWriterTbx  {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         self.tbxItems = (appDelegate.mainViewController?.outlineViewControllerTbx.tbxItems)!
         self.tbxItem = tbxItems[0]
-        if let furl = (appDelegate.mainViewController?.fileURL) {
-            self.fileurl = furl
+        
+        
+        // try optional chaining here on file urls, at some point
+        
+        // init tbx data
+        if let furl = (appDelegate.mainViewController?.tbxfileURL) {
+            self.tbxfileurl = furl
         }
         else {
-            self.fileurl = NSURL(fileURLWithPath: "") // should never happen
+            self.tbxfileurl = NSURL(fileURLWithPath: "") // should never happen
         }
         
         
-        self.path = self.fileurl.path!
-        self.data = NSFileManager.defaultManager().contentsAtPath(path)!
+        self.tbxpath = self.tbxfileurl.path!
+        self.tbxdata = NSFileManager.defaultManager().contentsAtPath(self.tbxpath)!
+        
+        
+        // init aeon data
+        if let aeonfurl = (appDelegate.mainViewController?.aeonfileURL) {
+            self.aeonfileurl = aeonfurl
+        }
+        else {
+            self.aeonfileurl = NSURL(fileURLWithPath: "") // should never happen
+        }
+        
+        
+        self.aeonpath = self.aeonfileurl.path!
+        self.aeondata = NSFileManager.defaultManager().contentsAtPath(self.aeonpath)!
         
     }
     
-    func addToolsAeonAttributesToTinderboxDoc() {
+    func addAeonAttributesToTinderboxDoc() {
         
         var error: NSError?
         
-        if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error) {
+        if let xmlDoc = AEXMLDocument(xmlData: self.tbxdata, error: &error) {
             
             for arrayel in xmlDoc.root["attrib"]["attrib"].all! {
                 if let name  = arrayel.attributes["Name"] as? String {
@@ -71,11 +94,11 @@ class XMLWriterTbx  {
                     }
                 }
             }
-
-
-          print(xmlDoc.xmlString)
             
-       
+            
+            print(xmlDoc.xmlString)
+            
+            
         }
         
     }
@@ -84,11 +107,44 @@ class XMLWriterTbx  {
         
     }
     
+    
+    func  addAeonEventElementsToTinderboxDoc() {
+        
+        // for every event element in aeon doc
+        //     create tinderbox note element
+        //     set item attributes
+        //     for every aeon event attribute
+        //         create attributeelement for item
+        //     add item to items array
+        
+        
+        //  when done writing the array
+        //
+    }
+    
+    func  addAeonArcElementsToTinderboxDoc() {
+        
+
+        
+    }
+    
+    func  addAeonEntityElementsToTinderBoxDoc() {
+        
+    }
+    
+    
     func writeTinderboxXMLDocument() {
         
-       constructToolsAeonAttributesForTinderboxDoc()
-       addToolsAeonAttributesToTinderboxDoc()
-       writeOutTheTinderboxDocToTheDrive()
+        constructAeonAttributesForTinderboxDoc()
+        addAeonAttributesToTinderboxDoc()
+        
+        addAeonEventElementsToTinderboxDoc()
+        addAeonArcElementsToTinderboxDoc()
+        addAeonEntityElementsToTinderBoxDoc()
+        
+        
+        
+        writeOutTheTinderboxDocToTheDrive()
         
     }
     
@@ -117,10 +173,10 @@ class XMLWriterTbx  {
     */
     
     
-    func constructToolsAeonAttributesForTinderboxDoc() {
-
-                var error: NSError?
-        if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error) {
+    func constructAeonAttributesForTinderboxDoc() {
+        
+        var error: NSError?
+        if let xmlDoc = AEXMLDocument(xmlData: self.tbxdata, error: &error) {
             
             for arrayel in xmlDoc.root["attrib"]["attrib"].all! {
                 if let name  = arrayel.attributes["Name"] as? String {
@@ -132,16 +188,9 @@ class XMLWriterTbx  {
                     }
                 }
             }
-
-
+            
+            
         }
- 
-        
-      
-        
-        
-        
-        
         
     }
     
@@ -177,6 +226,7 @@ class XMLWriterTbx  {
         
     }
     
+    /*
     
     func writeChildren(item: TbxItem) {
         
@@ -187,5 +237,5 @@ class XMLWriterTbx  {
         }
         
     }
-    
+    */
 }
