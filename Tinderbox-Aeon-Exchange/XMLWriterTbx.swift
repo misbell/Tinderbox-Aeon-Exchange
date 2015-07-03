@@ -42,6 +42,17 @@ class XMLWriterTbx  {
         "AeonEventExternalLinks,10,0",
         "AeonEventNoteStatus,8,0" ]
     
+    let basicNoteAttributes = [
+        
+        "Created,2015-07-02T20:39:52-04:00",
+        "Modified,2015-07-02T20:39:52-04:00",
+        "Name,untitled",
+        "SelectionCount,1",
+        "Xpos,7.92578125",
+        "Ypos,5.116577148"
+        
+    ]
+    
     var rootAttribElement: AEXMLElement = AEXMLElement("dummy")
     
     init() {
@@ -83,20 +94,87 @@ class XMLWriterTbx  {
         
         var error: NSError?
         
-        if let xmlDoc = AEXMLDocument(xmlData: self.tbxdata, error: &error) {
+        if let tbxXmlDoc = AEXMLDocument(xmlData: self.tbxdata, error: &error) {
             
-            for arrayel in xmlDoc.root["attrib"]["attrib"].all! {
+            
+            // add aeon attribs to user section of tinderbox doc
+            for arrayel in tbxXmlDoc.root["attrib"]["attrib"].all! {
                 if let name  = arrayel.attributes["Name"] as? String {
                     if name == "User" {
                         
-                        let x = xmlDoc.root["attrib"]["attrib"]
+                        let x = tbxXmlDoc.root["attrib"]["attrib"]
                         x.addChild(self.rootAttribElement)
                     }
                 }
             }
             
             
-            print(xmlDoc.xmlString)
+            // add aeon attribs to user section of tinderbox doc
+            var tascItem : AEXMLElement?
+            for arrayel in tbxXmlDoc.root["item"]["item"].all! {
+                
+                
+                for arraych in arrayel.children {
+                    //print (arraych.attributes)
+                    if let name  = arraych.attributes["name"] as? String {
+                        print (name)
+                        if name == "Name" { // "Aeon Timeline TASC Container" {
+                            if arraych.value == "Aeon Timeline TASC Container" {
+                                tascItem = tbxXmlDoc.root["item"]["item"]
+                                // tascItem!.addChild(self.rootAttribElement)
+                            }
+                            
+                        }
+                    }
+                }
+                
+                
+            }
+            
+            if let atascItem = tascItem {
+                
+            }
+            else {
+                //make a new tascItem
+                let baseItem = tbxXmlDoc.root["item"]
+                let tascBaseItem = AEXMLElement("item" )
+                tascBaseItem.value = " "
+                // xml attributes
+                tascBaseItem.addAttribute("ID", value: "1535924109") // make it real
+                tascBaseItem.addAttribute("Creator", value: "prenez") // make it real
+                
+                
+                // tinderbox attributes
+                
+                for tbxattribute in basicNoteAttributes {
+                    let attribArray = tbxattribute.componentsSeparatedByString(",")
+                    
+                    let aeTascContainerTbxAttributeElement = AEXMLElement("attribute")
+                    
+                    aeTascContainerTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                    if attribArray[0] == "Name" {
+                        aeTascContainerTbxAttributeElement.value = "Aeon Timeline TASC Container"
+                    } else {
+                        aeTascContainerTbxAttributeElement.value = attribArray[1] as String
+                        print ( aeTascContainerTbxAttributeElement.value)
+                    }
+                    
+                    
+                    tascBaseItem.addChild(aeTascContainerTbxAttributeElement)
+                }
+                
+                
+                baseItem.addChild(tascBaseItem)
+                
+                
+            }
+            
+            
+            // now,
+            
+            
+            
+            print(tbxXmlDoc.xmlString)
             
             
         }
@@ -124,7 +202,7 @@ class XMLWriterTbx  {
     
     func  addAeonArcElementsToTinderboxDoc() {
         
-
+        
         
     }
     
@@ -229,13 +307,13 @@ class XMLWriterTbx  {
     /*
     
     func writeChildren(item: TbxItem) {
-        
-        for child in item.children {
-            
-            writeChildren(child)
-            
-        }
-        
+    
+    for child in item.children {
+    
+    writeChildren(child)
+    
+    }
+    
     }
     */
 }
