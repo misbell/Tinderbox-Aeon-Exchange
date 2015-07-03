@@ -45,12 +45,12 @@ class XMLWriterTbx  {
     // duration has a an attribute
     
     let aeonEventToTinderboxMap = ["None, AeonNoteType, 0, 0",
-    "None, AeonEventNoteStatus,0,1",
+        "None, AeonEventNoteStatus,0,1",
         "ID, AeonEventID,2,0",
         "Locked, AeonEventLocked,2,0",
         "EventTitle,AeonEventTitle,0,0",
         "AllDay,AeonEventAllDay,2,0",
-        "StartDate,AeonEventStartDate, 0,0",
+        "StartDate,AeonEventStartDate,0,0",
         "Description,AeonEventDescription,0,0",
         "IncludeInExport,AeonEventIncludeInExport,2,0",
         "Label,AeonEventLabel,0,0",
@@ -67,13 +67,13 @@ class XMLWriterTbx  {
     
     
     
-    let aeonEventAttributes = [ "AeonNoteType,0,0",
+    let aeonTbxEventAttributes = [ "AeonNoteType,0,0",
         "AeonEventNoteStatus,0,1",
         "AeonEventID,2,0",
         "AeonEventLocked,2,0",
         "AeonEventTitle,0,0",
         "AeonEventAllDay,2,0",
-        "AeonEventStartDate, 0,0",
+        "AeonEventStartDate,0,0",
         "AeonEventDescription,0,0",
         "AeonEventIncludeInExport,2,0",
         "AeonEventLabel,0,0",
@@ -87,6 +87,28 @@ class XMLWriterTbx  {
         "AeonEventShowDay,2,0",
         "AeonEventShowMonth,2,0",
         "AeonEventExternalLinks,10,0"
+    ]
+    
+    let aeonAeonEventAttributes = [ "AeonNoteType",
+        "NoteStatus",
+        "ID",
+        "Locked",
+        "EventTitle",
+        "AllDay",
+        "StartDate",
+        "Description",
+        "IncludeInExport",
+        "Label",
+        "Arc",
+        "Relationships",
+        "Tags",
+        "Completed",
+        "Duration",
+        "DurationUnit",
+        "ShowTime",
+        "ShowDay",
+        "ShowMonth",
+        "ExternalLinks"
     ]
     
     let basicNoteAttributes = [
@@ -254,37 +276,125 @@ class XMLWriterTbx  {
                     
                     let aeonEventXmlElement = AEXMLElement("item")
                     aeonEventXmlElement.value = arrayel.value!
-                    for attribute in arrayel.attributes {
+                    
+                    var aeonEventType = AEXMLElement("attribute")
+                    aeonEventType.addAttribute("name", value: "AeonNoteType")
+                    aeonEventType.value = "AeonEvent"
+                    aeonEventXmlElement.addChild(aeonEventType)
+                    
+                    
+                    for aeonattribute in arrayel.attributes {
                         
+                        var i : Int? = aeonAeonEventAttributes.indexOf(aeonattribute.0 as! String)
+                        let s = aeonTbxEventAttributes[i!].componentsSeparatedByString(",")
+  
+                        let aeonAttToTbxElement = AEXMLElement("attribute")
+                        aeonAttToTbxElement.addAttribute("name", value: s[0])
+                        
+                        if aeonattribute.1 is String {
+                            if let s:String = aeonattribute.1 as! String {
+                                if !s.isEmpty {
+                                    aeonAttToTbxElement.value = s
+                                }
+                                else {
+                                    aeonAttToTbxElement.value = " "
+                                }
+                            }
+                            else {
+                                aeonAttToTbxElement.value = " "
+                            }
+                        }
+                        else {
+                            aeonAttToTbxElement.value = " "
+                        }
+                        
+                        aeonEventXmlElement.addChild(aeonAttToTbxElement)
                     }
-                    // also add necessary tinderbox attributes, id and creator
                     
                     
+      
                     
-                    // get the events child element attributes
+                    var saveEventTitle : String?
+                    
+                    // get the event's child element attributes
                     for arraych in arrayel.children {
                         print(arraych.name)
                         print (arraych.value)
                         
+                        if arraych.name == "EventTitle" {
+                            saveEventTitle = arraych.value
+                        }
+                        
+                        var i : Int? = aeonAeonEventAttributes.indexOf(arraych.name)
+                        let s = aeonTbxEventAttributes[i!].componentsSeparatedByString(",")
+                        
                         let aeonEventChildXmlElement = AEXMLElement("attribute")
+                        aeonEventChildXmlElement.addAttribute("name", value: s[0])
+                        
                         if let childvalue = arraych.value {
                             aeonEventChildXmlElement.value = arraych.value!
+  
+                            // if relationships or tags, a whole new thing
+                            // get its children and turn into list
+                            // NEEDS to be HANDLED
+                            
+                            
+                            // one element has attributes, get it
                             for attribute in arraych.attributes {
-                                
+                                aeonEventChildXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
                             }
+                            
                         }
                         else {
                             aeonEventChildXmlElement.value = " "
                         }
                         
+                        aeonEventXmlElement.addChild(aeonEventChildXmlElement)
+                        
                     }
+                    
+                    
+                    
+                    // also add necessary tinderbox attributes, id and creator
+                    aeonEventXmlElement.addAttribute("ID", value: "1535924109") // make it real
+                    aeonEventXmlElement.addAttribute("Creator", value: "prenez") // make it real
+                    
+                    // add tinderbox attribute elements to aeon note
+                    
+                    for tbxattribute in basicNoteAttributes {
+                        let attribArray = tbxattribute.componentsSeparatedByString(",")
+                        
+                        let aeEventTbxAttributeElement = AEXMLElement("attribute")
+                        
+                        
+                        aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                        if attribArray[0] == "Name" {
+                            aeEventTbxAttributeElement.value = saveEventTitle // need to add the aeon event title here
+                        } else {
+                            aeEventTbxAttributeElement.value = attribArray[1] as String
+                        }
+                        
+                        
+                        aeonEventXmlElement.addChild(aeEventTbxAttributeElement)
+                    }
+                    
+                    
+                    
+                    aeonEventXmlElement.addChild(aeonEventChildXmlElement)
+                    
+                    
+                    
                     //also add necessary tinderbox children
                     
+                    // here
                     
+                    self.tascBaseContainer.addChild(aeonEventXmlElement)
                 }
                 
                 // create elements from aeon events
                 // and add them to self.tascBaseContainer
+                
+                
                 
             }
             
@@ -391,7 +501,7 @@ class XMLWriterTbx  {
         
         
         
-        for attrib in aeonEventAttributes {
+        for attrib in aeonTbxEventAttributes {
             
             let attribArray = attrib.componentsSeparatedByString(",")
             

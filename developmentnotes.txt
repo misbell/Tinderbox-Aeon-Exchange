@@ -44,3 +44,12 @@ of course, you'll be able to edit all the tinderbox attributes at will.
 
 
 
+add prototypes
+add container
+add key attributes
+get spacing right
+
+save the doc
+
+clean up this messy code
+
