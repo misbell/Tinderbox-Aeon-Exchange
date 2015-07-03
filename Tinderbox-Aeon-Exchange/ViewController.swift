@@ -147,12 +147,6 @@ class ViewController: NSViewController {
     }
     */
     
-    
-    
-    
-    
-    
-    
     @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
         
         print("well done tb")

@@ -62,15 +62,29 @@ class XMLWriterTbx  {
         
         if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error) {
             
+            for arrayel in xmlDoc.root["attrib"]["attrib"].all! {
+                if let name  = arrayel.attributes["Name"] as? String {
+                    if name == "User" {
+                        
+                        let x = xmlDoc.root["attrib"]["attrib"]
+                        x.addChild(self.rootAttribElement)
+                    }
+                }
+            }
+
             
-            let el = xmlDoc.root["attrib"]["attrib"].attributes["Name"]!
-            if el as! String == "System" {
+        /*
+            
+            let el = xmlDoc.root["attrib"]["attrib"].attributes["Name"]
+            
+            if el as! String == "User" {
                 let x = xmlDoc.root["attrib"]["attrib"]
                 x.addChild(self.rootAttribElement)
                 
             }
-            
-            print(xmlDoc.rawXmlString)
+*/
+
+          print(xmlDoc.xmlString)
             
        
         }
@@ -83,9 +97,9 @@ class XMLWriterTbx  {
     
     func writeTinderboxXMLDocument() {
         
-        constructToolsAeonAttributesForTinderboxDoc()
-        addToolsAeonAttributesToTinderboxDoc()
-        writeOutTheTinderboxDocToTheDrive()
+       constructToolsAeonAttributesForTinderboxDoc()
+       addToolsAeonAttributesToTinderboxDoc()
+       writeOutTheTinderboxDocToTheDrive()
         
     }
     
@@ -115,50 +129,37 @@ class XMLWriterTbx  {
     
     
     func constructToolsAeonAttributesForTinderboxDoc() {
-        
 
+                var error: NSError?
+        if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error) {
+            
+            for arrayel in xmlDoc.root["attrib"]["attrib"].all! {
+                if let name  = arrayel.attributes["Name"] as? String {
+                    if name == "User" {
+                        self.rootAttribElement = arrayel
+                        let x = xmlDoc.root["attrib"]["attrib"]
+                        x.addChild(self.rootAttribElement)
+                        addAeonTimelineEventAttribs(self.rootAttribElement)
+                    }
+                }
+            }
+
+            /*
+            
+            let el = xmlDoc.root["attrib"]["attrib"].attributes["Name"]!
+            if el as! String == "User" {
+                let x = xmlDoc.root["attrib"]["attrib"]
+                x.addChild(self.rootAttribElement)
+                
+                addAeonTimelineEventAttribs(rootAttribElement)
+                
+            }
+*/
+
+        }
+ 
         
-       // self.rootAttribElement = AEXMLElement("Tools") // like system and user
-       // self.rootAttribElement.value = ""
-       // self.rootAttribElement.addAttribute("editable", value: "0")
-       // self.rootAttribElement.addAttribute("visibleInEditor", value: 1)
-       // self.rootAttribElement.addAttribute("default", value: "")
-        
-        let groupAttribElement = AEXMLElement("AeonTimeline")
-        groupAttribElement.addAttribute("parent", value: "Tools")
-        groupAttribElement.addAttribute("editable", value: "0")
-        groupAttribElement.addAttribute("visibleInEditor", value: 1)
-        groupAttribElement.addAttribute("default", value: "")
-        
-        let AEEventAttribElement = AEXMLElement("AeonTimelineEvent")
-        AEEventAttribElement.addAttribute("parent", value: "AeonTimeline")
-        AEEventAttribElement.addAttribute("editable", value: "0")
-        AEEventAttribElement.addAttribute("visibleInEditor", value: 1)
-        AEEventAttribElement.addAttribute("default", value: "")
-        
-        
-        addAeonTimelineEventAttribs(AEEventAttribElement)
-        
-        
-        let AEArcAttribElement = AEXMLElement("AeonTimelineArc")
-        AEArcAttribElement.addAttribute("parent", value: "AeonTimeline")
-        AEArcAttribElement.addAttribute("editable", value: "0")
-        AEArcAttribElement.addAttribute("visibleInEditor", value: 1)
-        AEArcAttribElement.addAttribute("default", value: "")
-        
-        let AEEntityAttribElement = AEXMLElement("AeonTimelineEntity")
-        AEEntityAttribElement.addAttribute("parent", value: "AeonTimeline")
-        AEEntityAttribElement.addAttribute("editable", value: "0")
-        AEEntityAttribElement.addAttribute("visibleInEditor", value: 1)
-        AEEntityAttribElement.addAttribute("default", value: "")
-        
-        //self.rootAttribElement.addChild(groupAttribElement)
-        groupAttribElement.addChild(AEEventAttribElement)
-        groupAttribElement.addChild(AEArcAttribElement)
-        groupAttribElement.addChild(AEEntityAttribElement)
-        
-        self.rootAttribElement = groupAttribElement
-        
+      
         
         
         
@@ -174,9 +175,10 @@ class XMLWriterTbx  {
             
             let attribArray = attrib.componentsSeparatedByString(",")
             
-            let aeEventAttribElement = AEXMLElement(attribArray[0])
+            let aeEventAttribElement = AEXMLElement("attrib")
             
-            aeEventAttribElement.addAttribute("parent", value: "AeonTimeline")
+            aeEventAttribElement.addAttribute("parent", value: "User")
+            aeEventAttribElement.addAttribute("Name", value: attribArray[0])
             aeEventAttribElement.addAttribute("editable", value: attribArray[2])
             aeEventAttribElement.addAttribute("visibleInEditor", value: "1")
             aeEventAttribElement.addAttribute("type", value: attribArray[1])
@@ -202,7 +204,7 @@ class XMLWriterTbx  {
         
         for child in item.children {
             
-            print (" \(child.name)  \(child.value)")
+            //print (" \(child.name)  \(child.value)")
             
             writeChildren(child)
             

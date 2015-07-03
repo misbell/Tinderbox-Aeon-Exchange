@@ -25,7 +25,7 @@ class XMLParserTbx   {
         
         self.path = contentPath.path!
         self.data = NSFileManager.defaultManager().contentsAtPath(path)!
-        
+
         
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         self.items = (appDelegate.mainViewController?.outlineViewControllerTbx.tbxItems)!
@@ -39,7 +39,7 @@ class XMLParserTbx   {
         var error: NSError?
         
         
-        if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error) {
+        if let xmlDoc = AEXMLDocument(xmlData: self.data, error: &error ) {
             
             // might want to structure it
             // parse items
@@ -50,7 +50,7 @@ class XMLParserTbx   {
             // the easier to make key value lists with later
             
            // var firstelement = xmlDoc.root["item"]
-           // print (xmlDoc.root["item"].stringValue)
+           // print (xmlDoc.root[xmldoc "item"].stringValue)
             
            // var firstitem =  xmlDoc.root["attrib"].countWithAttributes(["Name" : "Item"])
             

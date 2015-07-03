@@ -159,7 +159,7 @@ public class AEXMLElement: Equatable {
     }
     
     private func removeChild(child: AEXMLElement) {
-        if let childIndex = children.indexOf(child) {
+        if let childIndex = children.indexOf( child) {
             children.removeAtIndex(childIndex)
         }
     }
@@ -177,7 +177,7 @@ public class AEXMLElement: Equatable {
     private func indentation(count: Int) -> String {
         var indent = String()
         if count > 0 {
-            for _ in 0..<count {
+            for i in 0..<count {
                 indent += "\t"
             }
         }
@@ -194,7 +194,41 @@ public class AEXMLElement: Equatable {
         if attributes.count > 0 {
             // insert attributes
             for (key, value) in attributes {
-                xml += " \(key)=\"\(value)\""
+                
+                var keyyy :String = key as! String
+                var sss: String = " "
+                if name == "MapBackgroundPattern" {
+                    sss = "ok"
+                }
+                
+                var newvalue = ""
+                if value is String {
+                    
+                    if value as! String == "plain" {
+                        sss = "okok"
+                    }
+                    
+                    if let s:String = value as! String {
+                        for character in s.characters  {
+                            
+                            if character == ("<") {
+                                print ("xxxx& lt:")
+                                newvalue = newvalue + "&lt;"
+                            }else if character == ">" {
+                                newvalue = newvalue + "&gt;"
+                            }else if character == "\"" {
+                                newvalue = newvalue + "&quot;"
+                                
+                                
+                            } else {
+                                
+                                newvalue.append(character)
+                            }
+                        }
+                    }
+                    
+                }
+                xml += " \(key)=\"\(newvalue)\""
             }
         }
         
@@ -260,10 +294,11 @@ public class AEXMLDocument: AEXMLElement {
         }
     }
     
-    public convenience init(version: Double = 1.0, encoding: String = "utf-8", standalone: String = "no", xmlData: NSData) throws {
+    public convenience init?(version: Double = 1.0, encoding: String = "utf-8", standalone: String = "no", xmlData: NSData, inout error: NSError?) {
         self.init(version: version, encoding: encoding, standalone: standalone)
         if let parseError = readXMLData(xmlData) {
-            throw parseError
+            error = parseError
+            return nil
         }
     }
     
@@ -322,7 +357,7 @@ class AEXMLParser: NSObject, NSXMLParserDelegate {
     
     // MARK: NSXMLParserDelegate
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
+     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
         currentValue = String()
         currentElement = currentParent?.addChild(name: elementName, attributes: attributeDict)
         currentParent = currentElement

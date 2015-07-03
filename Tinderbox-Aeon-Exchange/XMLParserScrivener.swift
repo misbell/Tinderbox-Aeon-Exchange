@@ -57,7 +57,7 @@ class XMLParserScrivener  {
             
             for child in xmlDoc.root.children {
                 if let _ = child.value {
-                    print("\(child.name) >> \(child.value!)")
+                   // print("\(child.name) >> \(child.value!)")
                     currentItem = ScrivenerItem(name: child.name, value: child.value!, children: [])
                     self.scrivenerItems.addChild(currentItem)
                 }
@@ -67,7 +67,7 @@ class XMLParserScrivener  {
                 }
                 
                 for attribute in child.attributes {
-                    print("\t \(attribute.0) :: \(attribute.1) ")
+                   // print("\t \(attribute.0) :: \(attribute.1) ")
                     currentItem.addChild(ScrivenerItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
                     
                 }
@@ -90,7 +90,7 @@ class XMLParserScrivener  {
         for child in element.children {
             var currentItem = ScrivenerItem()
             if let _ = child.value {
-                print("\(child.name) >> \(child.value!)")
+               // print("\(child.name) >> \(child.value!)")
                 currentItem = ScrivenerItem(name: child.name, value: child.value!, children: [])
                 parentItem.addChild(currentItem)
             }
@@ -100,7 +100,7 @@ class XMLParserScrivener  {
             }
             
             for attribute in child.attributes {
-                print("\t \(attribute.0) :: \(attribute.1) ")
+               // print("\t \(attribute.0) :: \(attribute.1) ")
                 currentItem.addChild(ScrivenerItem(name: attribute.0 as! String, value: attribute.1 as! String, children: [])) // this could break
             }
             getChildren(currentItem, element: child)

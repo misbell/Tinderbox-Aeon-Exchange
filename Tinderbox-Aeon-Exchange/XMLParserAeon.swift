@@ -70,7 +70,7 @@ class XMLParserAeon   {
                 for attribute in child.attributes {
                     if currentItem.name == "Event" {
                         if attribute.0 == "ID" {
-                            print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
+                           // print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
                             let x = Int64(attribute.1 as! String)
                             self.eventIDNumbers.append(x!)
                         }
@@ -88,7 +88,7 @@ class XMLParserAeon   {
         let lowest = sortedEventIDNumbers.first
         let highest = sortedEventIDNumbers.last
         
-        print(" lowest is \(lowest) and highest is \(highest)")
+     //   print(" lowest is \(lowest) and highest is \(highest)")
         
         
         // make accessible to outlineview
@@ -116,7 +116,7 @@ class XMLParserAeon   {
             for attribute in child.attributes {
                 if currentItem.name == "Event" {
                     if attribute.0 == "ID" {
-                        print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
+                 //       print("\t Aeon Event \(attribute.0) :: \(attribute.1) ")
                         let x = Int64(attribute.1 as! String)
                         self.eventIDNumbers.append(x!)
                     }
