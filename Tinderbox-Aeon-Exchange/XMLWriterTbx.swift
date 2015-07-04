@@ -27,6 +27,8 @@ class XMLWriterTbx  {
     var aeonEventTbxXmlElement = AEXMLElement("item")
     var aeonEventAEElement = AEXMLElement("dummy")
     
+    var tbxDocumentCreator = ""
+    var nextTbxNoteID : Int64 = 0
     
     
     /*
@@ -175,6 +177,7 @@ class XMLWriterTbx  {
     init() {
         let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         self.tbxItems = (appDelegate.mainViewController?.outlineViewControllerTbx.tbxItems)!
+        self.nextTbxNoteID = (appDelegate.mainViewController?.highestTinderboxNoteID)!
         self.tbxItem = tbxItems[0]
         
         
@@ -223,6 +226,12 @@ class XMLWriterTbx  {
         var tascItem : AEXMLElement?
         
         // search all tinderbox items (notes) under the top level item (note)
+        
+        var tbxTopItemAEXmlElement = tbxXmlDoc.root["item"]
+        if let creator = tbxTopItemAEXmlElement.attributes["Creator"] as? String {
+            self.tbxDocumentCreator = creator
+        }
+        
         for tbxItemAEElement in tbxXmlDoc.root["item"]["item"].all! {
             
             
@@ -251,8 +260,9 @@ class XMLWriterTbx  {
             let tascBaseItem = AEXMLElement("item" )
             tascBaseItem.value = " "
             // xml attributes
-            tascBaseItem.addAttribute("ID", value: "1535924109") // make it real
-            tascBaseItem.addAttribute("Creator", value: "prenez") // make it real
+            
+            tascBaseItem.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+            tascBaseItem.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
             
             
             // tinderbox attributes
@@ -366,8 +376,8 @@ class XMLWriterTbx  {
     
     func addTinderboxAttributesToAeonEventElement(aeonXmlDoc: AEXMLDocument) {
         // also add necessary tinderbox attributes, id and creator
-        self.aeonEventTbxXmlElement.addAttribute("ID", value: "1535924109") // make it real
-        self.aeonEventTbxXmlElement.addAttribute("Creator", value: "prenez") // make it real
+        self.aeonEventTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        self.aeonEventTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
         
         // add tinderbox attribute elements to aeon note
         
@@ -395,8 +405,8 @@ class XMLWriterTbx  {
         
         var adornmentXmlElement = AEXMLElement("adornment")
         
-        adornmentXmlElement.addAttribute("ID", value: "1535924109") // make it real
-        adornmentXmlElement.addAttribute("Creator", value: "prenez") // make it real
+        adornmentXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        adornmentXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
         
         for adornmentAttributeElement in adornmentsArray {
             
@@ -418,8 +428,8 @@ class XMLWriterTbx  {
     func addPrototypeToTASCItem(tbxXmlDoc : AEXMLDocument) {
         var prototypeXmlElement = AEXMLElement("item")
         
-        prototypeXmlElement.addAttribute("ID", value: "1535924109") // make it real
-        prototypeXmlElement.addAttribute("Creator", value: "prenez") // make it real
+        prototypeXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        prototypeXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
         
         var prototypeAttribElement = AEXMLElement("attribute")
         

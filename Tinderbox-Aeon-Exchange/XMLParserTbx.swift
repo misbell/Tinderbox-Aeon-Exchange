@@ -20,6 +20,10 @@ class XMLParserTbx   {
     
     var itemIDNumbers : [Int64] = []
     
+    var appDelegate : AppDelegate?
+    
+ //   var highestTbxNoteID : Int64 = 0
+    
     
     init?(contentPath: NSURL) {
         
@@ -27,8 +31,8 @@ class XMLParserTbx   {
         self.data = NSFileManager.defaultManager().contentsAtPath(path)!
 
         
-        let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
-        self.items = (appDelegate.mainViewController?.outlineViewControllerTbx.tbxItems)!
+        self.appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+        self.items = (self.appDelegate!.mainViewController?.outlineViewControllerTbx.tbxItems)!
         
         
     }
@@ -96,9 +100,9 @@ class XMLParserTbx   {
         
         let sortedItemIDNumbers =  itemIDNumbers.sort()
         let lowest = sortedItemIDNumbers.first
-        let highest = sortedItemIDNumbers.last
+        self.appDelegate!.mainViewController?.highestTinderboxNoteID = sortedItemIDNumbers.last!
         
-        print(" lowest is \(lowest) and highest is \(highest)")
+       
         
         // make accessible to outlineview
         self.items.append(tbxItems)

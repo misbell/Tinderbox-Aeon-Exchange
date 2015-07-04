@@ -17,6 +17,8 @@ class ViewController: NSViewController {
     var aeonfileURL: NSURL?
     var scrivfileURL: NSURL?
     
+    var highestTinderboxNoteID : Int64 = 0
+    
     
     @IBOutlet weak var ovTinderbox: NSOutlineView!
     
