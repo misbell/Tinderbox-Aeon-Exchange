@@ -364,6 +364,14 @@ class XMLWriterTbx  {
                 self.saveEventTitle = aeonEventXmlElementChild.value
             }
             
+            if aeonEventXmlElementChild.name == "Description" {
+                var aeonEventChildTbxXmlElement = AEXMLElement("text")
+                aeonEventChildTbxXmlElement.value = aeonEventXmlElementChild.value
+                aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+                
+            }
+            
+            
             let i : Int? = aeonAeonEventAttributes.indexOf(aeonEventXmlElementChild.name)
             let s = aeonTbxEventAttributes[i!].componentsSeparatedByString(",")
             
