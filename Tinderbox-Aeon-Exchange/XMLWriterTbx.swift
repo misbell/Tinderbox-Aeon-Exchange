@@ -30,6 +30,8 @@ class XMLWriterTbx  {
     var tbxDocumentCreator = ""
     var nextTbxNoteID : Int64 = 0
     
+    var noteTimeStamp : String = ""
+    
     
     /*
     0 - string
@@ -206,6 +208,19 @@ class XMLWriterTbx  {
         self.aeonpath = self.aeonfileurl.path!
         self.aeondata = NSFileManager.defaultManager().contentsAtPath(self.aeonpath)!
         
+        
+        let todaysDate:NSDate = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+        // formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)!
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        self.noteTimeStamp =  formatter.stringFromDate(todaysDate)
+        
+        
+        
+        
+        
     }
     
     func captureTbxUserElement(tbxXmlDoc: AEXMLDocument) {
@@ -245,6 +260,7 @@ class XMLWriterTbx  {
                         }
                         
                     }
+
                 }
             }
             
@@ -273,13 +289,17 @@ class XMLWriterTbx  {
                 let aeTascContainerTbxAttributeElement = AEXMLElement("attribute")
                 
                 aeTascContainerTbxAttributeElement.addAttribute("name", value: attribArray[0])
-                if attribArray[0] == "Name" {
-                    aeTascContainerTbxAttributeElement.value = "Aeon Timeline TASC Container"
-                } else {
-                    aeTascContainerTbxAttributeElement.value = attribArray[1] as String
-                    // print ( aeTascContainerTbxAttributeElement.value)
-                }
                 
+                switch attribArray[0]{
+                case  "Name":
+                    aeTascContainerTbxAttributeElement.value = "Aeon Timeline TASC Container"
+                case  "Created":
+                    aeTascContainerTbxAttributeElement.value = self.noteTimeStamp
+                case  "Modified":
+                    aeTascContainerTbxAttributeElement.value = self.noteTimeStamp
+                default:
+                    aeTascContainerTbxAttributeElement.value = attribArray[1] as String
+                }
                 
                 tascBaseItem.addChild(aeTascContainerTbxAttributeElement)
             }
@@ -378,6 +398,7 @@ class XMLWriterTbx  {
         // also add necessary tinderbox attributes, id and creator
         self.aeonEventTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
         self.aeonEventTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+        self.aeonEventTbxXmlElement.addAttribute("proto", value: "AeonEventsPrototype")
         
         // add tinderbox attribute elements to aeon note
         
@@ -386,15 +407,18 @@ class XMLWriterTbx  {
             
             let aeEventTbxAttributeElement = AEXMLElement("attribute")
             
-            
             aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
-            if attribArray[0] == "Name" {
+            
+            switch attribArray[0]{
+            case  "Name":
                 aeEventTbxAttributeElement.value = self.saveEventTitle
-            } else {
+            case  "Created":
+                aeEventTbxAttributeElement.value = self.noteTimeStamp
+            case  "Modified":
+                aeEventTbxAttributeElement.value = self.noteTimeStamp
+            default:
                 aeEventTbxAttributeElement.value = attribArray[1] as String
             }
-            
-            
             self.aeonEventTbxXmlElement.addChild(aeEventTbxAttributeElement)
         }
     }
@@ -637,6 +661,7 @@ class XMLWriterTbx  {
             aeEventAttribElement.addAttribute("visibleInEditor", value: "1")
             aeEventAttribElement.addAttribute("type", value: attribArray[1])
             aeEventAttribElement.addAttribute("default", value: "")
+      
             
             aeonEventAttribElement.addChild(aeEventAttribElement)
             

@@ -45,13 +45,14 @@ of course, you'll be able to edit all the tinderbox attributes at will.
 
 bring in arcs and entities
 
+then slicing and dicing
 
 add prototypes
 add containers DONE
-add key attributes
+add key attributes DONE
 get spacing right
-get user id, creator, create dates right
-write it out to disk
+get user id, creator, create dates right DONE
+write it out to disk DONE
 
 add lists for relationships and tags
 set it not to write over existing notes
@@ -61,9 +62,9 @@ make sure the description in aeon gets into the text note in tinderbox
 
 add file menu
 
-save the doc
+save the doc DONE
 
-clean up this messy code
+clean up this messy code DONE
 
 
 http://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch
@@ -85,6 +86,22 @@ return formatter.stringFromDate(self)
 }
 
 NSDate().formatted  // "2015-01-19T01:22:18.964Z"
+
+http://stackoverflow.com/questions/28016578/swift-how-to-create-a-date-time-stamp-and-format-as-iso-8601-rfc-3339-utc-tim
+
+get date time components
+http://stackoverflow.com/questions/24070450/how-to-get-the-current-timeand-hour-as-datetime-swift
+
+
+var todaysDate:NSDate = NSDate()
+var dateFormatter:NSDateFormatter = NSDateFormatter()
+dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+var DateInFormat:String = dateFormatter.stringFromDate()
+
+.tbx file type on save dialog by default
+
+for calculating highest id, do you go through ALL containers YES I DO, IN parse() method
+
 
 
 
