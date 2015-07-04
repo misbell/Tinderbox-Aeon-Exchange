@@ -43,9 +43,11 @@ does it make sense to write the aeon date into the tinderbox date? i'd rather no
 of course, you'll be able to edit all the tinderbox attributes at will.
 
 
+bring in arcs and entities
+
 
 add prototypes
-add container
+add containers DONE
 add key attributes
 get spacing right
 get user id, creator, create dates right
@@ -67,6 +69,10 @@ clean up this messy code
 http://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch
 
 http://stackoverflow.com/questions/24010569/error-handling-in-swift-language
+
+parse aeon timeline dt into day month year
+
+
 
 
 

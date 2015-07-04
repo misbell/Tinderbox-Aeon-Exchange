@@ -51,27 +51,11 @@ class XMLWriterTbx  {
     //relations and tags are lists, child elements entity, participation level
     // duration has a an attribute
     
-    let aeonEventToTinderboxMap = ["None, AeonNoteType, 0, 0",
-        "None, AeonEventNoteStatus,0,1",
-        "ID, AeonEventID,2,0",
-        "Locked, AeonEventLocked,2,0",
-        "EventTitle,AeonEventTitle,0,0",
-        "AllDay,AeonEventAllDay,2,0",
-        "StartDate,AeonEventStartDate,0,0",
-        "Description,AeonEventDescription,0,0",
-        "IncludeInExport,AeonEventIncludeInExport,2,0",
-        "Label,AeonEventLabel,0,0",
-        "Arc,AeonEventArc,0,0",
-        "Relationships,AeonEventRelationships,10,0",
-        "Tags,AeonEventTags,10,0",
-        "Completed,AeonEventCompleted,2,0",
-        "Duration,AeonEventDuration,2,0",
-        "DurationUnit,AeonEventDurationUnit,0,0",
-        "ShowTime,AeonEventShowTime,0,0",
-        "ShowDay,AeonEventShowDay,2,0",
-        "ShowMonth,AeonEventShowMonth,2,0",
-        "ExternalLinks,AeonEventExternalLinks,10,0"]
+    let aeonTbxArcAttributes = [""]
+    let aeonTbxEntityAttributes = [""]
     
+    let aeonAeonArcAttributes = [""]
+    let aeonAeonEntityAttributes = [""]
     
     
     let aeonTbxEventAttributes = [ "AeonNoteType,0,0",
@@ -128,6 +112,63 @@ class XMLWriterTbx  {
         "Ypos,5.116577148"
         
     ]
+    
+    
+    
+    var aeonEventsTbxAdornmentAttributeElements = [
+        "AgentQuery,$AeonNoteType=&quot;AeonEvent&quot;",
+        "Color,green",
+        "Created,2015-07-04T07:21:54-04:00",
+        "Height,17.95739746",
+        "KeyAttributes,AgentQuery",
+        "Modified,2015-07-04T07:21:54-04:00",
+        "Name,Aeon Timeline Events",
+        "Searchable,false",
+        "SelectionCount,1",
+        "SortAlsoTransform,normal",
+        "SortTransform,normal",
+        "Width,24.79101562",
+        "Xpos,-1.574829102",
+        "Ypos,-3.1663818359"]
+    
+    
+    var aeonArcsTbxAdornmentAttributeElements = [
+        "AgentQuery,$AeonNoteType=&quot;AeonArc&quot;",
+        "Color,blue",
+        "Created,2015-07-04T07:21:54-04:00",
+        "Height,17.95739746",
+        "KeyAttributes,AgentQuery",
+        "Modified,2015-07-04T07:21:54-04:00",
+        "Name,Aeon Timeline Arcs",
+        "Searchable,false",
+        "SelectionCount,1",
+        "SortAlsoTransform,normal",
+        "SortTransform,normal",
+        "Width,24.79101562",
+        "Xpos,-1.574829102",
+        "Ypos,18.1663818359"]
+    
+    
+    
+    var aeonEntitiesTbxAdornmentAttributeElements = [
+        "AgentQuery,$AeonNoteType=&quot;AeonEntity&quot;",
+        "Color,red",
+        "Created,2015-07-04T07:21:54-04:00",
+        "Height,17.95739746",
+        "KeyAttributes,AgentQuery",
+        "Modified,2015-07-04T07:21:54-04:00",
+        "Name,Aeon Timeline Entities",
+        "Searchable,false",
+        "SelectionCount,1",
+        "SortAlsoTransform,normal",
+        "SortTransform,normal",
+        "Width,24.79101562",
+        "Xpos,-1.574829102",
+        "Ypos,40.1663818359"]
+    
+    //<attribute name="KeyAttributes" >AeonNoteType;AeonEventNoteStatus;AeonEventID;AeonEventLocked;AeonEventTitle;AeonEventAllDay;AeonEventStartDate;AeonEventDescription;AeonEventIncludeInExport;AeonEventLabel;AeonEventArc;AeonEventRelationships;AeonEventTags;AeonEventCompleted;AeonEventDuration;AeonEventDurationUnit;AeonEventShowTime;AeonEventExternalLinks;AeonEventShowMonth;AeonEventShowDay</attribute>
+    
+    
     
     var rootAttribElement: AEXMLElement = AEXMLElement("dummy")
     
@@ -243,9 +284,14 @@ class XMLWriterTbx  {
     func captureAeonEventElement(aeonXmlDoc: AEXMLDocument) {
         
         // always add this attribute element to the event note
-        let aeonEventType = AEXMLElement("attribute")
+        var aeonEventType = AEXMLElement("attribute")
         aeonEventType.addAttribute("name", value: "AeonNoteType")
         aeonEventType.value = "AeonEvent"
+        self.aeonEventTbxXmlElement.addChild(aeonEventType)
+        
+        aeonEventType = AEXMLElement("attribute")
+        aeonEventType.addAttribute("name", value: "Prototype")
+        aeonEventType.value = "AeonEventsPrototype"
         self.aeonEventTbxXmlElement.addChild(aeonEventType)
         
         // turn the aeon event xml attributes into tinderbox attribute elements, add to event note
@@ -343,6 +389,60 @@ class XMLWriterTbx  {
         }
     }
     
+    func addAdornmentsToTASCItem(tbxXmlDoc : AEXMLDocument, adornmentsArray: Array <String>) {
+        
+        
+        
+        var adornmentXmlElement = AEXMLElement("adornment")
+        
+        adornmentXmlElement.addAttribute("ID", value: "1535924109") // make it real
+        adornmentXmlElement.addAttribute("Creator", value: "prenez") // make it real
+        
+        for adornmentAttributeElement in adornmentsArray {
+            
+            let adornmentAttribArray = adornmentAttributeElement.componentsSeparatedByString(",")
+            
+            let  adornmentAttribElement = AEXMLElement("attribute")
+            adornmentAttribElement.value = adornmentAttribArray[1]
+            adornmentAttribElement.addAttribute("name", value: adornmentAttribArray[0])
+            
+            adornmentXmlElement.addChild(adornmentAttribElement)
+            
+            
+        }
+        self.tascBaseContainer.addChild(adornmentXmlElement)
+        
+    }
+    
+    
+    func addPrototypeToTASCItem(tbxXmlDoc : AEXMLDocument) {
+        var prototypeXmlElement = AEXMLElement("item")
+        
+        prototypeXmlElement.addAttribute("ID", value: "1535924109") // make it real
+        prototypeXmlElement.addAttribute("Creator", value: "prenez") // make it real
+        
+        var prototypeAttribElement = AEXMLElement("attribute")
+        
+        prototypeAttribElement.value = "AeonNoteType;AeonEventNoteStatus;AeonEventID;AeonEventLocked;AeonEventTitle;AeonEventAllDay;AeonEventStartDate;AeonEventDescription;AeonEventIncludeInExport;AeonEventLabel;AeonEventArc;AeonEventRelationships;AeonEventTags;AeonEventCompleted;AeonEventDuration;AeonEventDurationUnit;AeonEventShowTime;AeonEventExternalLinks;AeonEventShowMonth;AeonEventShowDay"
+        prototypeAttribElement.addAttribute("name", value: "KeyAttributes")
+        prototypeXmlElement.addChild(prototypeAttribElement)
+        
+        prototypeAttribElement = AEXMLElement("attribute")
+        prototypeAttribElement.value = "AeonEventsPrototype"
+        prototypeAttribElement.addAttribute("name", value: "Name")
+        prototypeXmlElement.addChild(prototypeAttribElement)
+        
+        prototypeAttribElement = AEXMLElement("attribute")
+        prototypeAttribElement.value = "true"
+        prototypeAttribElement.addAttribute("name", value: "IsPrototype")
+        prototypeXmlElement.addChild(prototypeAttribElement)
+        
+        self.tascBaseContainer.addChild(prototypeXmlElement)
+        
+        // and two more, arcs and entities
+    }
+    
+    
     func addAeonAttributesToTinderboxDoc() {
         
         var error: NSError?
@@ -352,6 +452,12 @@ class XMLWriterTbx  {
             
             captureTbxUserElement(tbxXmlDoc)
             captureOrCreateTASCItem(tbxXmlDoc)
+            
+            addAdornmentsToTASCItem(tbxXmlDoc, adornmentsArray: self.aeonEventsTbxAdornmentAttributeElements)
+            addAdornmentsToTASCItem(tbxXmlDoc, adornmentsArray: self.aeonArcsTbxAdornmentAttributeElements)
+            addAdornmentsToTASCItem(tbxXmlDoc, adornmentsArray: self.aeonEntitiesTbxAdornmentAttributeElements)
+            
+            addPrototypeToTASCItem(tbxXmlDoc)
             
             
             var error: NSError?
