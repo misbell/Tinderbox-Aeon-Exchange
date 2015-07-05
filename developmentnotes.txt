@@ -104,5 +104,13 @@ for calculating highest id, do you go through ALL containers YES I DO, IN parse(
 
 
 
+first decide if it's preexisting
+if it's not
+   add
+if it is
+   update only the aeon elements and attributes of the note
+   update the tinderbox modified date of the note
 
+
+brand new method to keep the code non branchy
 
