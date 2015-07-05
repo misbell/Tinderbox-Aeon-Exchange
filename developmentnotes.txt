@@ -103,14 +103,14 @@ var DateInFormat:String = dateFormatter.stringFromDate()
 for calculating highest id, do you go through ALL containers YES I DO, IN parse() method
 
 
+to do
+update value!!
+backup container for arc and entity
+case of new aeon events in existing aeon doc, added
+   so it hs to both modify existing notes and add new ones
+write out arc and entity notes into reference note
 
-first decide if it's preexisting
-if it's not
-   add
-if it is
-   update only the aeon elements and attributes of the note
-   update the tinderbox modified date of the note
 
 
-brand new method to keep the code non branchy
+
 

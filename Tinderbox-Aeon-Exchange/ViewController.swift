@@ -160,7 +160,7 @@ class ViewController: NSViewController {
     
     @IBAction func loadTinderboxXmlDocument(sender: AnyObject) {
         
-        print("well done tb")
+       // print("well done tb")
         
         let openFileTypes = ["tbx"]
         

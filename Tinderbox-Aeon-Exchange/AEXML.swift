@@ -216,7 +216,6 @@ public class AEXMLElement: Equatable {
                                 for character in s.characters  {
                                     
                                     if character == ("<") {
-                                        print ("xxxx& lt:")
                                         newvalue = newvalue + "&lt;"
                                     }else if character == ">" {
                                         newvalue = newvalue + "&gt;"
