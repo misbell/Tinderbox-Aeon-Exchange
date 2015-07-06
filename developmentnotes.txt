@@ -118,5 +118,13 @@ write out arc and entity notes into reference note
 4 create new from r1 and w
 5 look at text fields
 
+that looks good
+
+bug it's creating a new tascbase
+instead of using the one in xmldoc
+
+so the new elements are simply being added to a 'disconnected' tascbase
+there's the morning's work
+'
 
 

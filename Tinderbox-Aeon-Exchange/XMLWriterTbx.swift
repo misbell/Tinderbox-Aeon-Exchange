@@ -362,6 +362,8 @@ class XMLWriterTbx  {
         aeonEventType.value = "AeonEventsPrototype"
         self.aeonEventTbxXmlElement.addChild(aeonEventType)
         
+        var anAeonEventAEElement = self.aeonEventAEElement
+        
         // turn the aeon event xml attributes into tinderbox attribute elements, add to event note
         for aeonattribute in  self.aeonEventAEElement.attributes {
             
@@ -894,7 +896,7 @@ class XMLWriterTbx  {
             
             if let aeonXmlDoc = AEXMLDocument(xmlData: self.aeondata, error: &error) {
                 
-                
+                var j = tascBaseContainer.children.count
                 
                 // get the events
                 for aeonEventAEElement in aeonXmlDoc.root["Events"]["Event"].all! {
@@ -910,11 +912,18 @@ class XMLWriterTbx  {
                         captureAeonEventElementChildren(aeonXmlDoc)
                         addTinderboxAttributesToAeonEventElement(aeonXmlDoc)
                         
+                        var anewone = self.aeonEventTbxXmlElement
+                        var tascbasecontainer = self.tascBaseContainer
                         
-                        self.tascBaseContainer.addChild(aeonEventTbxXmlElement)
+                        // 26 attributes if new
+                        // 25 if new in modified doc
+                        // why
+                        self.tascBaseContainer.addChild(anewone)
                     }
                     
                 }
+                
+                var xx = tascBaseContainer.children.count
                 
                 // get the arcs
                 // question can i delete an element by nilling it out?
@@ -944,11 +953,15 @@ class XMLWriterTbx  {
                     addTinderboxAttributesToAeonEntityElement(aeonXmlDoc)
                     
                     self.tascBaseContainer.addChild(aeonEntityTbxXmlElement)
+                    
+ 
+                    
                 }
                 
                 
             }
             
+            var i = tascBaseContainer.children.count
             // print(tbxXmlDoc.xmlString)
             
             var path : String = ""
