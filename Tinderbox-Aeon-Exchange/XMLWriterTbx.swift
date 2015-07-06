@@ -424,13 +424,21 @@ class XMLWriterTbx  {
                 
                 
                 // one element has attributes, get it
-                for attribute in aeonEventXmlElementChild.attributes {
-                    aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
-                }
+                //for attribute in aeonEventXmlElementChild.attributes {
+                //    aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
+                //}
                 
             }
             else {
                 aeonEventChildTbxXmlElement.value = " "
+                
+                // for attribute in aeonEventXmlElementChild.attributes {
+                //     aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
+                // }
+            }
+            
+            for attribute in aeonEventXmlElementChild.attributes {
+                aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
             }
             
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
@@ -772,7 +780,7 @@ class XMLWriterTbx  {
             if let name = tbxItemAeElementChildB.attributes["name"] as? String {
                 if name == "AeonEventID" {
                     if tbxItemAeElementChildB.value == aeonID {
-//                        print("aeon event \(aeonID) already exists")
+                        //                        print("aeon event \(aeonID) already exists")
                         return true
                     }
                 }
@@ -780,23 +788,28 @@ class XMLWriterTbx  {
             
             
         }
-
+        
         return false
         
     }
     
     func checkForExistingAeonEvent(aeonEventAEElement: AEXMLElement) -> Bool  {
-       
+        
         let aeoneventid  = aeonEventAEElement.attributes["ID"] as! String
         
         // search the tinderbox document for a note whose AeonEventID attribute value
         // matches the current Aeon Event ID in aeoneventid
-        
+        var weFoundMatchingTbxNote = false
         for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
+            
+            // if this for loop doesn't find a match, it's a new note  
             
             for tbxItemAeElementChildA in tbxItemAEElement.children {
                 
+                // this if test has to set a switch saying the for loop found something
+                // else the for loop found nothing and it's a new note
                 if matchForAeonIDWithExistingTbxNoteAeonID(tbxItemAeElementChildA, aeonID: aeoneventid) {
+                    weFoundMatchingTbxNote = true
                     
                     // so we have the matching tbx note now
                     // so update the note's aeon value and attributes only
@@ -813,7 +826,7 @@ class XMLWriterTbx  {
                     for aeonAttributeElement in aeonEventAEElement.children {
                         
                         let matchingTbxAttributeIndex = aeonAeonEventAttributes.indexOf(aeonAttributeElement.name)
-                      //  print ("Matching Tbx Attribute \(matchingTbxAttributeIndex) for \(aeonAttributeElement.name)")
+                        print ("Matching Tbx Attribute \(matchingTbxAttributeIndex) for \(aeonAttributeElement.name)")
                         let tbxAttributeNameString = aeonTbxEventAttributes[matchingTbxAttributeIndex!]
                         
                         let attribArray = tbxAttributeNameString.componentsSeparatedByString(",")
@@ -826,30 +839,36 @@ class XMLWriterTbx  {
                             for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
                                 
                                 if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                                    // print(" name is \(name)  tbxname is \(tbxAttributeName))")
                                     if name == tbxAttributeName {
-                                        //print("matching name is \(name) \(aeonEventAttributeValue)")
+                                        print("matching name is \(name) \(aeonEventAttributeValue)")
                                         tbxItemAeElementChildB.value = aeonEventAttributeValue
                                         break
+                                        
                                     }
                                 }
                             }
-     
+                            
                         }
-                    }
+                    } // for loop
                     
                     
-                }
-                    
+                } // if test
                 
-            }
+                
+            } // for all that either found one or didn't
             
+  
+            
+            
+            
+        } // for all loop
+        
+        if weFoundMatchingTbxNote {
+            return true
+        } else {
+            return false
         }
-        
-        return false
-    }
-    
-    func matchAndUpdateEvent(aeonEventAEElement: AEXMLElement) {
-        
     }
     
     func addAeonAttributesToTinderboxDoc() {
@@ -893,11 +912,8 @@ class XMLWriterTbx  {
                         
                         
                         self.tascBaseContainer.addChild(aeonEventTbxXmlElement)
-                    } else {
-                        //match and replace data 
-                        
-                        matchAndUpdateEvent(aeonEventAEElement)
                     }
+                    
                 }
                 
                 // get the arcs

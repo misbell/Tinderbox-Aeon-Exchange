@@ -112,5 +112,11 @@ write out arc and entity notes into reference note
 
 
 
+1 cerate new from base and w, save as r1
+2 look at text fields
+3 modify text in w, save
+4 create new from r1 and w
+5 look at text fields
+
 
 
