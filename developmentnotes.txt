@@ -133,5 +133,9 @@ fix description
 also, can't copy text field, so have to make it editable so can copy
 in fact, only id really needs to be uneditable
 
-'
+description appear to be working
+use append
+append old note to new note, then maket that the value of text
+aeon description field on tbx attribuete, tbx display doesn't handlet hat well
 
+'
