@@ -126,5 +126,12 @@ instead of using the one in xmldoc
 so the new elements are simply being added to a 'disconnected' tascbase
 there's the morning's work
 '
+if changed, add a red badge
+if added to modified doc, green badge
+fix description
 
+also, can't copy text field, so have to make it editable so can copy
+in fact, only id really needs to be uneditable
+
+'
 
