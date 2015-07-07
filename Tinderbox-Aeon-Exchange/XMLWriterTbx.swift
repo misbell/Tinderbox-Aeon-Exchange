@@ -285,7 +285,7 @@ class XMLWriterTbx  {
             self.tbxDocumentCreator = creator
         }
         
-        for tbxItemAEElement in tbxXmlDoc.root["item"]["item"].all! {
+        for tbxItemAEElement in tbxXmlDoc.root["item"].children {
             
             
             for tbxItemAEElementChild in tbxItemAEElement.children {
@@ -293,8 +293,14 @@ class XMLWriterTbx  {
                     //print (name)
                     if name == "Name" { // "Aeon Timeline TASC Container" {
                         if tbxItemAEElementChild.value == "Aeon Timeline TASC Container" {
-                            tascItem = tbxXmlDoc.root["item"]["item"]
-                            // tascItem!.addChild(self.rootAttribElement)
+                            
+                            // this lines means events will be added to FIRST container...
+                            // this could be useful, add new events to a separate container...
+                            // tascItem = tbxXmlDoc.root["item"]["item"]
+                            tascItem = tbxItemAEElement
+                            self.tascBaseContainer = tbxItemAEElement // or ... tbxItemAEElementChild
+
+                            
                         }
                         
                     }
@@ -340,10 +346,12 @@ class XMLWriterTbx  {
                 }
                 
                 tascBaseItem.addChild(aeTascContainerTbxAttributeElement)
+                
+                self.tascBaseContainer = tascBaseItem
+                baseItem.addChild(tascBaseItem)
             }
             
-            self.tascBaseContainer = tascBaseItem
-            baseItem.addChild(tascBaseItem)
+       
             
             
         }
