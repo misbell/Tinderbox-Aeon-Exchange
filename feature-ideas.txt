@@ -1,0 +1,65 @@
+
+arcs notes updating
+entities notes updating
+
+list relationships and tags in note file
+
+list date in text
+list relationships in text every time
+
+a note to reduce to the last text entry across all notes
+
+give revisions a number as well as a dt (later)
+
+add separators and columns during merge
+
+update tbx start date IMPORTANT
+
+add badge attribute to prototypes so easily changeable
+
+no
+
+they just have to know how to do that
+
+but have to get arcs and entities straight
+
+and time to think about tags and the fun i could have with them
+
+just add relationships as attributes and tags as attributes
+whoa that makes sense
+
+yeah. that's it'
+
+
+idea: import only a specified arc, or a specified entity.
+
+now we're talking. yes.
+
+also,use aeon's tags to slice and dice imports. now that will be a very powerful tool.
+
+see, that let's you go into one head mode, where you're just grinding away organizing the events on the arcs and calendar. and then you can use TASC to act as a query tool for slicing and dicing the data.
+
+
+1 arcs backup containers
+2 arcs tags
+3 arcs just match  on name
+
+thinking about the search tool
+read all tbx docs in the directory
+find all notes that match some criteria
+write them to a new doc
+so your query returns a new tinderbox doc as a result
+
+
+
+=============
+
+for an arc, compile all the text into one note
+
+============
+
+for a relationship compileal all text into one note
+
+==============
+
+

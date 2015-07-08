@@ -39,6 +39,7 @@
 		C97583061B3C10860075AC8A /* TASCTextViewTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583051B3C10860075AC8A /* TASCTextViewTB.swift */; };
 		C97583081B3C10B60075AC8A /* TASCTextViewAE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */; };
 		C978C38A1B45F40600D4D338 /* aexml-clean.txt in Resources */ = {isa = PBXBuildFile; fileRef = C978C3891B45F40600D4D338 /* aexml-clean.txt */; };
+		C98020A01B4CB56600587624 /* feature-ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = C980209F1B4CB56600587624 /* feature-ideas.txt */; };
 		C98B7AFB1B42B8D600C5D662 /* XMLWriterTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */; };
 		C99A213A1B404E630027B1D6 /* TASCOutlineViewScrivener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		C97583051B3C10860075AC8A /* TASCTextViewTB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewTB.swift; sourceTree = "<group>"; };
 		C97583071B3C10B60075AC8A /* TASCTextViewAE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCTextViewAE.swift; sourceTree = "<group>"; };
 		C978C3891B45F40600D4D338 /* aexml-clean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "aexml-clean.txt"; sourceTree = "<group>"; };
+		C980209F1B4CB56600587624 /* feature-ideas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "feature-ideas.txt"; sourceTree = "<group>"; };
 		C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLWriterTbx.swift; sourceTree = "<group>"; };
 		C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewScrivener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 				C95307051B3EA71500E9954E /* app notes.txt */,
 				C97583031B3C10330075AC8A /* Notes.txt */,
 				C96F9ED61B4385C500BE8F61 /* xmlstring.txt */,
+				C980209F1B4CB56600587624 /* feature-ideas.txt */,
 			);
 			name = notes;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				C91C7A401B4623B300B2569F /* oldxmlwritertbx.txt in Resources */,
 				C97583041B3C10330075AC8A /* Notes.txt in Resources */,
 				2725D9AA1B3B061F00968814 /* Main.storyboard in Resources */,
+				C98020A01B4CB56600587624 /* feature-ideas.txt in Resources */,
 				C96F9ED71B4385C500BE8F61 /* xmlstring.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

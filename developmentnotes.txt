@@ -138,4 +138,44 @@ use append
 append old note to new note, then maket that the value of text
 aeon description field on tbx attribuete, tbx display doesn't handlet hat well
 
-'
+================ new 7/7/2015 9.00 am est =================
+
+Note Name:
+barack's biography'
+
+note text: born in a log cabin in kenya, he...
+
+================ new 7/6/2015 1.32 pm est =================
+
+Note Name:
+barack's bio'
+
+note text: born in a log cabin in kenya, he...
+
+
+also include start date and time
+
+list of relationships
+like that
+
+button to turn lights on and off
+trim strings on name compare
+turn on plus sign to replace naems
+turn on check to replace text
+
+paged scene constructor
+that produces...what...
+
+text, probably
+and scrivener notes of some kind
+
+remove backblaze
+
+tools
+===
+search directory
+slice and dice data
+scene creation compilation
+was there one other thing?
+
+
