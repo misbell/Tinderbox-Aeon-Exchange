@@ -127,6 +127,12 @@ class XMLWriterTbx  {
         "AeonEventExternalLinks,10,0"
     ]
     
+    let aeonTbxEventRelationship = "AeonEventRelationship,10,0"
+    
+    
+    let aeonTbxEventTag = "AeonEventTag,10,0"
+    
+    
     let aeonAeonEventAttributes = [ "AeonEventNoteType",
         "NoteStatus",
         "ID",
@@ -250,7 +256,7 @@ class XMLWriterTbx  {
         self.aeondata = NSFileManager.defaultManager().contentsAtPath(self.aeonpath)!
         
         
- 
+        
         self.noteTimeStamp =  getTodayDateString()
         
         
@@ -305,7 +311,7 @@ class XMLWriterTbx  {
                             // tascItem = tbxXmlDoc.root["item"]["item"]
                             tascItem = tbxItemAEElement
                             self.tascBaseContainer = tbxItemAEElement // or ... tbxItemAEElementChild
-
+                            
                             
                         }
                         
@@ -353,11 +359,11 @@ class XMLWriterTbx  {
                 
                 tascBaseItem.addChild(aeTascContainerTbxAttributeElement)
                 
-       
+                
             }
             self.tascBaseContainer = tascBaseItem
             baseItem.addChild(tascBaseItem)
-       
+            
             
             
         }
@@ -377,6 +383,13 @@ class XMLWriterTbx  {
         self.aeonEventTbxXmlElement.addChild(aeonEventType)
         
         var anAeonEventAEElement = self.aeonEventAEElement
+        
+        if self.existingTascChildrenCount > 0 {
+            var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+            aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
+            aeonEventChildTbxXmlElement.value = "label green"
+            aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+        }
         
         // turn the aeon event xml attributes into tinderbox attribute elements, add to event note
         for aeonattribute in  self.aeonEventAEElement.attributes {
@@ -412,7 +425,7 @@ class XMLWriterTbx  {
     func captureAeonEventElementChildren(aeonXmlDoc: AEXMLDocument) {
         
         // get the event's child element attributes
-     
+        
         for aeonEventXmlElementChild in  self.aeonEventAEElement.children {
             
             if aeonEventXmlElementChild.name == "EventTitle" {
@@ -423,10 +436,10 @@ class XMLWriterTbx  {
             // make a note. if no description in aeon then text must be added here to text anyway
             
             if aeonEventXmlElementChild.name == "Description" {
-            
+                
                 var aeonEventChildTbxXmlElement = AEXMLElement("text")
                 if let aeonEventDescriptionvalue = aeonEventXmlElementChild.value {
-                   aeonEventChildTbxXmlElement.value = aeonEventDescriptionvalue
+                    aeonEventChildTbxXmlElement.value = aeonEventDescriptionvalue
                 } else {
                     aeonEventChildTbxXmlElement.value = "No note was found for this event in Aeon Timeline"
                 }
@@ -434,52 +447,100 @@ class XMLWriterTbx  {
                 
             }
             
-            if self.existingTascChildrenCount > 0 {
-                var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
-                aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
-                aeonEventChildTbxXmlElement.value = "label green"
-                aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+            if aeonEventXmlElementChild.name == "Relationships" {
+                captureAeonEventElementRelationshipChildren(aeonEventAEElement,aeonEventAERelationships: aeonEventXmlElementChild)
+            } else {
+                
+                if aeonEventXmlElementChild.name == "Tags" {
+                    captureAeonEventElementTagChildren(aeonEventAEElement,aeonEventAETags: aeonEventXmlElementChild)
+                } else { // everything else
+                    
+                    
+                    // wrong place for this, added more than once?
+                    
+                    
+                    let i : Int? = aeonAeonEventAttributes.indexOf(aeonEventXmlElementChild.name)
+                    let s = aeonTbxEventAttributes[i!].componentsSeparatedByString(",")
+                    
+                    let aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+                    aeonEventChildTbxXmlElement.addAttribute("name", value: s[0])
+                    
+                    if let _ = aeonEventXmlElementChild.value {
+                        aeonEventChildTbxXmlElement.value = aeonEventXmlElementChild.value!
+                        
+                        // if relationships or tags, a whole new thing
+                        // get its children and turn into list
+                        // NEEDS to be HANDLED
+                        
+                        
+                        // one element has attributes, get it
+                        //for attribute in aeonEventXmlElementChild.attributes {
+                        //    aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
+                        //}
+                        
+                    }
+                    else {
+                        aeonEventChildTbxXmlElement.value = " "
+                        
+                        // for attribute in aeonEventXmlElementChild.attributes {
+                        //     aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
+                        // }
+                    }
+                    
+                    for attribute in aeonEventXmlElementChild.attributes {
+                        aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
+                    }
+                    
+                    aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+                }
             }
-            
-            let i : Int? = aeonAeonEventAttributes.indexOf(aeonEventXmlElementChild.name)
-            let s = aeonTbxEventAttributes[i!].componentsSeparatedByString(",")
+        }
+        
+        
+    }
+    
+    func captureAeonEventElementRelationshipChildren(aeonEventAEElement: AEXMLElement, aeonEventAERelationships: AEXMLElement) {
+        
+        let attribArray = aeonTbxEventRelationship.componentsSeparatedByString(",")
+        
+        for aeonEventAEOneRelationship in aeonEventAERelationships.children {
+            print ( "rel = \(aeonEventAEOneRelationship.value)")
             
             let aeonEventChildTbxXmlElement = AEXMLElement("attribute")
-            aeonEventChildTbxXmlElement.addAttribute("name", value: s[0])
+            aeonEventChildTbxXmlElement.addAttribute("name", value: attribArray[0])
             
-            if let _ = aeonEventXmlElementChild.value {
-                aeonEventChildTbxXmlElement.value = aeonEventXmlElementChild.value!
+            var relationshipEntity = ""
+            var relationshipParticipation = ""
+            for relationshipComponent in aeonEventAEOneRelationship.children {
                 
-                // if relationships or tags, a whole new thing
-                // get its children and turn into list
-                // NEEDS to be HANDLED
-                
-                
-                // one element has attributes, get it
-                //for attribute in aeonEventXmlElementChild.attributes {
-                //    aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
-                //}
+                if relationshipComponent.name == "Entity" {
+                    relationshipEntity = relationshipComponent.value!
+                }
+                if relationshipComponent.name == "ParticipationLevel" {
+                    relationshipParticipation = relationshipComponent.value!
+                }
                 
             }
-            else {
-                aeonEventChildTbxXmlElement.value = " "
-                
-                // for attribute in aeonEventXmlElementChild.attributes {
-                //     aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
-                // }
-            }
-            
-            for attribute in aeonEventXmlElementChild.attributes {
-                aeonEventChildTbxXmlElement.addAttribute(attribute.0, value: attribute.1) // dangerous no testing on attribute.1
-            }
+            aeonEventChildTbxXmlElement.value = relationshipEntity + ";" + relationshipParticipation
             
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
             
         }
+    }
+    
+    func captureAeonEventElementTagChildren(aeonEventAEElement: AEXMLElement, aeonEventAETags: AEXMLElement)  {
         
+        let attribArray = aeonTbxEventTag.componentsSeparatedByString(",")
         
-
-        
+        for aeonEventAEOneTag in aeonEventAETags.children {
+            print (  "tag = \(aeonEventAEOneTag.value)")
+            
+            let aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+            aeonEventChildTbxXmlElement.addAttribute("name", value: attribArray[0])
+            aeonEventChildTbxXmlElement.value = aeonEventAEOneTag.value!
+            
+            aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+        }
     }
     
     func captureAeonArcElementChildren(aeonXmlDoc: AEXMLDocument) {
@@ -491,12 +552,12 @@ class XMLWriterTbx  {
                 self.saveEventTitle = aeonArcXmlElementChild.value
             }
             
-            if aeonArcXmlElementChild.name == "Notes" {
-                var aeonArcChildTbxXmlElement = AEXMLElement("text") // not correct, Notes
-                aeonArcChildTbxXmlElement.value = aeonArcXmlElementChild.value
-                aeonArcTbxXmlElement.addChild(aeonArcChildTbxXmlElement)
-                
-            }
+            //          if aeonArcXmlElementChild.name == "Description" {
+            //              var aeonArcChildTbxXmlElement = AEXMLElement("text") // not correct, Notes
+            //              aeonArcChildTbxXmlElement.value = aeonArcXmlElementChild.value
+            //              aeonArcTbxXmlElement.addChild(aeonArcChildTbxXmlElement)
+            
+            //          }
             
             let i : Int? = aeonAeonArcAttributes.indexOf(aeonArcXmlElementChild.name)
             let s = aeonTbxArcAttributes[i!].componentsSeparatedByString(",")
@@ -639,7 +700,7 @@ class XMLWriterTbx  {
         
         var prototypeEventAttribElement = AEXMLElement("attribute")
         
-        prototypeEventAttribElement.value = "AeonEventNoteType;AeonEventNoteStatus;AeonEventID;AeonEventLocked;AeonEventTitle;AeonEventAllDay;AeonEventStartDate;AeonEventDescription;AeonEventIncludeInExport;AeonEventLabel;AeonEventArc;AeonEventRelationships;AeonEventTags;AeonEventCompleted;AeonEventDuration;AeonEventDurationUnit;AeonEventShowTime;AeonEventExternalLinks;AeonEventShowMonth;AeonEventShowDay"
+        prototypeEventAttribElement.value = "AeonEventNoteType;AeonEventNoteStatus;AeonEventID;AeonEventLocked;AeonEventTitle;AeonEventAllDay;AeonEventStartDate;AeonEventDescription;AeonEventIncludeInExport;AeonEventLabel;AeonEventArc;AeonEventCompleted;AeonEventDuration;AeonEventDurationUnit;AeonEventShowTime;AeonEventExternalLinks;AeonEventShowMonth;AeonEventShowDay"
         prototypeEventAttribElement.addAttribute("name", value: "KeyAttributes")
         prototypeEventXmlElement.addChild(prototypeEventAttribElement)
         
@@ -837,7 +898,7 @@ class XMLWriterTbx  {
         var weFoundMatchingTbxNote = false
         for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
             
-            // if this for loop doesn't find a match, it's a new note  
+            // if this for loop doesn't find a match, it's a new note
             
             for tbxItemAeElementChildA in tbxItemAEElement.children {
                 
@@ -858,10 +919,10 @@ class XMLWriterTbx  {
                     // ok, I have the aeon element
                     
                     
-     
+                    
                     for aeonAttributeElement in aeonEventAEElement.children {
                         
-                       // print ("aeonAttributeElement name is \(aeonAttributeElement.name)")
+                        // print ("aeonAttributeElement name is \(aeonAttributeElement.name)")
                         
                         let matchingTbxAttributeIndex = aeonAeonEventAttributes.indexOf(aeonAttributeElement.name)
                         // print ("Matching Tbx Attribute \(matchingTbxAttributeIndex) for \(aeonAttributeElement.name)")
@@ -871,7 +932,7 @@ class XMLWriterTbx  {
                         
                         
                         let tbxAttributeName = attribArray[0]
-                       // print ("tbxAttributeName = \(tbxAttributeName)") // aeoneventdescription comes out here
+                        // print ("tbxAttributeName = \(tbxAttributeName)") // aeoneventdescription comes out here
                         
                         
                         if let aeonEventAttributeValue = aeonAttributeElement.value as String? {
@@ -894,7 +955,7 @@ class XMLWriterTbx  {
                                                 text = AEXMLElement("text")
                                                 text.value = " "
                                                 tbxItemAeElementChildA.addChild(text)
-          
+                                                
                                             }
                                             
                                             var now = getTodayDateString()
@@ -909,8 +970,8 @@ class XMLWriterTbx  {
                                             // if the tbx text here is blank or says novalue, add or update the text element too
                                             // this value could be nil:tbxItemAeElementChildB.value  -- have to acct for that
                                             if tbxItemAeElementChildB.value != aeonEventAttributeValue { // or other changes were made
-                                                print ("from tbx: \(tbxItemAeElementChildB.value) ***")
-                                                print ("from aeon: \(aeonEventAttributeValue) ***")
+                                                //print ("from tbx: \(tbxItemAeElementChildB.value) ***")
+                                                //print ("from aeon: \(aeonEventAttributeValue) ***")
                                                 var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
                                                 aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
                                                 aeonEventChildTbxXmlElement.value = "label yellow"
@@ -919,18 +980,18 @@ class XMLWriterTbx  {
                                                 // get the <text> element from the <event>.children
                                                 var text = tbxItemAeElementChildA["text"]
                                                 if text.name == "AEXMLError" {
-                              
+                                                    
                                                     text = AEXMLElement("text")
                                                     text.value = " "
                                                     tbxItemAeElementChildA.addChild(text)
                                                     
-                                  
+                                                    
                                                 }
                                                 var now = getTodayDateString()
                                                 var currenttext = text.value
                                                 var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonEventAttributeValue
                                                 text.value = newtext
-                                            
+                                                
                                             }
                                         }
                                         
@@ -970,7 +1031,7 @@ class XMLWriterTbx  {
                 
             } // for children of the element
             
-  
+            
             
             
             
@@ -1065,7 +1126,7 @@ class XMLWriterTbx  {
                     
                     self.tascBaseContainer.addChild(aeonEntityTbxXmlElement)
                     
- 
+                    
                     
                 }
                 

@@ -62,4 +62,19 @@ for a relationship compileal all text into one note
 
 ==============
 
+general idea
+compile your notes according to a structure
 
+==============
+turn off green badges on straight add
+
+
+============
+
+
+count elements in tasc container is coiunting everything inc adornments and prototypes
+just count real elements
+
+for each test, just count thoes, for example, events
+
+==========================
