@@ -178,4 +178,29 @@ slice and dice data
 scene creation compilation
 was there one other thing?
 
+are create and modified dates on adornments correct
+
+=================
+so, i'm not crazy about scrivener until much later, at least 3/5 of the way through the writing process. and its index cards are a joke compared to what tinderbox can do for you.
+
+what i'd really like to do is compose my notes in tinderbox, using scene and narrative structures i've created and then compile them into text documents.
+
+so that's exactly what i'm going to do. i'll write an app that traverses tinderbox notes according to structures, pulls out the text, makes a doc.
+
+oh, this is going to be fun. and i already wrote most of the code, that's the beautiful thing about writing xml transform code. once you've got it working you can cut and paste the loops.
+
+idea
+==================
+
+added relationships and tags
+changed title heights
+
+have to worry about relationship and tags text now in the <text> field
+and note name too
+meh
+
+and i haven't really dealt with arcs and entities update problem yet either
+
+'
+
 

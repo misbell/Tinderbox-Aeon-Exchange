@@ -221,6 +221,40 @@ class XMLWriterTbx  {
     
     
     
+    var aeonRelationshipsTbxAdornmentAttributeElements = [
+        "AgentQuery,$AeonRelationshipNoteType=&quot;AeonRelationship&quot;",
+        "Color,orange",
+        "Created,2015-07-04T07:21:54-04:00",
+        "Height,17.95739746",
+        "KeyAttributes,AgentQuery",
+        "Modified,2015-07-04T07:21:54-04:00",
+        "Name,Aeon Timeline Event Relationships",
+        "Searchable,false",
+        "SelectionCount,1",
+        "SortAlsoTransform,normal",
+        "SortTransform,normal",
+        "Width,24.79101562",
+        "Xpos,-1.574829102",
+        "Ypos,-3.1663818359"]
+    
+    
+    var aeonTagsTbxAdornmentAttributeElements = [
+        "AgentQuery,$AeonTagNoteType=&quot;AeonTag&quot;",
+        "Color,violet",
+        "Created,2015-07-04T07:21:54-04:00",
+        "Height,17.95739746",
+        "KeyAttributes,AgentQuery",
+        "Modified,2015-07-04T07:21:54-04:00",
+        "Name,Aeon Timeline Event Tags",
+        "Searchable,false",
+        "SelectionCount,1",
+        "SortAlsoTransform,normal",
+        "SortTransform,normal",
+        "Width,24.79101562",
+        "Xpos,-1.574829102",
+        "Ypos,18.1663818359"]
+    
+    
     
     
     init() {
@@ -384,6 +418,11 @@ class XMLWriterTbx  {
         
         var anAeonEventAEElement = self.aeonEventAEElement
         
+        var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+        aeonEventChildTbxXmlElement.addAttribute("name", value: "TitleHeight")
+        aeonEventChildTbxXmlElement.value = "5"
+        aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+        
         if self.existingTascChildrenCount > 0 {
             var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
             aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
@@ -418,6 +457,10 @@ class XMLWriterTbx  {
             }
             
             self.aeonEventTbxXmlElement.addChild(aeonAttToTbxElement)
+            
+            addAdornmentsToTbxAeonEventItem(aeonEventTbxXmlElement, adornmentsArray: self.aeonRelationshipsTbxAdornmentAttributeElements)
+            addAdornmentsToTbxAeonEventItem(aeonEventTbxXmlElement, adornmentsArray: self.aeonTagsTbxAdornmentAttributeElements)
+  
         }
         
     }
@@ -501,14 +544,15 @@ class XMLWriterTbx  {
     
     func captureAeonEventElementRelationshipChildren(aeonEventAEElement: AEXMLElement, aeonEventAERelationships: AEXMLElement) {
         
+        
+        
         let attribArray = aeonTbxEventRelationship.componentsSeparatedByString(",")
         
         for aeonEventAEOneRelationship in aeonEventAERelationships.children {
             print ( "rel = \(aeonEventAEOneRelationship.value)")
             
-            let aeonEventChildTbxXmlElement = AEXMLElement("attribute")
-            aeonEventChildTbxXmlElement.addAttribute("name", value: attribArray[0])
-            
+
+
             var relationshipEntity = ""
             var relationshipParticipation = ""
             for relationshipComponent in aeonEventAEOneRelationship.children {
@@ -521,7 +565,41 @@ class XMLWriterTbx  {
                 }
                 
             }
-            aeonEventChildTbxXmlElement.value = relationshipEntity + ";" + relationshipParticipation
+
+            let aeonEventChildTbxXmlElement = AEXMLElement("item")
+            aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+            aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+            aeonEventChildTbxXmlElement.addAttribute("proto", value: "AeonRelationshipsPrototype")
+            
+            for tbxattribute in basicNoteAttributes {
+                let attribArray = tbxattribute.componentsSeparatedByString(",")
+                
+                let aeEventTbxAttributeElement = AEXMLElement("attribute")
+                
+                aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                
+                switch attribArray[0]{
+                case  "Name":
+                    aeEventTbxAttributeElement.value = "Relationship: " + relationshipEntity + ";" + relationshipParticipation
+                case  "Created":
+                    aeEventTbxAttributeElement.value = self.noteTimeStamp
+                case  "Modified":
+                    aeEventTbxAttributeElement.value = self.noteTimeStamp
+                default:
+                    aeEventTbxAttributeElement.value = attribArray[1] as String
+                }
+                aeonEventChildTbxXmlElement.addChild(aeEventTbxAttributeElement)
+            }
+
+            let aeonNoteTypeElement = AEXMLElement("attribute")
+            aeonNoteTypeElement.addAttribute("name", value: "AeonRelationshipNoteType")
+            aeonNoteTypeElement.value = "AeonRelationship"
+            aeonEventChildTbxXmlElement.addChild(aeonNoteTypeElement)
+            
+            let aeonPrototypeTypeElement = AEXMLElement("attribute")
+            aeonPrototypeTypeElement.addAttribute("name", value: "Prototype")
+            aeonPrototypeTypeElement.value = "AeonRelationshipsPrototype"
+            aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
             
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
             
@@ -535,11 +613,45 @@ class XMLWriterTbx  {
         for aeonEventAEOneTag in aeonEventAETags.children {
             print (  "tag = \(aeonEventAEOneTag.value)")
             
-            let aeonEventChildTbxXmlElement = AEXMLElement("attribute")
-            aeonEventChildTbxXmlElement.addAttribute("name", value: attribArray[0])
-            aeonEventChildTbxXmlElement.value = aeonEventAEOneTag.value!
+            let aeonEventChildTbxXmlElement = AEXMLElement("item")
+            aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+            aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+            aeonEventChildTbxXmlElement.addAttribute("proto", value: "AeonTagsPrototype")
+            
+            for tbxattribute in basicNoteAttributes {
+                let attribArray = tbxattribute.componentsSeparatedByString(",")
+                
+                let aeEventTbxAttributeElement = AEXMLElement("attribute")
+                
+                aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                
+                switch attribArray[0]{
+                case  "Name":
+                    aeEventTbxAttributeElement.value = "Tag: " + aeonEventAEOneTag.value!
+                case  "Created":
+                    aeEventTbxAttributeElement.value = self.noteTimeStamp
+                case  "Modified":
+                    aeEventTbxAttributeElement.value = self.noteTimeStamp
+                default:
+                    aeEventTbxAttributeElement.value = attribArray[1] as String
+                }
+                aeonEventChildTbxXmlElement.addChild(aeEventTbxAttributeElement)
+            }
+            
+            // always add this attribute element to the event note
+            let aeonNoteTypeElement = AEXMLElement("attribute")
+            aeonNoteTypeElement.addAttribute("name", value: "AeonTagNoteType")
+            aeonNoteTypeElement.value = "AeonTag"
+            aeonEventChildTbxXmlElement.addChild(aeonNoteTypeElement)
+            
+            let aeonPrototypeTypeElement = AEXMLElement("attribute")
+            aeonPrototypeTypeElement.addAttribute("name", value: "Prototype")
+            aeonPrototypeTypeElement.value = "AeonTagsPrototype"
+            aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
             
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+            
+ 
         }
     }
     
@@ -691,6 +803,31 @@ class XMLWriterTbx  {
     }
     
     
+    func addAdornmentsToTbxAeonEventItem(tbxAeonEventElement: AEXMLElement, adornmentsArray: Array <String>) {
+        
+        var adornmentXmlElement = AEXMLElement("adornment")
+        
+        adornmentXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        adornmentXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+        
+        for adornmentAttributeElement in adornmentsArray {
+            
+            let adornmentAttribArray = adornmentAttributeElement.componentsSeparatedByString(",")
+            
+            let  adornmentAttribElement = AEXMLElement("attribute")
+            adornmentAttribElement.value = adornmentAttribArray[1]
+            adornmentAttribElement.addAttribute("name", value: adornmentAttribArray[0])
+            
+            adornmentXmlElement.addChild(adornmentAttribElement)
+            
+            
+        }
+        tbxAeonEventElement.addChild(adornmentXmlElement)
+        
+    }
+    
+    
+    
     func addPrototypeToTASCItem(tbxXmlDoc : AEXMLDocument) {
         
         var prototypeEventXmlElement = AEXMLElement("item")
@@ -769,6 +906,60 @@ class XMLWriterTbx  {
         prototypeEntityXmlElement.addChild(prototypeEntityAttribElement)
         
         self.tascBaseContainer.addChild(prototypeEntityXmlElement)
+        
+        
+        // relationships
+        
+        var prototypeRelationshipXmlElement = AEXMLElement("item")
+        
+        prototypeRelationshipXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        prototypeRelationshipXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+        
+        var prototypeRelationshipAttribElement = AEXMLElement("attribute")
+        
+       prototypeRelationshipAttribElement.value = "AeonRelationshipNoteType;Prototype"
+        
+      prototypeRelationshipAttribElement.addAttribute("name", value: "KeyAttributes")
+      prototypeRelationshipXmlElement.addChild(prototypeRelationshipAttribElement)
+        
+        prototypeRelationshipAttribElement = AEXMLElement("attribute")
+        prototypeRelationshipAttribElement.value = "AeonRelationshipsPrototype"
+        prototypeRelationshipAttribElement.addAttribute("name", value: "Name")
+        prototypeRelationshipXmlElement.addChild(prototypeRelationshipAttribElement)
+        
+        prototypeRelationshipAttribElement = AEXMLElement("attribute")
+        prototypeRelationshipAttribElement.value = "true"
+        prototypeRelationshipAttribElement.addAttribute("name", value: "IsPrototype")
+        prototypeRelationshipXmlElement.addChild(prototypeRelationshipAttribElement)
+        
+        self.tascBaseContainer.addChild(prototypeRelationshipXmlElement)
+
+        
+        // tags
+        
+        var prototypeTagXmlElement = AEXMLElement("item")
+        
+        prototypeTagXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+        prototypeTagXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+        
+        var prototypeTagAttribElement = AEXMLElement("attribute")
+        
+        prototypeTagAttribElement.value = "AeonTagNoteType;Prototype"
+        
+        prototypeTagAttribElement.addAttribute("name", value: "KeyAttributes")
+        prototypeTagXmlElement.addChild(prototypeTagAttribElement)
+        
+        prototypeTagAttribElement = AEXMLElement("attribute")
+        prototypeTagAttribElement.value = "AeonTagsPrototype"
+        prototypeTagAttribElement.addAttribute("name", value: "Name")
+        prototypeTagXmlElement.addChild(prototypeTagAttribElement)
+        
+        prototypeTagAttribElement = AEXMLElement("attribute")
+        prototypeTagAttribElement.value = "true"
+        prototypeTagAttribElement.addAttribute("name", value: "IsPrototype")
+        prototypeTagXmlElement.addChild(prototypeTagAttribElement)
+        
+        self.tascBaseContainer.addChild(prototypeTagXmlElement)
         
     }
     
