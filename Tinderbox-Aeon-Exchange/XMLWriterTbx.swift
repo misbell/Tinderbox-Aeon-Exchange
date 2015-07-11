@@ -1124,6 +1124,8 @@ class XMLWriterTbx  {
         
     }
     
+    // ok
+    
     func checkForExistingAeonArc(aeonArcAEElement: AEXMLElement) -> Bool  {
         
          let aeonarceventitle  = aeonArcAEElement.attributes["EventTitle"] as! String
