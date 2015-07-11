@@ -1128,7 +1128,7 @@ class XMLWriterTbx  {
     
     func checkForExistingAeonArc(aeonArcAEElement: AEXMLElement) -> Bool  {
         
-         let aeonarceventitle  = aeonArcAEElement.attributes["EventTitle"] as! String
+         let aeonarceventitle  = aeonArcAEElement.attributes["Name"] as! String
         
         // search the tinderbox document for a note whose tinderbox Name attribute value
         // matches the current Aeon Event Title in aeonarceventtitle
