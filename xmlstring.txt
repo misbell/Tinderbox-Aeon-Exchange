@@ -1,0 +1,87 @@
+if let aeonArcAttributeValue = aeonAttributeElement.value as String? {
+
+// not find the matching aeonArcxxxx name in tbx
+for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
+
+if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+// print(" name is \(name)  tbxname is \(tbxAttributeName))")
+if name == tbxAttributeName {
+// print("matching name is \(name) \(aeonArcAttributeValue)")
+
+var retrieveName = ""
+if name == "AeonArcTitle" {
+retrieveName = tbxItemAeElementChildB.value!
+
+var text = tbxItemAeElementChildA["text"]
+if text.name == "AEXMLError" {
+
+text = AEXMLElement("text")
+text.value = " "
+tbxItemAeElementChildA.addChild(text)
+
+}
+
+var now = getTodayDateString()
+var currenttext = text.value
+var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonArcAttributeValue
+text.value = newtext
+
+}
+
+if name == "AeonArcDescription" {
+
+// if the tbx text here is blank or says novalue, add or update the text element too
+// this value could be nil:tbxItemAeElementChildB.value  -- have to acct for that
+if tbxItemAeElementChildB.value != aeonArcAttributeValue { // or other changes were made
+//print ("from tbx: \(tbxItemAeElementChildB.value) ***")
+//print ("from aeon: \(aeonArcAttributeValue) ***")
+var aeonArcChildTbxXmlElement = AEXMLElement("attribute")
+aeonArcChildTbxXmlElement.addAttribute("name", value: "Badge")
+aeonArcChildTbxXmlElement.value = "label yellow"
+tbxItemAeElementChildA.addChild(aeonArcChildTbxXmlElement)
+
+// get the <text> element from the <Arc>.children
+var text = tbxItemAeElementChildA["text"]
+if text.name == "AEXMLError" {
+
+text = AEXMLElement("text")
+text.value = " "
+tbxItemAeElementChildA.addChild(text)
+
+
+}
+var now = getTodayDateString()
+var currenttext = text.value
+var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonArcAttributeValue
+text.value = newtext
+
+}
+}
+
+// also update desc if the value was 'no value from aeon timeline'
+
+tbxItemAeElementChildB.value = aeonArcAttributeValue
+
+
+
+break
+
+} // if you found a match to update the tbx aeon xxx field with
+} // if you got the name
+} // for all the attributes on the tbx element
+
+} // if there was value in the aeon element (then find the tbx and update it)
+else { //otherwise
+// still find the tbx and update it, and you are not currently doing that
+
+for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
+if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+if name == tbxAttributeName {
+tbxItemAeElementChildB.value = "no value found"
+break
+
+} // if you found a match to update the tbx aeon xxx field with
+} // if you got the name
+}
+
+}
