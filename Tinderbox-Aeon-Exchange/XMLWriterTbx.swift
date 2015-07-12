@@ -1082,14 +1082,39 @@ class XMLWriterTbx  {
         
     }
     
-    func matchForAeonEventTitleWithExistingTbxNoteName(childAttributeElementsForTbxNote: AEXMLElement, aeonArcEventTitle: String)  -> Bool{
+    
+    func matchForAeonEntityNameWithExistingTbxNoteName(childAttributeElementsForTbxNote: AEXMLElement, aeonEntityName: String)  -> Bool{
         
         
         for tbxItemAeElementChildB in childAttributeElementsForTbxNote.children {
             
             if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                // we use tinderbox field here because no stable id from aeon
                 if name == "Name" {
-                    if tbxItemAeElementChildB.value == aeonArcEventTitle {
+                    if tbxItemAeElementChildB.value == aeonEntityName {
+                        //  print("aeon arc \(aeoneventitle) already exists")
+                        return true
+                    }
+                }
+            }
+            
+            
+        }
+        
+        return false
+        
+    }
+    
+    
+    func matchForAeonEventTitleWithExistingTbxNoteName(childAttributeElementsForTbxNote: AEXMLElement, aeonEventTitle: String)  -> Bool{
+        
+        
+        for tbxItemAeElementChildB in childAttributeElementsForTbxNote.children {
+            
+            if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                // we use tinderbox field here because no stable id from aeon
+                if name == "Name" {
+                    if tbxItemAeElementChildB.value == aeonEventTitle {
                         //  print("aeon arc \(aeoneventitle) already exists")
                         return true
                     }
@@ -1109,6 +1134,7 @@ class XMLWriterTbx  {
         for tbxItemAeElementChildB in childAttributeElementsForTbxNote.children {
             
             if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                // we use the aeon field here because unique id from aeon
                 if name == "AeonEventID" {
                     if tbxItemAeElementChildB.value == aeonID {
                         //                        print("aeon event \(aeonID) already exists")
@@ -1128,11 +1154,11 @@ class XMLWriterTbx  {
     
     func checkForExistingAeonArc(aeonArcAEElement: AEXMLElement) -> Bool  {
         
-         let aeonarceventitle  = aeonArcAEElement.attributes["Name"] as! String
+        let aeonarceventitle  = aeonArcAEElement.attributes["Name"] as! String
         
         // search the tinderbox document for a note whose tinderbox Name attribute value
         // matches the current Aeon Event Title in aeonarceventtitle
-        var weFoundMatchingTbxNote = false
+        var didWeFindMatchingTbxNote = false
         for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
             
             
@@ -1140,43 +1166,43 @@ class XMLWriterTbx  {
             
             for tbxItemAeElementChildA in tbxItemAEElement.children {
                 
-                if matchForAeonEventTitleWithExistingTbxNoteName(tbxItemAeElementChildA, aeonArcEventTitle: aeonarceventitle) {
-                    weFoundMatchingTbxNote = true
+                if matchForAeonEventTitleWithExistingTbxNoteName(tbxItemAeElementChildA, aeonEventTitle: aeonarceventitle) {
+                    didWeFindMatchingTbxNote = true
                     
                     
                     // the arc's attributes
-                    for aeonAttributeElement in aeonEventAEElement.children {
+                    for aeonAttributeElement in aeonArcAEElement.children {
                         
                         let matchingTbxAttributeIndex = aeonAeonArcAttributes.indexOf(aeonAttributeElement.name)
                         let tbxAttributeNameString = aeonTbxArcAttributes[matchingTbxAttributeIndex!]
                         
                         let attribArray = tbxAttributeNameString.componentsSeparatedByString(",")
                         let tbxAttributeName = attribArray[0]
-                  
+                        
                         if let aeonArcAttributeValue = aeonAttributeElement.value as String? {
                             
                             // not find the matching aeonArcxxxx name in tbx
                             for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
                                 
                                 if let name = tbxItemAeElementChildB.attributes["name"] as? String {
-                            
+                                    
                                     if name == tbxAttributeName {
                                         
                                         if name == "AeonArcDescription" {
-          
+                                            
                                             if tbxItemAeElementChildB.value != aeonArcAttributeValue { // or other changes were made
-                         
+                                                
                                                 var aeonArcChildTbxXmlElement = AEXMLElement("attribute")
                                                 aeonArcChildTbxXmlElement.addAttribute("name", value: "Badge")
                                                 aeonArcChildTbxXmlElement.value = "label yellow"
                                                 tbxItemAeElementChildA.addChild(aeonArcChildTbxXmlElement)
                                                 
-                              
+                                                
                                                 var text = tbxItemAeElementChildA["text"]
                                                 if text.name == "AEXMLError" {
                                                     
                                                     text = AEXMLElement("text")
-                                                    text.value = " "
+                                                    text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
                                                     tbxItemAeElementChildA.addChild(text)
                                                     
                                                     
@@ -1190,8 +1216,12 @@ class XMLWriterTbx  {
                                         }
                                         
                                         // also update desc if the value was 'no value from aeon timeline'
+                                        var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                                         
-                                        tbxItemAeElementChildB.value = aeonArcAttributeValue
+                                  
+                                        if trimmedDesc.isEmpty  {
+                                            tbxItemAeElementChildB.value = aeonArcAttributeValue
+                                        }
                                         
                                         
                                         
@@ -1208,7 +1238,31 @@ class XMLWriterTbx  {
                             for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
                                 if let name = tbxItemAeElementChildB.attributes["name"] as? String {
                                     if name == tbxAttributeName {
-                                        tbxItemAeElementChildB.value = "no value found"
+                                        
+                                        var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                                       
+                                        if !trimmedDesc.isEmpty  {
+                                            
+                                            var aeonArcChildTbxXmlElement = AEXMLElement("attribute")
+                                            aeonArcChildTbxXmlElement.addAttribute("name", value: "Badge")
+                                            aeonArcChildTbxXmlElement.value = "label yellow"
+                                            tbxItemAeElementChildA.addChild(aeonArcChildTbxXmlElement)
+                                        }
+                                        
+                                        var text = tbxItemAeElementChildA["text"]
+                                        if text.name == "AEXMLError" {
+                                            
+                                            text = AEXMLElement("text")
+                                            text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
+                                            tbxItemAeElementChildA.addChild(text)
+                                            
+                                            
+                                        }
+                                        
+                                        // capture b value here add to log roll on text item
+                                        if trimmedDesc.isEmpty {
+                                            tbxItemAeElementChildB.value = "no value found"
+                                        }
                                         break
                                         
                                     } // if you found a match to update the tbx aeon xxx field with
@@ -1217,16 +1271,142 @@ class XMLWriterTbx  {
                             
                         }
                     }
-                }
+                }// no matching note found, return false
+            
                 
-            }
-        }
+            } // for loop
+        } // for loop
         
-        return true
+        return didWeFindMatchingTbxNote
     }
     
     func checkForExistingAeonEntity(aeonEntityAEElement: AEXMLElement) -> Bool  {
-        return true
+        let aeonEntityeventitle  = aeonEntityAEElement.attributes["Name"] as! String
+        
+        // seEntityh the tinderbox document for a note whose tinderbox Name attribute value
+        // matches the current Aeon Event Title in aeonEntityeventtitle
+        var didWeFindMatchingTbxNote = false
+        for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
+            
+            
+            // if this for loop doesn't find a match, it's a new note
+            
+            for tbxItemAeElementChildA in tbxItemAEElement.children {
+                
+                if matchForAeonEntityNameWithExistingTbxNoteName(tbxItemAeElementChildA, aeonEntityName: aeonEntityeventitle) {
+
+                
+                    didWeFindMatchingTbxNote = true
+                    
+                    
+                    // the Entity's attributes
+                    for aeonAttributeElement in aeonEntityAEElement.children {
+                        
+                        let matchingTbxAttributeIndex = aeonAeonEntityAttributes.indexOf(aeonAttributeElement.name)
+                        let tbxAttributeNameString = aeonTbxEntityAttributes[matchingTbxAttributeIndex!]
+                        
+                        let attribArray = tbxAttributeNameString.componentsSeparatedByString(",")
+                        let tbxAttributeName = attribArray[0]
+                        
+                        if let aeonEntityAttributeValue = aeonAttributeElement.value as String? {
+                            
+                            // not find the matching aeonEntityxxxx name in tbx
+                            for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
+                                
+                                if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                                    
+                                    if name == tbxAttributeName {
+                                        
+                                        if name == "AeonEntityNotes" {
+                                            
+                                            if tbxItemAeElementChildB.value != aeonEntityAttributeValue { // or other changes were made
+                                                
+                                                var aeonEntityChildTbxXmlElement = AEXMLElement("attribute")
+                                                aeonEntityChildTbxXmlElement.addAttribute("name", value: "Badge")
+                                                aeonEntityChildTbxXmlElement.value = "label yellow"
+                                                tbxItemAeElementChildA.addChild(aeonEntityChildTbxXmlElement)
+                                                
+                                                
+                                                var text = tbxItemAeElementChildA["text"]
+                                                if text.name == "AEXMLError" {
+                                                    
+                                                    text = AEXMLElement("text")
+                                                    text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
+                                                    tbxItemAeElementChildA.addChild(text)
+                                                    
+                                                    
+                                                }
+                                                var now = getTodayDateString()
+                                                var currenttext = text.value
+                                                var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonEntityAttributeValue
+                                                text.value = newtext
+                                                
+                                            }
+                                        }
+                                        
+                                        // also update desc if the value was 'no value from aeon timeline'
+                                        var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                                        
+                                        
+                                        if trimmedDesc.isEmpty  {
+                                            tbxItemAeElementChildB.value = aeonEntityAttributeValue
+                                        }
+                                        
+                                        
+                                        
+                                        break
+                                        
+                                    } // if you found a match to update the tbx aeon xxx field with
+                                } // if you got the name
+                            } // for all the attributes on the tbx element
+                            
+                        } // if there was value in the aeon element (then find the tbx and update it)
+                        else { //otherwise
+                            // still find the tbx and update it, and you are not currently doing that
+                            
+                            for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
+                                if let name = tbxItemAeElementChildB.attributes["name"] as? String {
+                                    if name == tbxAttributeName {
+                                        
+                                        var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                                        
+                                        if !trimmedDesc.isEmpty  {
+                                            
+                                            var aeonEntityChildTbxXmlElement = AEXMLElement("attribute")
+                                            aeonEntityChildTbxXmlElement.addAttribute("name", value: "Badge")
+                                            aeonEntityChildTbxXmlElement.value = "label yellow"
+                                            tbxItemAeElementChildA.addChild(aeonEntityChildTbxXmlElement)
+                                        }
+                                        
+                                        var text = tbxItemAeElementChildA["text"]
+                                        if text.name == "AEXMLError" {
+                                            
+                                            text = AEXMLElement("text")
+                                            text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
+                                            tbxItemAeElementChildA.addChild(text)
+                                            
+                                            
+                                        }
+                                        
+                                        // capture b value here add to log roll on text item
+                                        if trimmedDesc.isEmpty {
+                                            tbxItemAeElementChildB.value = "no value found"
+                                        }
+                                        break
+                                        
+                                    } // if you found a match to update the tbx aeon xxx field with
+                                } // if you got the name
+                            }
+                            
+                        }
+                    }
+                }// no matching note found, return false
+                
+                
+            } // for loop
+        } // for loop
+        
+        return didWeFindMatchingTbxNote
     }
     
     func checkForExistingAeonEvent(aeonEventAEElement: AEXMLElement) -> Bool  {
@@ -1235,7 +1415,7 @@ class XMLWriterTbx  {
         
         // search the tinderbox document for a note whose AeonEventID attribute value
         // matches the current Aeon Event ID in aeoneventid
-        var weFoundMatchingTbxNote = false
+        var didWeFindMatchingTbxNote = false
         for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
             
             // if this for loop doesn't find a match, it's a new note
@@ -1245,7 +1425,7 @@ class XMLWriterTbx  {
                 // this if test has to set a switch saying the for loop found something
                 // else the for loop found nothing and it's a new note
                 if matchForAeonIDWithExistingTbxNoteAeonID(tbxItemAeElementChildA, aeonID: aeoneventid) {
-                    weFoundMatchingTbxNote = true
+                    didWeFindMatchingTbxNote = true
                     
                     // so we have the matching tbx note now
                     // so update the note's aeon value and attributes only
@@ -1377,11 +1557,7 @@ class XMLWriterTbx  {
             
         } // for doc all loop
         
-        if weFoundMatchingTbxNote {
-            return true
-        } else {
-            return false
-        }
+        return didWeFindMatchingTbxNote
     }
     
     func addAeonAttributesToTinderboxDoc() {

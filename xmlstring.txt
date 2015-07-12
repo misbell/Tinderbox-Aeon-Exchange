@@ -1,66 +1,71 @@
-if let aeonArcAttributeValue = aeonAttributeElement.value as String? {
+let aeonEntityeventitle  = aeonentityAEElement.attributes["Name"] as! String
 
-// not find the matching aeonArcxxxx name in tbx
+// seEntityh the tinderbox document for a note whose tinderbox Name attribute value
+// matches the current Aeon Event Title in aeonEntityeventtitle
+var didWeFindMatchingTbxNote = false
+for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
+
+
+// if this for loop doesn't find a match, it's a new note
+
+for tbxItemAeElementChildA in tbxItemAEElement.children {
+
+if matchForAeonEventTitleWithExistingTbxNoteName(tbxItemAeElementChildA, aeonEntityEventTitle: aeonEntityeventitle) {
+didWeFindMatchingTbxNote = true
+
+
+// the Entity's attributes
+for aeonAttributeElement in aeonEntityAEElement.children {
+
+let matchingTbxAttributeIndex = aeonAeonEntityAttributes.indexOf(aeonAttributeElement.name)
+let tbxAttributeNameString = aeonTbxEntityAttributes[matchingTbxAttributeIndex!]
+
+let attribArray = tbxAttributeNameString.componentsSeparatedByString(",")
+let tbxAttributeName = attribArray[0]
+
+if let aeonEntityAttributeValue = aeonAttributeElement.value as String? {
+
+// not find the matching aeonEntityxxxx name in tbx
 for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
 
 if let name = tbxItemAeElementChildB.attributes["name"] as? String {
-// print(" name is \(name)  tbxname is \(tbxAttributeName))")
+
 if name == tbxAttributeName {
-// print("matching name is \(name) \(aeonArcAttributeValue)")
 
-var retrieveName = ""
-if name == "AeonArcTitle" {
-retrieveName = tbxItemAeElementChildB.value!
+if name == "AeonEntityDescription" {
+
+if tbxItemAeElementChildB.value != aeonEntityAttributeValue { // or other changes were made
+
+var aeonEntityChildTbxXmlElement = AEXMLElement("attribute")
+aeonEntityChildTbxXmlElement.addAttribute("name", value: "Badge")
+aeonEntityChildTbxXmlElement.value = "label yellow"
+tbxItemAeElementChildA.addChild(aeonEntityChildTbxXmlElement)
+
 
 var text = tbxItemAeElementChildA["text"]
 if text.name == "AEXMLError" {
 
 text = AEXMLElement("text")
-text.value = " "
-tbxItemAeElementChildA.addChild(text)
-
-}
-
-var now = getTodayDateString()
-var currenttext = text.value
-var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonArcAttributeValue
-text.value = newtext
-
-}
-
-if name == "AeonArcDescription" {
-
-// if the tbx text here is blank or says novalue, add or update the text element too
-// this value could be nil:tbxItemAeElementChildB.value  -- have to acct for that
-if tbxItemAeElementChildB.value != aeonArcAttributeValue { // or other changes were made
-//print ("from tbx: \(tbxItemAeElementChildB.value) ***")
-//print ("from aeon: \(aeonArcAttributeValue) ***")
-var aeonArcChildTbxXmlElement = AEXMLElement("attribute")
-aeonArcChildTbxXmlElement.addAttribute("name", value: "Badge")
-aeonArcChildTbxXmlElement.value = "label yellow"
-tbxItemAeElementChildA.addChild(aeonArcChildTbxXmlElement)
-
-// get the <text> element from the <Arc>.children
-var text = tbxItemAeElementChildA["text"]
-if text.name == "AEXMLError" {
-
-text = AEXMLElement("text")
-text.value = " "
+text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
 tbxItemAeElementChildA.addChild(text)
 
 
 }
 var now = getTodayDateString()
 var currenttext = text.value
-var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonArcAttributeValue
+var newtext = currenttext! + "\n\n\n  ======================= \(now) =============== \n\n" + aeonEntityAttributeValue
 text.value = newtext
 
 }
 }
 
 // also update desc if the value was 'no value from aeon timeline'
+var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 
-tbxItemAeElementChildB.value = aeonArcAttributeValue
+
+if trimmedDesc.isEmpty  {
+tbxItemAeElementChildB.value = aeonEntityAttributeValue
+}
 
 
 
@@ -77,7 +82,31 @@ else { //otherwise
 for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
 if let name = tbxItemAeElementChildB.attributes["name"] as? String {
 if name == tbxAttributeName {
+
+var trimmedDesc = tbxItemAeElementChildB.value!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+
+if !trimmedDesc.isEmpty  {
+
+var aeonEntityChildTbxXmlElement = AEXMLElement("attribute")
+aeonEntityChildTbxXmlElement.addAttribute("name", value: "Badge")
+aeonEntityChildTbxXmlElement.value = "label yellow"
+tbxItemAeElementChildA.addChild(aeonEntityChildTbxXmlElement)
+}
+
+var text = tbxItemAeElementChildA["text"]
+if text.name == "AEXMLError" {
+
+text = AEXMLElement("text")
+text.value = "\n\n\n  ======================= original value =============== \n\n" + tbxItemAeElementChildB.value!
+tbxItemAeElementChildA.addChild(text)
+
+
+}
+
+// capture b value here add to log roll on text item
+if trimmedDesc.isEmpty {
 tbxItemAeElementChildB.value = "no value found"
+}
 break
 
 } // if you found a match to update the tbx aeon xxx field with
@@ -85,3 +114,11 @@ break
 }
 
 }
+}
+}// no matching note found, return false
+
+
+} // for loop
+} // for loop
+
+return didWeFindMatchingTbxNote
