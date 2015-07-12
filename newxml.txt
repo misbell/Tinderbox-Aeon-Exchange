@@ -19,3 +19,90 @@ let xxaexonEventAttributes = [ "AeonNoteType",
 "ShowMonth",
 "ExternalLinks"
 ]
+
+
+http://natashatherobot.com/swift-string-ranges-the-functional/
+
+
+children of an event
+
+<item ID="1436008882" Creator="prenez" proto="AeonRelationshipsPrototype" >
+<attribute name="AeonEventRelationshipNoteType" >AeonRelationship</attribute>
+<attribute name="Created" >2015-07-11T17:06:51-04:00</attribute>
+<attribute name="Modified" >2015-07-11T17:06:51-04:00</attribute>
+<attribute name="Name" >Relationship: Catherine Earnshaw;Observer</attribute>
+<attribute name="SelectionCount" >1</attribute>
+<attribute name="Xpos" >7.925170898</attribute>
+<attribute name="Ypos" >-1.553881836</attribute>
+</item>
+
+
+<item ID="1436008883" Creator="prenez" proto="AeonTagsPrototype" >
+<attribute name="AeonEventTagNoteType" >AeonTag</attribute>
+<attribute name="Created" >2015-07-11T17:06:51-04:00</attribute>
+<attribute name="Modified" >2015-07-11T17:06:51-04:00</attribute>
+<attribute name="Name" >Tag: Death</attribute>
+<attribute name="SelectionCount" >1</attribute>
+<attribute name="Xpos" >-1.074829102</attribute>
+<attribute name="Ypos" >19.77888184</attribute>
+</item>
+</item>
+
+else { // its not an attribute element, either an adorument, relationship or tag
+
+
+
+
+// an adornment
+// a relationship
+// a tag
+// a text
+
+
+// so this is the matching algo
+var foundARelationship = false
+var tbxRelationshipString = ""
+
+if let aPrototype = tbxItemAeElementChildB.attributes["proto"] {
+
+if tbxItemAeElementChildB.name == "item" {
+
+//&& tbxItemAeElementChildB.attributes["proto"]!.name == "AeonRelationshipsPrototype" {
+
+for tbxItemAeElementChildC in tbxItemAeElementChildB.children {
+if let name  = tbxItemAeElementChildC.attributes["name"] as? String {
+
+if name == "Name" { // "Aeon Timeline TASC Container" {
+
+let attribArray = tbxItemAeElementChildC.value!.componentsSeparatedByString(":")
+
+if attribArray[0] == "Relationship" {
+
+// now we know it's a relationship
+
+tbxRelationshipString = tbxItemAeElementChildC.value!
+foundARelationship = true
+break
+} // if
+} // if
+} // if
+
+} // for
+
+
+} //  if
+
+
+
+} //if
+
+if foundARelationship {
+
+var strings = assembleRelationshipStrings()
+//search the strings
+
+// if different, add the new one
+}
+
+
+} //else

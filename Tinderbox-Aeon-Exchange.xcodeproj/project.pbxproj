@@ -31,6 +31,7 @@
 		C962A6611B4047030019A2AC /* ScrivenerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A6601B4047030019A2AC /* ScrivenerItem.swift */; };
 		C962A6631B40485A0019A2AC /* XMLParserScrivener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962A6621B40485A0019A2AC /* XMLParserScrivener.swift */; };
 		C96310971B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96310961B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift */; };
+		C9654E4C1B52EC9100315DBD /* strings-in-swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9654E4B1B52EC9100315DBD /* strings-in-swift.txt */; };
 		C96B6F971B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */; };
 		C96B6F991B3CF40F00CBE22E /* TASCOutlineViewAeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */; };
 		C96F9ED71B4385C500BE8F61 /* xmlstring.txt in Resources */ = {isa = PBXBuildFile; fileRef = C96F9ED61B4385C500BE8F61 /* xmlstring.txt */; };
@@ -83,6 +84,7 @@
 		C962A6601B4047030019A2AC /* ScrivenerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrivenerItem.swift; sourceTree = "<group>"; };
 		C962A6621B40485A0019A2AC /* XMLParserScrivener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParserScrivener.swift; sourceTree = "<group>"; };
 		C96310961B4054C8003CAF34 /* OutlineViewControllerScrivProtocolForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineViewControllerScrivProtocolForm.swift; sourceTree = "<group>"; };
+		C9654E4B1B52EC9100315DBD /* strings-in-swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "strings-in-swift.txt"; sourceTree = "<group>"; };
 		C96B6F961B3CF3D200CBE22E /* TASCOutlineViewTinderbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewTinderbox.swift; sourceTree = "<group>"; };
 		C96B6F981B3CF40F00CBE22E /* TASCOutlineViewAeon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewAeon.swift; sourceTree = "<group>"; };
 		C96F9ED61B4385C500BE8F61 /* xmlstring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xmlstring.txt; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				C95307051B3EA71500E9954E /* app notes.txt */,
 				C97583031B3C10330075AC8A /* Notes.txt */,
 				C96F9ED61B4385C500BE8F61 /* xmlstring.txt */,
+				C9654E4B1B52EC9100315DBD /* strings-in-swift.txt */,
 			);
 			name = notes;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C905C3541B46AC38007037A2 /* bad-preferences.txt in Resources */,
 				27D008661B447FC900E677E4 /* newxml.txt in Resources */,
 				C978C38A1B45F40600D4D338 /* aexml-clean.txt in Resources */,
+				C9654E4C1B52EC9100315DBD /* strings-in-swift.txt in Resources */,
 				C905C3561B46B097007037A2 /* goodpreferences.txt in Resources */,
 				C905C3581B46BA6E007037A2 /* developmentnotes.txt in Resources */,
 				C95307061B3EA71500E9954E /* app notes.txt in Resources */,

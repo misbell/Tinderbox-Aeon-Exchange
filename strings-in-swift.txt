@@ -1,0 +1,374 @@
+
+http://sketchytech.blogspot.com/2014/08/swift-pure-swift-method-for-returning.html
+
+
+AUG
+10
+Swift: A pure Swift method for returning ranges of a String instance (updated for Xcode 6.3.1, Swift 1.2 and Xcode 7, Swift 2)
+
+A selection of algorithms that work with Strings
+
+Often familiarity makes us turn back to the Cocoa Framework, but Swift has a wealth of algorithms that we can use with String. These include:
+distance(str.startIndex, str.endIndex) // string length
+count(str) // string length
+
+str[advance(str.startIndex, 4)] // get character at index 4
+str[advance(str.startIndex, 4)...advance(str.startIndex, 8)] // get characters in range index 4 to 8
+
+last(str) // retrieve last letter
+first(str) // retrieve first letter
+dropFirst(str) // remove first letter
+dropLast(str) // remove last letter
+
+filter(str, {!contains("aeiou", $0)}) // remove vowels
+
+indices(str) // retrieve the Range value for string
+
+isEmpty(str) // test whether there is anything in the string
+minElement(indices(str)) // first index
+
+str.substringToIndex(advance(minElement(indices(str)), 5)) // returns string up to the 5th character
+str.substringFromIndex(advance(minElement(indices(str)), 5)) // returns string from the 5th character
+
+min("antelope","ant") // returns the alphabetical first
+max("antelope","ant") // returns the alphabetical last
+
+prefix(str, 5) // returns first 5 characters
+reverse(str) // return reverse array of Characters
+
+suffix(str, 5) // returns last 5 characters
+swap(&str, &a) // swaps two strings for the value of one another
+
+
+
+
+
+
+
+
+
+
+Update: Swift 2 (string algorithms)
+
+var str = "Hello Swift!"
+var aStr = "Hello World!"
+
+str.startIndex // first index
+str.endIndex // end index
+
+distance(str.startIndex, str.endIndex) // string length
+str.characters.count // string length
+
+str[advance(str.startIndex, 4)] // get character at index 4
+str[advance(str.startIndex, 4)...advance(str.startIndex, 8)] // get characters in range index 4 to 8
+
+str.characters.last // retrieve last letter
+str.characters.first // retrieve first letter
+
+str.removeAtIndex(str.characters.indices.first!) // remove first letter
+str.removeAtIndex(str.characters.indices.last!) // remove last letter
+
+let a = dropFirst(str.characters)
+String(a) // dropFirst
+
+let a = dropLast(str.characters)
+String(a) // dropLast
+
+"aeiou".characters.contains("a") // contains character
+str.characters.filter{!"aeiou".characters.contains($0)} // remove vowels
+
+str.characters.indices // retrieve the Range value for string
+
+str.isEmpty // test whether there is anything in the string
+
+advance(str.startIndex, 5) // advance index
+str.substringToIndex(advance(str.startIndex,5)) // returns string up to the 5th character
+str.substringFromIndex(advance(str.startIndex,5)) // returns string from the 5th character
+
+min("antelope","ant") // returns the alphabetical first
+max("antelope","ant") // returns the alphabetical last
+
+prefix(str.characters, 5) // returns first 5 characters
+str.characters.reverse() // return reverse array of Characters
+
+suffix(str.characters, 5) // returns last 5 characters
+swap(&str, &aStr) // swaps two strings for the value of one another
+
+
+
+
+
+
+
+
+
+
+Reversing a string
+
+Things start to get interesting when you start to combine these algorithms, like so
+var str = "hello"
+var revStr = ""
+for i in str {
+revStr.append(last(str)!)
+str = dropLast(str)
+}
+revStr // "olleh"
+
+
+
+
+
+
+
+Update: Swift 2 (reversing a string)
+
+var str = "Hello Swift!"
+String(str.characters.reverse()) // "!tfiwS olleH" in this process for reversing a string.
+
+
+
+
+
+
+
+
+
+
+
+
+rangesOfString:
+
+It is also possible to go further and remove the need for Cocoa Framework methods like rangeOfString. And here I'm doing something very similar by retrieving the ranges of a string
+extension String {
+func rangesOfString(findStr:String) -> [Range<String.Index>] {
+var arr = [Range<String.Index>]()
+var startInd = self.startIndex
+// check first that the first character of search string exists
+if contains(self, first(findStr)!) {
+// if so set this as the place to start searching
+startInd = find(self,first(findStr)!)!
+}
+else {
+// if not return empty array
+return arr
+}
+var i = distance(self.startIndex, startInd)
+while i<=count(self)-count(findStr) {
+if self[advance(self.startIndex, i)..<advance(self.startIndex, i+count(findStr))] == findStr {
+arr.append(Range(start:advance(self.startIndex, i),end:advance(self.startIndex, i+count(findStr))))
+i = i+count(findStr)
+}
+else {
+i++
+}
+}
+return arr
+}
+} // try further optimisation by jumping to next index of first search character after every find
+
+
+"a very good hello, hello".rangesOfString("hello”) using a String extension written entirely in Swift with no added Cocoa.
+
+
+
+
+
+
+
+
+
+
+Update: Swift 2 implementation (rangesOfString:)
+
+Note that not only are instance methods are now used as opposed to functions, but find() is replaced by indexOf().
+extension String {
+func rangesOfString(findStr:String) -> [Range<String.Index>] {
+var arr = [Range<String.Index>]()
+var startInd = self.startIndex
+// check first that the first character of search string exists
+if self.characters.contains(findStr.characters.first!) {
+// if so set this as the place to start searching
+startInd = self.characters.indexOf(findStr.characters.first!)!
+}
+else {
+// if not return empty array
+return arr
+}
+var i = distance(self.startIndex, startInd)
+while i<=self.characters.count-findStr.characters.count {
+if self[advance(self.startIndex, i)..<advance(self.startIndex, i+findStr.characters.count)] == findStr {
+arr.append(Range(start:advance(self.startIndex, i),end:advance(self.startIndex, i+findStr.characters.count)))
+i = i+findStr.characters.count
+}
+else {
+i++
+}
+}
+return arr
+}
+} // try further optimisation by jumping to next index of first search character after every find
+
+
+"a very good hello, hello".rangesOfString("hello")
+
+
+
+Endorse on Coderwall
+Posted 10th August 2014 by Anthony Levings
+Labels: algorithms extension iOS OS X string Swift Swift 2 Xcode Xcode 7 beta 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9  View comments
+
+BonEvil15 August 2014 at 15:51
+Excellence! This gave me the clarity I needed to write some substring extensions. Great job.
+
+Reply
+
+Jan Weiß20 August 2014 at 11:50
+rangesOfString() above assumes literal string equivalence. This ignores canonically equivalence: http://en.wikipedia.org/wiki/Unicode_equivalence
+
+Reply
+Replies
+
+Anthony Levings20 August 2014 at 20:28
+Is it possible for you to provide an example of an input where this falls down so that I might test and explore revisions?
+
+Reply
+
+Sam Isaacson14 September 2014 at 14:59
+How does your rangeOfString extension compare in terms of performance to the native ObjC/Cocoa one?
+
+Reply
+Replies
+
+Anthony Levings14 September 2014 at 19:27
+A great question. I shall revisit and test, then publish results.
+
+Reply
+
+Brett George31 December 2014 at 18:08
+Your code has a bug on this line:
+i++
+It should be:
+else {i++}
+
+Your code fails on this case
+"hellohello".rangesOfString("hello")
+
+Reply
+Replies
+
+Anthony Levings2 January 2015 at 13:20
+You are absolutely right. Thanks for pointing this out. I've updated the code accordingly.
+
+Reply
+
+mossby1 May 2015 at 05:32
+rangesOfString is a lifesaver, thanks!
+
+Reply
+Replies
+
+Anthony Levings1 May 2015 at 10:23
+Thanks for your comment, I'm glad it's helped you.
+
+Reply
+
+sketchyTech technology tips for writers, editors, designers, illustrators, programmers and publishers
+Magazine
+Home Twitter Apps for Review The sketchyTech Manifesto
+JUL
+7
+The Wonderful World of Popups and Popovers in Swift: Beyond the Newly Deprecated
+The Wonderful World of Popups and Popovers in Swift
+
+To those approaching iOS alerts and popovers for the first time, or perhaps after a break, things can be a bit mind boggling. The docs tell you to use a UIPopoverController to present a UIImagePickerController, but the UIPopoverController docs tell you that it has been deprecated in iOS 9 and to use UIPopoverPresentationController instead. But a view controller doesn't recognise a UIPopoverPresentationController as a view controller, so it can't present it using its presentation method. Argh!
+
+Finally, you get your head around the logic of UIPopoverPresentationController and then you want to figure out how to display a UIAlertView, but that was deprecated in iOS 8.
+JUL
+6
+The ABC of Making a UIAlertViewController Popover in Swift (Xcode 7 beta 2; iOS 9)
+Last time we looked at making a UIImagePickerController popover, and this time we do something very similar but slightly different. We start by creating a UIAlertController instance:
+
+let distributionAlertController = UIAlertController(title: "Distribution", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet) Note here the use of preferred style UIAlertControllerStyle.ActionSheet rather than .Alert.
+JUL
+6
+Swift: Displaying a UIImagePickerController in iOS 9 using non-deprecated classes
+In iOS there have been so many classes come and go for the presentation of alerts and actions, and there's so much documentation (and so many tutorials) that point to deprecated approaches, that it can be a bit mind boggling where to start when the compiler presents you with a warning. And this is made even more difficult by many deprecated classes having very similar names to newer or non-deprecated classes for doing similar things.
+JUL
+5
+Swift: Common Auto Layout scenarios for UIStackView
+If you are using content with an intrinsic size (e.g. a collection of UIImageViews), then you are likely to want to allow a UIStackView to freely expand around the content. In order to do this I think there are only really a limited set of common scenarios, which can be very simply divided into two.
+JUL
+4
+Fear and Loathing in Auto Layout: Programmatic Constraints
+I want to start this post with a brief list of points that are often skipped over in tutorials and I think might be useful to people seeking answers:
+
+Setting constraints programmatically you must set all subviews to subView.translatesAutoresizingMaskIntoConstraints = false (but not self.view). But this rule doesn't apply to views added to a UIStackView (although it does apply to the top level UIStackView).
+
+JUL
+2
+GitHub on your iPad: Working Copy App Review
+Working Copy
+
+On the desktop I use GitHub's own app for uploading, committing changes and synchronizing. (Waits while rotten fruit is thrown by command-line purists.)
+
+Working Copy (developed by Anders Borum) serves the same purpose as GitHub's app, but it is designed for the iPad (and iPhone). And while testing I could identify no missing feature. If anything I found more than I was expecting.
+JUN
+30
+Similarly different: join(), reduce() and flatMap() in Swift 2
+This is the first ever piece that I've written first as a playground and second as a blogpost. This is something that I'd like to make the norm wherever possible and will endeavour to do so. It covers a selection of higher order functions in Swift and draws attention to their similarities and differences.
+2
+
+JUN
+29
+Fear and Loathing in Auto Layout: Constraint Multipliers, Ratios, Constants and Relations (Xcode 7 beta 2)
+Multipliers and Ratios
+
+Up until now the Auto Layout series of posts has been using constraints with constant widths and heights, but there is another way. This involves using multipliers, ratios and relations. In this post, I'll show you in practical terms what this means for your layout.
+
+1.  To begin, add a single button to the left corner of your view.
+
+2.
+JUN
+28
+Empowering Extensions in Swift 2: Protocols, Types and Subclasses (Xcode 7 beta 2)
+Type extensions with generic type parameters
+
+Extensions are a convenient way of separating code, extending pre-existing types and adopting new protocols in Swift. But with the arrival of Swift 2 they've taken on a whole new set of powers.
+
+I've already looked briefly at the extension of protocols (in Xcode 7 beta 1), but with the arrival of Xcode 7 beta 2 we can now perform even more magic.
+
+JUN
+25
+Fear and Loathing in Auto Layout: Content Hugging Priority (Xcode 7 beta 2)
+Content Hugging: A Brief Embrace
+
+At the end of yesterday's post we hovered over the input boxes for Content Compression Resistance Priority and discovered that in short it simply means 'Resistance to being made smaller'. And from hovering over the equivalent input boxes for Content Hugging Priority (CHP) we see that Hugging defines the resistance to being made larger.
+
+
+
+Loading
