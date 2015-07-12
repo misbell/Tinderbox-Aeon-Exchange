@@ -1602,6 +1602,12 @@ class XMLWriterTbx  {
                         captureAeonEventElementChildren(aeonXmlDoc)
                         addTinderboxAttributesToAeonEventElement(aeonXmlDoc)
                         
+                        // add the relationship and tags somewhere here
+                        // same mix and match logic
+                        //captureAeonEventElementRelationshipChildren
+                        //captureAeonEventElementTagChildren
+                        
+                        
                         //    var anewone = self.aeonEventTbxXmlElement
                         //  var tascbasecontainer = self.tascBaseContainer
                         
