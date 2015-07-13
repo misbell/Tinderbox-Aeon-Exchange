@@ -1443,7 +1443,6 @@ class XMLWriterTbx  {
             var aeonRelationshipString = "Relationship: \(anAeonRelationship.children[entity].value!);\(relationshipParticipation)"
             
             
-            
             // so this is the matching algo
             var weFoundAMatch = false
             var tbxRelationshipString = ""
@@ -1477,6 +1476,7 @@ class XMLWriterTbx  {
             
             
             if !weFoundAMatch {
+                print("add the new relationship \(aeonRelationshipString)")
 
                 let aeonEventChildTbxXmlElement = AEXMLElement("item")
                 aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
@@ -1768,43 +1768,7 @@ class XMLWriterTbx  {
         
         return didWeFindMatchingTbxNote
     }
-    
-    func assembleRelationshipStrings() -> [String] {
-        /*
-        for aeonEventAEOneRelationship in aeonEventAERelationships.children {
-        print ( "rel = \(aeonEventAEOneRelationship.value)")
-        
-        
-        
-        var relationshipEntity = ""
-        var relationshipParticipation = ""
-        for relationshipComponent in aeonEventAEOneRelationship.children {
-        
-        if relationshipComponent.name == "Entity" {
-        relationshipEntity = relationshipComponent.value!
-        }
-        if relationshipComponent.name == "ParticipationLevel" {
-        
-        switch relationshipComponent.value! {
-        case "1":
-        relationshipParticipation = "Observer"
-        case "2":
-        relationshipParticipation = "Participant"
-        case "3":
-        relationshipParticipation = "Death"
-        case "4":
-        relationshipParticipation = "Birth"
-        default:
-        relationshipParticipation = "unknown"
-        
-        }
-        
-        }
-        
-        }
-        */
-        return ["",""]
-    }
+
     
     func addAeonAttributesToTinderboxDoc() {
         
