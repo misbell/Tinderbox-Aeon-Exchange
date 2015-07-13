@@ -560,7 +560,7 @@ class XMLWriterTbx  {
         //      let attribArray = aeonTbxEventRelationshipAttributes.componentsSeparatedByString(",")
         
         for aeonEventAEOneRelationship in aeonEventAERelationships.children {
-            print ( "rel = \(aeonEventAEOneRelationship.value)")
+            //print ( "rel = \(aeonEventAEOneRelationship.value)")
             
             
             
@@ -638,7 +638,7 @@ class XMLWriterTbx  {
         //      let attribArray = aeonTbxEventTagAttributes.componentsSeparatedByString(",")
         
         for aeonEventAEOneTag in aeonEventAETags.children {
-            print (  "tag = \(aeonEventAEOneTag.value)")
+            //   print (  "tag = \(aeonEventAEOneTag.value)")
             
             let aeonEventChildTbxXmlElement = AEXMLElement("item")
             aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
@@ -1129,6 +1129,8 @@ class XMLWriterTbx  {
         
     }
     
+    // this does two things:: test to see if the passed in attribute is the id field, and then sees if the id matches
+    // two tests jammed together is a little confusing...
     func matchForAeonIDWithExistingTbxNoteAeonID(childAttributeElementsForTbxNote: AEXMLElement, aeonID: String)  -> Bool{
         
         
@@ -1410,18 +1412,207 @@ class XMLWriterTbx  {
         return didWeFindMatchingTbxNote
     }
     
-    func handleRelationships(aeonRelationshipsAEElement: AEXMLElement) {
+    func handleRelationships(aeonRelationshipsAEElement: AEXMLElement, tbxRelationshipsAEElement: AEXMLElement) {
         
-        print ("handle relationships")
+        //    print ("handle relationships")
         // remember matching note has been found
         
-        
+        for anAeonRelationship in aeonRelationshipsAEElement.children {
+            
+            // these are the relationships
+            
+            let entity = 0
+            let participationlevel = 1
+            
+            
+            var relationshipParticipation = ""
+            switch anAeonRelationship.children[participationlevel].value! {
+            case "1":
+                relationshipParticipation = "Observer"
+            case "2":
+                relationshipParticipation = "Participant"
+            case "3":
+                relationshipParticipation = "Death"
+            case "4":
+                relationshipParticipation = "Birth"
+            default:
+                relationshipParticipation = "unknown"
+                
+            }
+            
+            var aeonRelationshipString = "Relationship: \(anAeonRelationship.children[entity].value!);\(relationshipParticipation)"
+            
+            
+            
+            // so this is the matching algo
+            var weFoundAMatch = false
+            var tbxRelationshipString = ""
+            
+            
+            for eventItem in tbxRelationshipsAEElement.children {
+                if eventItem.name == "item" {
+                    for childAttributes in eventItem.children {
+                        let name = childAttributes.attributes["name"] as! String
+                        if name == "Name" {
+                            var attribArray = childAttributes.value!.componentsSeparatedByString(":")
+                            if attribArray[0] == "Relationship" {
+                                
+                              //  print (" tbx: \(childAttributes.value!)")
+                              //  print ("aeon: \(aeonRelationshipString)")
+                                
+                                if aeonRelationshipString == childAttributes.value! {
+                                    weFoundAMatch = true
+                                    tbxRelationshipString = childAttributes.value!
+                                    break
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                }
+                
+                
+            }
+            
+            
+            if !weFoundAMatch {
+
+                let aeonEventChildTbxXmlElement = AEXMLElement("item")
+                aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+                aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+                aeonEventChildTbxXmlElement.addAttribute("proto", value: "AeonRelationshipsPrototype")
+                
+                for tbxattribute in basicNoteAttributes {
+                    let attribArray = tbxattribute.componentsSeparatedByString(",")
+                    
+                    let aeEventTbxAttributeElement = AEXMLElement("attribute")
+                    
+                    aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                    
+                    switch attribArray[0]{
+                    case  "Name":
+                        aeEventTbxAttributeElement.value = aeonRelationshipString
+                    case  "Created":
+                        aeEventTbxAttributeElement.value = self.noteTimeStamp
+                    case  "Modified":
+                        aeEventTbxAttributeElement.value = self.noteTimeStamp
+                    default:
+                        aeEventTbxAttributeElement.value = attribArray[1] as String
+                    }
+                    aeonEventChildTbxXmlElement.addChild(aeEventTbxAttributeElement)
+                }
+                
+                let aeonNoteTypeElement = AEXMLElement("attribute")
+                aeonNoteTypeElement.addAttribute("name", value: "AeonEventRelationshipNoteType")
+                aeonNoteTypeElement.value = "AeonRelationship"
+                aeonEventChildTbxXmlElement.addChild(aeonNoteTypeElement)
+                
+                let aeonPrototypeTypeElement = AEXMLElement("attribute")
+                aeonPrototypeTypeElement.addAttribute("name", value: "Prototype")
+                aeonPrototypeTypeElement.value = "AeonRelationshipsPrototype"
+                aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
+                
+                tbxRelationshipsAEElement.addChild(aeonEventChildTbxXmlElement)
+            }
+            
+            
+   
+            
+        }
         
     }
     
-    func handleTags(aeonTagsAEElement: AEXMLElement) {
-        print ("handle tags")
-             // remember matching note has been found
+    func handleTags(aeonTagsAEElement: AEXMLElement, tbxTagsAEElement: AEXMLElement) {
+        //    print ("handle relationships")
+        // remember matching note has been found
+        
+        for anAeonTag in aeonTagsAEElement.children {
+            
+            // these are the tags
+            
+            let tag = 0
+            
+            var aeonTagString = "Tag: \(anAeonTag.value!)"
+            
+            // so this is the matching algo
+            var weFoundAMatch = false
+            var tbxTagString = ""
+            
+            
+            for eventItem in tbxTagsAEElement.children {
+                if eventItem.name == "item" {
+                    for childAttributes in eventItem.children {
+                        let name = childAttributes.attributes["name"] as! String
+                        if name == "Name" {
+                            var attribArray = childAttributes.value!.componentsSeparatedByString(":")
+                            if attribArray[0] == "Tag" {
+                                
+                                //  print (" tbx: \(childAttributes.value!)")
+                                //  print ("aeon: \(aeonRelationshipString)")
+                                
+                                if aeonTagString == childAttributes.value! {
+                                    weFoundAMatch = true
+                                    tbxTagString = childAttributes.value!
+                                    break
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                }
+                
+                
+            }
+            
+            
+            if !weFoundAMatch {
+                
+                print("add the new tag \(aeonTagString)")
+
+                let aeonEventChildTbxXmlElement = AEXMLElement("item")
+                aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
+                aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
+                aeonEventChildTbxXmlElement.addAttribute("proto", value: "AeonTagsPrototype")
+                
+                for tbxattribute in basicNoteAttributes {
+                    let attribArray = tbxattribute.componentsSeparatedByString(",")
+                    
+                    let aeEventTbxAttributeElement = AEXMLElement("attribute")
+                    
+                    aeEventTbxAttributeElement.addAttribute("name", value: attribArray[0])
+                    
+                    switch attribArray[0]{
+                    case  "Name":
+                        aeEventTbxAttributeElement.value = "Tag: " + anAeonTag.value!
+                    case  "Created":
+                        aeEventTbxAttributeElement.value = self.noteTimeStamp
+                    case  "Modified":
+                        aeEventTbxAttributeElement.value = self.noteTimeStamp
+                    default:
+                        aeEventTbxAttributeElement.value = attribArray[1] as String
+                    }
+                    aeonEventChildTbxXmlElement.addChild(aeEventTbxAttributeElement)
+                }
+                
+                // always add this attribute element to the event note
+                let aeonNoteTypeElement = AEXMLElement("attribute")
+                aeonNoteTypeElement.addAttribute("name", value: "AeonEventTagNoteType")
+                aeonNoteTypeElement.value = "AeonTag"
+                aeonEventChildTbxXmlElement.addChild(aeonNoteTypeElement)
+                
+                let aeonPrototypeTypeElement = AEXMLElement("attribute")
+                aeonPrototypeTypeElement.addAttribute("name", value: "Prototype")
+                aeonPrototypeTypeElement.value = "AeonTagsPrototype"
+                aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
+                
+                tbxTagsAEElement.addChild(aeonEventChildTbxXmlElement)
+              
+            }
+            
+        }
+
     }
     
     func checkForExistingAeonEvent(aeonEventAEElement: AEXMLElement) -> Bool  {
@@ -1453,42 +1644,31 @@ class XMLWriterTbx  {
                     
                     // ok, I have the aeon element
                     
-                    
-                    
                     for aeonAttributeElement in aeonEventAEElement.children {
                         
                         if aeonAttributeElement.name == "Relationships" {
-                            handleRelationships(aeonAttributeElement)
+                            handleRelationships(aeonAttributeElement,tbxRelationshipsAEElement: tbxItemAeElementChildA)
                             
                             
                         } else if aeonAttributeElement.name == "Tags" {
-                            handleTags(aeonAttributeElement)
+                            handleTags(aeonAttributeElement,tbxTagsAEElement: tbxItemAeElementChildA)
                             
                         } else {
                             
-                            // print ("aeonAttributeElement name is \(aeonAttributeElement.name)")
-                            
                             let matchingTbxAttributeIndex = aeonAeonEventAttributes.indexOf(aeonAttributeElement.name)
-                            // print ("Matching Tbx Attribute \(matchingTbxAttributeIndex) for \(aeonAttributeElement.name)")
+                            
                             let tbxAttributeNameString = aeonTbxEventAttributes[matchingTbxAttributeIndex!]
                             
                             let attribArray = tbxAttributeNameString.componentsSeparatedByString(",")
-                            
-                            
                             let tbxAttributeName = attribArray[0]
-                            // print ("tbxAttributeName = \(tbxAttributeName)") // aeoneventdescription comes out here
-                            
                             
                             if let aeonEventAttributeValue = aeonAttributeElement.value as String? {
                                 
                                 // now find the matching aeoneventxxxx name in tbx
                                 for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
                                     
-                                    
                                     if let name = tbxItemAeElementChildB.attributes["name"] as? String {
-                                        // print(" name is \(name)  tbxname is \(tbxAttributeName))")
                                         if name == tbxAttributeName {
-                                            // print("matching name is \(name) \(aeonEventAttributeValue)")
                                             
                                             var retrieveName = ""
                                             if name == "AeonEventTitle" {
@@ -1570,10 +1750,6 @@ class XMLWriterTbx  {
                                 
                             }
                         }
-                        
-                        
-                        
-                        
                         
                         
                     } // for tbx elements search loop
