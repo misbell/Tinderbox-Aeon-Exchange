@@ -35,6 +35,27 @@ class ViewController: NSViewController {
     @IBOutlet var outlineViewControllerScrivener: OutlineViewControllerScrivener!
     
     
+    
+    @IBOutlet var textViewBulkEvents: NSTextView!
+    
+    
+    @IBOutlet var textViewBulkArcs: NSTextView!
+
+    
+    @IBAction func getBulkEvents(sender: AnyObject) {
+        let xmlWriter = XMLWriterTbx()
+        xmlWriter.writeAeonArcsXMLSnippet()
+        
+    }
+    
+    
+    @IBAction func getBulkArcs(sender: AnyObject) {
+        let xmlWriter = XMLWriterTbx()
+        xmlWriter.writeAeonEventsXMLSnippet()
+        
+    }
+    
+    
     required   init?(coder: NSCoder) {
         super.init(coder: coder)
         parseAeon = false

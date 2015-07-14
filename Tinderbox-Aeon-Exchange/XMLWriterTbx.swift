@@ -1456,8 +1456,8 @@ class XMLWriterTbx  {
                             var attribArray = childAttributes.value!.componentsSeparatedByString(":")
                             if attribArray[0] == "Relationship" {
                                 
-                              //  print (" tbx: \(childAttributes.value!)")
-                              //  print ("aeon: \(aeonRelationshipString)")
+                                //  print (" tbx: \(childAttributes.value!)")
+                                //  print ("aeon: \(aeonRelationshipString)")
                                 
                                 if aeonRelationshipString == childAttributes.value! {
                                     weFoundAMatch = true
@@ -1477,7 +1477,7 @@ class XMLWriterTbx  {
             
             if !weFoundAMatch {
                 print("add the new relationship \(aeonRelationshipString)")
-
+                
                 let aeonEventChildTbxXmlElement = AEXMLElement("item")
                 aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
                 aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
@@ -1517,7 +1517,7 @@ class XMLWriterTbx  {
             }
             
             
-   
+            
             
         }
         
@@ -1570,7 +1570,7 @@ class XMLWriterTbx  {
             if !weFoundAMatch {
                 
                 print("add the new tag \(aeonTagString)")
-
+                
                 let aeonEventChildTbxXmlElement = AEXMLElement("item")
                 aeonEventChildTbxXmlElement.addAttribute("ID", value: String(++self.nextTbxNoteID)) // make it real
                 aeonEventChildTbxXmlElement.addAttribute("Creator", value: self.tbxDocumentCreator) // make it real
@@ -1608,11 +1608,11 @@ class XMLWriterTbx  {
                 aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
                 
                 tbxTagsAEElement.addChild(aeonEventChildTbxXmlElement)
-              
+                
             }
             
         }
-
+        
     }
     
     func checkForExistingAeonEvent(aeonEventAEElement: AEXMLElement) -> Bool  {
@@ -1768,7 +1768,7 @@ class XMLWriterTbx  {
         
         return didWeFindMatchingTbxNote
     }
-
+    
     
     func addAeonAttributesToTinderboxDoc() {
         
@@ -2053,5 +2053,63 @@ class XMLWriterTbx  {
         }
         
     }
+    
+    
+    func writeAeonArcsXMLSnippet() {
+        
+        
+        
+        
+    }
+    
+    
+    func writeAeonEventsXMLSnippet() {
+        
+        var error: NSError?
+        if let tbxXmlDoc = AEXMLDocument(xmlData: self.tbxdata, error: &error) {
+            
+            self.tinderboxXmlDoc = tbxXmlDoc
+            
+            for tbxItemAEElement in self.tinderboxXmlDoc!.root["item"]["item"].all! {
+                
+                
+                // if this for loop doesn't find a match, it's a new note
+                
+                for tbxItemAeElementChildA in tbxItemAEElement.children {
+                    
+                    if let proto = tbxItemAeElementChildA.attributes["proto"] {
+                        if proto as! String == "event prototype" {
+                            for tbxItemAeElementChildB in tbxItemAeElementChildA.children {
+                                if let name  = tbxItemAeElementChildB.attributes["name"] {
+                                    if name as! String == "Name" {
+                                        print ("name = \(tbxItemAeElementChildB.value!)")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
