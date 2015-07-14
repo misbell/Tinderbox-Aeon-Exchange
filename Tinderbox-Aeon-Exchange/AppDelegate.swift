@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import CloudKit
+
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,6 +20,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
+        
+        let i = 0
+        
+        
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

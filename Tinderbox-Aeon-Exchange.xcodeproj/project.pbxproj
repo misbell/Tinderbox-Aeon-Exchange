@@ -43,6 +43,7 @@
 		C98B7AFB1B42B8D600C5D662 /* XMLWriterTbx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */; };
 		C99A213A1B404E630027B1D6 /* TASCOutlineViewScrivener.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */; };
 		C9B938FF1B4E2BF6008FA2AE /* feature-ideas.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9B938FE1B4E2BF6008FA2AE /* feature-ideas.txt */; };
+		C9D8E5EB1B54874500CDEFB4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D8E5EA1B54874500CDEFB4 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		C98B7AFA1B42B8D600C5D662 /* XMLWriterTbx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLWriterTbx.swift; sourceTree = "<group>"; };
 		C99A21391B404E630027B1D6 /* TASCOutlineViewScrivener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASCOutlineViewScrivener.swift; sourceTree = "<group>"; };
 		C9B938FE1B4E2BF6008FA2AE /* feature-ideas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "feature-ideas.txt"; sourceTree = "<group>"; };
+		C9D8E5E91B5486E200CDEFB4 /* Tinderbox-Aeon-Exchange.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Tinderbox-Aeon-Exchange.entitlements"; sourceTree = "<group>"; };
+		C9D8E5EA1B54874500CDEFB4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D8E5EB1B54874500CDEFB4 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,7 @@
 		2725D9941B3B061F00968814 = {
 			isa = PBXGroup;
 			children = (
+				C9D8E5EA1B54874500CDEFB4 /* CloudKit.framework */,
 				C9158FBD1B3F843E00F5A9DD /* Abstractions */,
 				C9158FBB1B3F83CA00F5A9DD /* TestData */,
 				C9158FBC1B3F83EA00F5A9DD /* Parser */,
@@ -144,6 +149,7 @@
 		2725D99F1B3B061F00968814 /* Tinderbox-Aeon-Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				C9D8E5E91B5486E200CDEFB4 /* Tinderbox-Aeon-Exchange.entitlements */,
 				2725D9A21B3B061F00968814 /* AppDelegate.swift */,
 				2725D9A41B3B061F00968814 /* ViewController.swift */,
 				2725D9A61B3B061F00968814 /* Images.xcassets */,
@@ -314,6 +320,12 @@
 				TargetAttributes = {
 					2725D99C1B3B061F00968814 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 979MPXHXFC;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					2725D9AE1B3B061F00968814 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -515,11 +527,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tinderbox-Aeon-Exchange/Tinderbox-Aeon-Exchange.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tinderbox-Aeon-Exchange/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prenezsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -527,11 +543,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tinderbox-Aeon-Exchange/Tinderbox-Aeon-Exchange.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Tinderbox-Aeon-Exchange/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prenezsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
