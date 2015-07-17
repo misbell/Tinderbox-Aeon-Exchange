@@ -44,6 +44,8 @@ class XMLWriterTbx  {
     
     var existingTascChildrenCount = 0
     
+    var greenLightNewEvents = true;
+    
     
     /*
     0 - string
@@ -372,6 +374,9 @@ class XMLWriterTbx  {
             
         }
         else {
+            
+            self.greenLightNewEvents = false
+
             //make a new tascItem
             let baseItem = tbxXmlDoc.root["item"]
             let tascBaseItem = AEXMLElement("item" )
@@ -434,7 +439,8 @@ class XMLWriterTbx  {
         aeonEventChildTbxXmlElement.value = "5"
         aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
         
-        if self.existingTascChildrenCount > 0 {
+        //if self.existingTascChildrenCount > 0 {
+        if self.greenLightNewEvents {
             var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
             aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
             aeonEventChildTbxXmlElement.value = "label green"
@@ -626,6 +632,14 @@ class XMLWriterTbx  {
             aeonPrototypeTypeElement.value = "AeonRelationshipsPrototype"
             aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
             
+            if self.greenLightNewEvents {
+                var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+                aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
+                aeonEventChildTbxXmlElement.value = "label green"
+                aeonEventChildTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+            }
+            
+            
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
             
         }
@@ -676,6 +690,14 @@ class XMLWriterTbx  {
             aeonPrototypeTypeElement.value = "AeonTagsPrototype"
             aeonEventChildTbxXmlElement.addChild(aeonPrototypeTypeElement)
             
+            if self.greenLightNewEvents {
+                var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+                aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
+                aeonEventChildTbxXmlElement.value = "label green"
+                aeonEventChildTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+            }
+            
+            
             aeonEventTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
             
             
@@ -719,6 +741,14 @@ class XMLWriterTbx  {
             }
             else {
                 aeonArcChildTbxXmlElement.value = " "
+            }
+            
+            //if self.existingTascChildrenCount > 0 {
+            if self.greenLightNewEvents {
+                var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+                aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
+                aeonEventChildTbxXmlElement.value = "label green"
+                aeonArcTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
             }
             
             aeonArcTbxXmlElement.addChild(aeonArcChildTbxXmlElement)
@@ -767,6 +797,15 @@ class XMLWriterTbx  {
             else {
                 aeonEntityChildTbxXmlElement.value = " "
             }
+            
+            //if self.existingTascChildrenCount > 0 {
+            if self.greenLightNewEvents {
+                var aeonEventChildTbxXmlElement = AEXMLElement("attribute")
+                aeonEventChildTbxXmlElement.addAttribute("name", value: "Badge")
+                aeonEventChildTbxXmlElement.value = "label green"
+                aeonEntityTbxXmlElement.addChild(aeonEventChildTbxXmlElement)
+            }
+            
             
             aeonEntityTbxXmlElement.addChild(aeonEntityChildTbxXmlElement)
             
@@ -2097,19 +2136,76 @@ class XMLWriterTbx  {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+    /*
+
+
+
+item ID="1434963654" Creator="prenez" proto="event prototype" >
+<attribute name="Badge" >label red</attribute>
+<attribute name="Created" >2015-06-21T18:16:59-04:00</attribute>
+<attribute name="Height" >3.173608003</attribute>
+<attribute name="KeyAttributes" >IsPrototype;StartDate;EndDate;TimelineBand;Badge;Prototype</attribute>
+<attribute name="Modified" >2015-06-21T18:30:16-04:00</attribute>
+<attribute name="Name" >cops grab olivia&apos;s stalker</attribute>
+<attribute name="SelectionCount" >90</attribute>
+<attribute name="StartDate" >1983-08-01T01:01:23-04:00</attribute>
+<attribute name="TimelineBand" >7</attribute>
+<attribute name="TimelineBandName" >celebrities in trouble</attribute>
+<attribute name="Xpos" >-25.2867492</attribute>
+<attribute name="Ypos" >9.883185799</attribute>
+<text >August month of hot summer in the city meeting alicia
+September new apartment and love and birthday
+October the new job
+Mov the holidays
+Dec the trip home
+Jan the challenger
+Feb the campaign betrayal
+March dakota, tartuffe
+april the sickness, her heartbreak
+may the june the wedding end of valentina, suddenly wants alicia
+July atlantic city
+August the end
+September psychosis
+October loss and recovery
+
+</text>
+
+
+
+
+<Event ID="2" Locked="0">
+
+<EventTitle>New Event</EventTitle>
+
+<ShowTime>1</ShowTime>
+<Completed>0</Completed>
+<ShowDay>1</ShowDay>
+<ShowMonth>1</ShowMonth>
+<StartDate>1 2015 2 22 0 0 0</StartDate>
+
+<Description></Description>
+<Duration Unit="Second">0</Duration>
+<IncludeInExport>1</IncludeInExport>
+<Label>Ruby</Label>
+
+<Arc>Global</Arc>
+
+<Relationships></Relationships>
+<Tags></Tags>
+<ExternalLinks></ExternalLinks>
+
+</Event>
+
+
+
+
+
+
+
+
+
+}
+
+*/
